@@ -126,6 +126,6 @@ console.log(typeof foo)
 
 
 
-For now I belive is a good baby step and in this week I promise  write another post about new features, next step we will talk more about arrow functions!
+For now I belive is a good first baby step and in this week I promise  write another post about new features, next step we will talk more about arrow functions!
 
 Thanks and see you soon!
