@@ -97,7 +97,7 @@ console.log(foo)
 ```
 
 ```
-//Const if I try change your value
+//Const if I try change your type
 
 const foo = []
 console.log(typeof foo)
