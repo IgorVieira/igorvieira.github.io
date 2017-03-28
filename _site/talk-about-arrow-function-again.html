@@ -91,30 +91,32 @@ is a code in your read is easy, just like baby steps, go back to code, step by s
 <div class="highlighter-rouge"><pre class="highlight"><code>iDoSomething = (name) =&gt; {
 `My name is $ {name}`
 }
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log (iDoSomething ('Igor'))
+
+// undefine
 
 </code></pre>
 </div>
-<p>console.log (iDoSomething (‘Igor’))</p>
 
-<p>// undefine</p>
+<p>In real is possible write the diferents way:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-In real is possible write the diferents way:
+<div class="highlighter-rouge"><pre class="highlight"><code>const iDoSomething =(name)=&gt; { ...}
+iDoSomething =(name)=&gt; {...}
 
-
-</code></pre>
-</div>
-<p>const iDoSomething =(name)=&gt; { …}
-iDoSomething =(name)=&gt; {…}</p>
-
-<p>const calc = {
+const calc = {
     mult:(x,y) =&gt; x * y,
-    …
- }</p>
+    ...
+ }
 
-<p>console.log(<code class="highlighter-rouge">Possible multiply: ${calc.mult(5,10)}</code>)</p>
+console.log(`Possible multiply: ${calc.mult(5,10)}`)
 
-<p>```</p>
+
+
+</code></pre>
+</div>
 
 <p>In the end this arrow function, is the syntax sugar, is the way more easy to read and write, perfect to use with promises and the little way to distinct, organize and standardize your code for the other programers, and is possible to write just like a describe function, is possible to build a stack for resolve functions, especially if you have a stack of asynchronous functions,but the big power about this way to write is organization and the simplicity of writing code, probably you work in team and other people read you do, so… in the end you do not write for you, you Write for the others, so write a good code just like baby steps, thank you for your time and see you soon!</p>
 

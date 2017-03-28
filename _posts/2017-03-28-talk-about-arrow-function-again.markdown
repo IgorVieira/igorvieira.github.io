@@ -57,6 +57,7 @@ But you need to pay attention, look over this way to write, you see another deta
 iDoSomething = (name) => {
 `My name is $ {name}`
 }
+```
 
 ```
 console.log (iDoSomething ('Igor'))

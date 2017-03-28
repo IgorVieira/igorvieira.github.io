@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 20:50:35 -0300</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 20:50:35 -0300</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 20:57:10 -0300</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 20:57:10 -0300</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -54,30 +54,32 @@ is a code in your read is easy, just like baby steps, go back to code, step by s
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iDoSomething = (name) =&amp;gt; {
 `My name is $ {name}`
 }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log (iDoSomething ('Igor'))
+
+// undefine
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;console.log (iDoSomething (‘Igor’))&lt;/p&gt;
 
-&lt;p&gt;// undefine&lt;/p&gt;
+&lt;p&gt;In real is possible write the diferents way:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-In real is possible write the diferents way:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const iDoSomething =(name)=&amp;gt; { ...}
+iDoSomething =(name)=&amp;gt; {...}
 
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;const iDoSomething =(name)=&amp;gt; { …}
-iDoSomething =(name)=&amp;gt; {…}&lt;/p&gt;
-
-&lt;p&gt;const calc = {
+const calc = {
     mult:(x,y) =&amp;gt; x * y,
-    …
- }&lt;/p&gt;
+    ...
+ }
 
-&lt;p&gt;console.log(&lt;code class=&quot;highlighter-rouge&quot;&gt;Possible multiply: ${calc.mult(5,10)}&lt;/code&gt;)&lt;/p&gt;
+console.log(`Possible multiply: ${calc.mult(5,10)}`)
 
-&lt;p&gt;```&lt;/p&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;In the end this arrow function, is the syntax sugar, is the way more easy to read and write, perfect to use with promises and the little way to distinct, organize and standardize your code for the other programers, and is possible to write just like a describe function, is possible to build a stack for resolve functions, especially if you have a stack of asynchronous functions,but the big power about this way to write is organization and the simplicity of writing code, probably you work in team and other people read you do, so… in the end you do not write for you, you Write for the others, so write a good code just like baby steps, thank you for your time and see you soon!&lt;/p&gt;
 </description>
