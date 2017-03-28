@@ -39,7 +39,7 @@ is a code in your read is easy, just like baby steps, go back to code, step by s
 
 
 
-IDoSomething - The name about my function
+iDoSomething - The name about my function
 
 = (Name) => - I expect the name in my function
 
