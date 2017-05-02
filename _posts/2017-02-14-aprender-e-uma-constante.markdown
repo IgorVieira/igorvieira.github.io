@@ -2,7 +2,7 @@
 layout: post
 title:  "Aprender é uma Constante!  "
 date:   2017-02-14
-categories: Nodejs Javascript
+categories: Lifestyle
 ---
 
 ![movie](https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/movie.png?raw=true)
