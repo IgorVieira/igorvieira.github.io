@@ -134,7 +134,7 @@ export default {
 
 Depois vamos criar o nosso template, repare que colocamos uma nova tag ```<home></home>``` e ela está dentro de uma div, ela é importante pelo seguinte, tudo o que fizermos temos que passar em nosso template em um único bloco, sempre dentro de uma div, caso contrário ele não entenderá o nosso componente ou os diversos componentes que precisarmos.
 
-PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mas pra frente traremos mais coisas somente a respeito dele!
+PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mais para frente trataremos a respeito dele!
 
 
 ```
