@@ -170,7 +170,7 @@ export default {
 ```
 
 
-Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em ```./src/components/home/Home.vue```, vamos fazer a mesma coisa, trabalhare ele do zero.
+Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em ```./src/components/home/Home.vue```, vamos fazer a mesma coisa, trabalhar ele do zero.
 
 
 
