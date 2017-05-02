@@ -6,15 +6,15 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 May 2017 22:48:47 -0300</pubDate>
-    <lastBuildDate>Mon, 01 May 2017 22:48:47 -0300</lastBuildDate>
+    <pubDate>Mon, 01 May 2017 22:58:01 -0300</pubDate>
+    <lastBuildDate>Mon, 01 May 2017 22:58:01 -0300</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Vamos falar de Vuejs </title>
         <description>&lt;p&gt;Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muita coisas em torno da biblioteca.&lt;/p&gt;
 
-&lt;p&gt;Vamos ao objetivo deste post, o que pretendo nos próximos dias é criar uma aplicação simples, a base é um to-do-list, porém coisas mais interessante a respeito dele, um to-do-list onde você terá anotações para o mesmo to-do-list, mas o diferencial dessa série, é test, vamos guiar nosso desenvolvimento por meio de test, pra isso vamos usar o vue-cli, não sou muito fã de cli, mas acho que esse apresenta uma boa abordagem para teste, ainda mais para testes e2e, gostei muito dos esquemas para orgnização de testes, eis a lista do workflow que iremos precisar para montar a nossa aplicação&lt;/p&gt;
+&lt;p&gt;Vamos ao objetivo deste post, o que pretendo nos próximos dias é criar uma aplicação simples, a base é um &lt;a href=&quot;https://github.com/IgorVieira/to-do-list-vue&quot;&gt;to-do-list&lt;/a&gt;, porém com coisas mais interessantes sobre o mesmo, um to-do-list onde você terá anotações para task, e com uma abordagem em tests, vamos guiar nosso desenvolvimento por meio de tests, e para isso vamos usar o vue-cli, não sou muito fã de cli, mas acho que esse apresenta uma boa abordagem, eis a lista do workflow que iremos precisar para montar a nossa aplicação.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;vue-cli&lt;/li&gt;
@@ -67,7 +67,7 @@ vue-cli · Generated &quot;to-do-list&quot;.
 &lt;p&gt;Aqui eu vou usar o VSCode, ele já tem uns plugins para vue-js, é só um shift+ctrl+x, digita vue-js e procure o: Syntax Highlight for Vue.js, instale e é isso.&lt;/p&gt;
 
 &lt;p&gt;Vamos entrar na pasta e alterar algumas coisas, primeiro, vamos entrar no folder e em src
-&lt;code class=&quot;highlighter-rouge&quot;&gt;./src&lt;/code&gt;, esse vai ser por hora o único folder que iremos trabalhar , existe outro folder dentro chamado componentes, vamos deletar esse arquivo, Hello.vue,pronto,  repare que Vuejs tem um template próprio, então tudo o que vamos criar tem uma certa extensão .vue, vamos deletar esse arquivo e criar um outro folder, home/Home.vue e ficará assim&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;./src&lt;/code&gt;, esse vai ser por hora o único folder que iremos trabalhar , existe outro folder dentro chamado componentes, vamos deletar esse arquivo, Hello.vue,pronto,  repare que Vuejs tem um template próprio, então tudo o que vamos criar tem uma certa extensão .vue, vamos deletar esse arquivo e criar um outro folder, home/Home.vue e ficará assim:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ├── components
