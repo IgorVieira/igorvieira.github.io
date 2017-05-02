@@ -808,5 +808,5 @@ export default {
     </html>
  ``` 
 
-Pronto, first step concluído, próximo passo, vamos fazer um pequeno test com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]
+Pronto, first step concluído, próximo passo, vamos fazer dois pequenos testes com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]
 
