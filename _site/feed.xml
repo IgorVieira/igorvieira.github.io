@@ -6,13 +6,15 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 May 2017 22:58:01 -0300</pubDate>
-    <lastBuildDate>Mon, 01 May 2017 22:58:01 -0300</lastBuildDate>
+    <pubDate>Tue, 02 May 2017 17:37:01 -0300</pubDate>
+    <lastBuildDate>Tue, 02 May 2017 17:37:01 -0300</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Vamos falar de Vuejs </title>
-        <description>&lt;p&gt;Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muita coisas em torno da biblioteca.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/vuejs.jpg?raw=true&quot; alt=&quot;Vuejs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muitas coisas em torno da biblioteca.&lt;/p&gt;
 
 &lt;p&gt;Vamos ao objetivo deste post, o que pretendo nos próximos dias é criar uma aplicação simples, a base é um &lt;a href=&quot;https://github.com/IgorVieira/to-do-list-vue&quot;&gt;to-do-list&lt;/a&gt;, porém com coisas mais interessantes sobre o mesmo, um to-do-list onde você terá anotações para task, e com uma abordagem em tests, vamos guiar nosso desenvolvimento por meio de tests, e para isso vamos usar o vue-cli, não sou muito fã de cli, mas acho que esse apresenta uma boa abordagem, eis a lista do workflow que iremos precisar para montar a nossa aplicação.&lt;/p&gt;
 
@@ -107,7 +109,7 @@ vue-cli · Generated &quot;to-do-list&quot;.
 
 &lt;p&gt;Essa é a estrutura básica de qualquer componente que viemos a criar com Vue, template é onde teremos a nossa view e alguns atributos como binds por exemplo no qual os dados vem da view ao nosso data e do data pode ser passado a nossa view, data nesse caso se emplica a uma função onde podemos trabalhar a nossa aplicação, criar objetos, passar objetos e poder chamá-los em outras partes da nossa aplicação, podemos trabalhar inúmeras possiblidades, é bem interessante, e por fim temos o nosso style, que implica na estilização da nossa aplicação.&lt;/p&gt;
 
-&lt;p&gt;Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente única da nossa View,&lt;/p&gt;
+&lt;p&gt;Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente único da nossa View,&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 &amp;lt;/template&amp;gt;
@@ -132,7 +134,7 @@ export default {
 
 &lt;p&gt;Depois vamos criar o nosso template, repare que colocamos uma nova tag &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;home&amp;gt;&amp;lt;/home&amp;gt;&lt;/code&gt; e ela está dentro de uma div, ela é importante pelo seguinte, tudo o que fizermos temos que passar em nosso template em um único bloco, sempre dentro de uma div, caso contrário ele não entenderá o nosso componente ou os diversos componentes que precisarmos.&lt;/p&gt;
 
-&lt;p&gt;PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mas pra frente traremos mais coisas somente a respeito dele!&lt;/p&gt;
+&lt;p&gt;PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mais para frente trataremos a respeito dele!&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
   &amp;lt;div id=&quot;app&quot;&amp;gt;
@@ -166,7 +168,7 @@ export default {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em &lt;code class=&quot;highlighter-rouge&quot;&gt;./src/components/home/Home.vue&lt;/code&gt;, vamos fazer a mesma coisa, trabalhare ele do zero.&lt;/p&gt;
+&lt;p&gt;Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em &lt;code class=&quot;highlighter-rouge&quot;&gt;./src/components/home/Home.vue&lt;/code&gt;, vamos fazer a mesma coisa, trabalhar ele do zero.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 &amp;lt;/template&amp;gt;
@@ -227,9 +229,9 @@ export default {
  “Igor mas dentro de template não teria que ter uma div? “
 Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso passar somente essa tag, mesmo se for um componente, não tem problema, agora se eu tiver mais de um componente, eu precisarei colocar tudo dentro de uma div de fato, mas vamos testar somente como está.&lt;/p&gt;
 
-&lt;p&gt;Bem, podemos notar que funcionou, agora precisamos implementar a nossa pequena lista de fazeres, e ver o que de fato foi feito!&lt;/p&gt;
+&lt;p&gt;Bem, podemos notar que funcionou, agora precisamos implementar a nossa pequena lista de afazeres, e ver o que de fato foi feito!&lt;/p&gt;
 
-&lt;p&gt;Para isso vamos trabalhar em nosso script, Vue é tão intuitivo que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:&lt;/p&gt;
+&lt;p&gt;Para isso vamos trabalhar em nosso script, Vue é tão intuitivo, que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
@@ -260,7 +262,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: ‘Hey’, agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:&lt;/p&gt;
+&lt;p&gt;Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: ‘Hey’ e o mesmo eu posso chamar na view algo semelhante ao ng-expression do Angular , agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
@@ -389,7 +391,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;O VueJS tem um evento chamdo de &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit&lt;/code&gt;, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, e ai vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:&lt;/p&gt;
+&lt;p&gt;O VueJS tem um evento chamdo de &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit&lt;/code&gt;, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     // código anterior
@@ -446,7 +448,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar sunto ao evento, um prevent, igual ao &lt;code class=&quot;highlighter-rouge&quot;&gt;e.preventDefault()&lt;/code&gt;, mas da seguinte forma &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit.prevent=&quot;submitTask()&quot;&lt;/code&gt;, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um load na página, bem, passado isso vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, no qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:&lt;/p&gt;
+&lt;p&gt;Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar junto ao evento, um prevent, igual ao &lt;code class=&quot;highlighter-rouge&quot;&gt;e.preventDefault()&lt;/code&gt;, mas da seguinte forma &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit.prevent=&quot;submitTask()&quot;&lt;/code&gt;, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um reload na página, bem, passado isso, vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, e qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     // código anterior
@@ -763,8 +765,24 @@ export default {
 &amp;lt;/style&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;E adicionar a tag script do font-awesome no index.html da raiz do  projeto&lt;/p&gt;
 
-&lt;p&gt;Pronto, first step concluído, próximo passo, vamos fazer um pequeno test com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;To do List!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- built files will be auto injected --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pronto, first step concluído, próximo passo, vamos fazer dois pequenos testes com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 01 May 2017 00:00:00 -0300</pubDate>
@@ -985,6 +1003,109 @@ console.log(typeof foo)
         
         
         <category>Javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>EM 2 MESES... </title>
+        <description>&lt;p&gt;Nesses meses, eu tenho gasto boa parte do meu tempo lendo, assistindo ou somente ouvindo sobre diversos assuntos sobre tecnologia, front-end, back, UX/UI, startupismo, Design, padrões de projetos, ferramentas, frameworks, testes, SEO  e tudo isso em diversos meios, entre eles o Medium, Youtube, Podcasts e claro, Blogs !&lt;/p&gt;
+
+&lt;p&gt;A maioria são coisas que você pode fazer nos seus fins de semana,  podcasts que você pode ouvir indo para o trabalho e  artigos que você pode ler durante o seu almoço, ou em qualquer intervalo que tiver, bem, é informação pra caramba, em português e em inglês, e eu sei, nem todos falam em Inglês, mesmo concordando, que, se você está em algum meio voltado a tecnologia, o minimo que você deveria saber é inglês… mesmo que pouco, te garanto, esse pouco já faz uma bruta diferença quando você começa a compreender e a criar projetos baseados naquilo que você obteve de informação, o que na sua maioria está em inglês, enfim, tem muito conteúdo e muito conteúdo útil, que pode te ajudar, à aprender a sua primeira linguagem, a usar o seu primeiro framework, a criar a sua primeira aplicação, a ter seu primeiro negócio, ou a quem sabe a ter o seu primeiro milhão kkk, quem sabe não é mesmo?!&lt;/p&gt;
+
+&lt;p&gt;#Videos!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/youtube.jpg?raw=true&quot; alt=&quot;youtube&quot; /&gt;
+De videos, tem um monte, eu vou dar foco aos nascionais, os que eu costumo assistir e quando possível compartilho e mostro para os meus amigos ou jogo nas comunidades, e realmente tem muito material bom, de qualidade que vale a pena você disponibilizar um tempo para acompanhar, se organizar bem dá para montar um roteiro bem de boas para acompanhar a esses canais, alguns até soltam tudo de uma vez, igual ao Waldemar Neto, com ele a parada é igual Netflix, tu assiste tudo de uma vez, e como todos os outros, tem um conteúdo incrível, assinem e apoiem esses canais, realmente vale a pena!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw&quot;&gt;Filipe Deschamps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCnLdHOuue5i1O7TsH6oh07w&quot;&gt;BrazilJS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/rodrigobranas&quot;&gt;Rodrigo Branas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/Loianeg&quot;&gt;Loiane Groner&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCqmJGTdcMIRXOZuukHZ8TqA&quot;&gt;Waldemar Neto&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ&quot;&gt;One Bit Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/aluracursosonline&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Além do pessoal Brazuca, temos vários outros devs de fora do país, pessoal que trabalha em diversos projetos bem da hora, então para quem não conhece, esses são alguns dos canais que eu sigo, são muito bons, postam constantemente e vem sempre com umas soluções ou discussões que realmente valem a pena parar para prestar atenção e analisar bem sobre as mesmas.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q&quot;&gt;MPJ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCfWZwsP8trUy5uHJg8gcGIQ&quot;&gt;Mackenzie Child&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/wesbos&quot;&gt;Wes Bos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[Kyle Robinson Young] (https://www.youtube.com/channel/UCpqYfSWEcyBGorRGvPsHkgg)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/LevelUpTuts&quot;&gt;LevelUpTuts&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/MrRemchi&quot;&gt;MrRemchi&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/whobeatpinkled/videos&quot;&gt;Kurt Weiberth&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww&quot;&gt;Go Rails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A&quot;&gt;RubyThursday&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#Leitura!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/medium.jpg?raw=true&quot; alt=&quot;medium&quot; /&gt;
+De leitura, eu divido em dois grupos, eu gosto de blogs, gosto muito mesmo, mas boa parte dos autores que conheço tem migrado para o Medium, ou mantiveram o seus blogs e volta e meia postam em suas páginas no Medium, aqui sim é muito conteúdo, fora que ler é um hábito muito bom, e por mais que tenhamos tantas facilidades visuais, leitura refina a nossa habilidade de compreensão, e isso é algo bom…mentira é bom pra caramba!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thedesignteam.io/&quot;&gt;The Design Team&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@marcobrunobr&quot;&gt;Marco Bruno&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@oieduardorabelo&quot;&gt;Eduardo Rabelo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@diegoeis&quot;&gt;Diego Eis&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@zenorocha&quot;&gt;Zeno Rocha&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@fdaciuk&quot;&gt;Fernando Daciuk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[Willian Justen] (https://willianjusten.com.br/)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.akitaonrails.com&quot;&gt;Fábio Akita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nipher.io&quot;&gt;Jonas Mendes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.felipefialho.com&quot;&gt;Felipe Fialho&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.alura.com.br&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;podcast&quot;&gt;Podcast!&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/hipster.png?raw=true&quot; alt=&quot;podcast&quot; /&gt;
+Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui podcast, alguns dos quais eu ouvia, pararam de realizar os programas, então eu resolvi postar esses que acompanho/voltei a acompanhar com mais frequência , se tiverem mais que vocês conheçam, por favor, coloquem nos comentários!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thewebplatform.libsyn.com&quot;&gt;The web platform podcast&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;hipsters.tech&quot;&gt;Hipsters Ponto Tech&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://devnaestrada.com.br/&quot;&gt;Dev na Estrada&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Esses foram alguns dos materiais que tenho criado uma certa rotina em torno deles, e acompanhado, quando posso kkkk, no mais, eu espero sinceramente  que isso possa lhe ajudar, e até a próxima!&lt;/p&gt;
+
+&lt;p&gt;PS: Esse post era do blog antigo, mas é valido, então resolvi colocar ele de volta! =]&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Mar 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/em-2-meses</link>
+        <guid isPermaLink="true">http://localhost:4000/em-2-meses</guid>
+        
+        
+        <category>Lifestyle</category>
         
       </item>
     

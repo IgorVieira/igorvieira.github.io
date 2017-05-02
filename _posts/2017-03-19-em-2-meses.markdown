@@ -1,0 +1,127 @@
+---
+layout: post
+title:  "EM 2 MESES... "
+date:   2017-03-19
+categories: Lifestyle
+---
+
+Nesses meses, eu tenho gasto boa parte do meu tempo lendo, assistindo ou somente ouvindo sobre diversos assuntos sobre tecnologia, front-end, back, UX/UI, startupismo, Design, padrões de projetos, ferramentas, frameworks, testes, SEO  e tudo isso em diversos meios, entre eles o Medium, Youtube, Podcasts e claro, Blogs !
+
+A maioria são coisas que você pode fazer nos seus fins de semana,  podcasts que você pode ouvir indo para o trabalho e  artigos que você pode ler durante o seu almoço, ou em qualquer intervalo que tiver, bem, é informação pra caramba, em português e em inglês, e eu sei, nem todos falam em Inglês, mesmo concordando, que, se você está em algum meio voltado a tecnologia, o minimo que você deveria saber é inglês... mesmo que pouco, te garanto, esse pouco já faz uma bruta diferença quando você começa a compreender e a criar projetos baseados naquilo que você obteve de informação, o que na sua maioria está em inglês, enfim, tem muito conteúdo e muito conteúdo útil, que pode te ajudar, à aprender a sua primeira linguagem, a usar o seu primeiro framework, a criar a sua primeira aplicação, a ter seu primeiro negócio, ou a quem sabe a ter o seu primeiro milhão kkk, quem sabe não é mesmo?! 
+
+
+
+
+#Videos!
+
+---------------------------------
+
+![youtube](https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/youtube.jpg?raw=true)
+De videos, tem um monte, eu vou dar foco aos nascionais, os que eu costumo assistir e quando possível compartilho e mostro para os meus amigos ou jogo nas comunidades, e realmente tem muito material bom, de qualidade que vale a pena você disponibilizar um tempo para acompanhar, se organizar bem dá para montar um roteiro bem de boas para acompanhar a esses canais, alguns até soltam tudo de uma vez, igual ao Waldemar Neto, com ele a parada é igual Netflix, tu assiste tudo de uma vez, e como todos os outros, tem um conteúdo incrível, assinem e apoiem esses canais, realmente vale a pena! 
+
+
+[Filipe Deschamps]( https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw)
+ 
+[BrazilJS](https://www.youtube.com/channel/UCnLdHOuue5i1O7TsH6oh07w)
+  
+[Rodrigo Branas]( https://www.youtube.com/user/rodrigobranas)
+
+[Loiane Groner](https://www.youtube.com/user/Loianeg)
+
+[Waldemar Neto](https://www.youtube.com/channel/UCqmJGTdcMIRXOZuukHZ8TqA)
+
+[One Bit Code](https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ)
+
+
+[Alura](https://www.youtube.com/user/aluracursosonline)
+
+ 
+Além do pessoal Brazuca, temos vários outros devs de fora do país, pessoal que trabalha em diversos projetos bem da hora, então para quem não conhece, esses são alguns dos canais que eu sigo, são muito bons, postam constantemente e vem sempre com umas soluções ou discussões que realmente valem a pena parar para prestar atenção e analisar bem sobre as mesmas.   
+
+
+
+[MPJ]( https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q)
+
+[Mackenzie Child](https://www.youtube.com/channel/UCfWZwsP8trUy5uHJg8gcGIQ)
+
+[Wes Bos](https://www.youtube.com/user/wesbos)
+
+[Kyle Robinson Young] (https://www.youtube.com/channel/UCpqYfSWEcyBGorRGvPsHkgg)
+
+[LevelUpTuts](https://www.youtube.com/user/LevelUpTuts)
+
+[MrRemchi](https://www.youtube.com/user/MrRemchi)
+
+[Kurt Weiberth](https://www.youtube.com/user/whobeatpinkled/videos)
+
+[Go Rails](https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww)
+
+[RubyThursday](https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A)
+
+
+
+
+
+#Leitura!
+
+---------------------------------
+
+![medium](https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/medium.jpg?raw=true)
+De leitura, eu divido em dois grupos, eu gosto de blogs, gosto muito mesmo, mas boa parte dos autores que conheço tem migrado para o Medium, ou mantiveram o seus blogs e volta e meia postam em suas páginas no Medium, aqui sim é muito conteúdo, fora que ler é um hábito muito bom, e por mais que tenhamos tantas facilidades visuais, leitura refina a nossa habilidade de compreensão, e isso é algo bom...mentira é bom pra caramba!
+
+
+
+[The Design Team](https://thedesignteam.io/)
+
+[Marco Bruno](https://medium.com/@marcobrunobr)
+
+[Eduardo Rabelo](https://medium.com/@oieduardorabelo)
+
+[Diego Eis](https://medium.com/@diegoeis)
+
+[Zeno Rocha](https://medium.com/@zenorocha)
+
+[Fernando Daciuk](https://medium.com/@fdaciuk)
+
+[Willian Justen] (https://willianjusten.com.br/)
+
+[Fábio Akita](http://www.akitaonrails.com)
+
+[Jonas Mendes](http://nipher.io)
+
+[Felipe Fialho](http://www.felipefialho.com)
+
+[Alura](http://blog.alura.com.br)
+
+
+
+
+
+## Podcast!
+
+
+
+---------------------------------
+
+![podcast](https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/hipster.png?raw=true)
+Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui podcast, alguns dos quais eu ouvia, pararam de realizar os programas, então eu resolvi postar esses que acompanho/voltei a acompanhar com mais frequência , se tiverem mais que vocês conheçam, por favor, coloquem nos comentários!
+
+[The web platform podcast](https://thewebplatform.libsyn.com)
+
+[Hipsters Ponto Tech](hipsters.tech)
+
+[Dev na Estrada](http://devnaestrada.com.br/)
+
+
+
+
+Esses foram alguns dos materiais que tenho criado uma certa rotina em torno deles, e acompanhado, quando posso kkkk, no mais, eu espero sinceramente  que isso possa lhe ajudar, e até a próxima!
+
+
+PS: Esse post era do blog antigo, mas é valido, então resolvi colocar ele de volta! =]
+
+
+
+
+
+
