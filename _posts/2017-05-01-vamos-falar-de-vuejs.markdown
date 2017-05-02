@@ -5,7 +5,7 @@ date:   2017-05-01
 categories: Javascript, Vuejs, Firebase
 ---
 
-Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muita coisas em torno da biblioteca.
+Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muitas coisas em torno da biblioteca.
 
 
 Vamos ao objetivo deste post, o que pretendo nos próximos dias é criar uma aplicação simples, a base é um [to-do-list](https://github.com/IgorVieira/to-do-list-vue), porém com coisas mais interessantes sobre o mesmo, um to-do-list onde você terá anotações para task, e com uma abordagem em tests, vamos guiar nosso desenvolvimento por meio de tests, e para isso vamos usar o vue-cli, não sou muito fã de cli, mas acho que esse apresenta uma boa abordagem, eis a lista do workflow que iremos precisar para montar a nossa aplicação.
