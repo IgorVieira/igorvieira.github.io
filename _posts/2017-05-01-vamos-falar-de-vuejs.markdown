@@ -107,7 +107,7 @@ Pronto, é assim que queremos os nossos arquivos, indo em App.vue, vamos fazer a
 
 Essa é a estrutura básica de qualquer componente que viemos a criar com Vue, template é onde teremos a nossa view e alguns atributos como binds por exemplo no qual os dados vem da view ao nosso data e do data pode ser passado a nossa view, data nesse caso se emplica a uma função onde podemos trabalhar a nossa aplicação, criar objetos, passar objetos e poder chamá-los em outras partes da nossa aplicação, podemos trabalhar inúmeras possiblidades, é bem interessante, e por fim temos o nosso style, que implica na estilização da nossa aplicação.
 
-Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente única da nossa View,
+Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente único da nossa View,
 
 
 ```
