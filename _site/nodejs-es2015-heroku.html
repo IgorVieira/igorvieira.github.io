@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
+  <title>
+    
+      NodeJS(ES2015) + Heroku  
+    
+      Igor Vieira
+    
+  </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="masthead">
+  <h1 class="masthead-title">
+    <a href="/">Igor Vieira</a>
+  </h1>
+  <nav class="masthead-nav">
+    
+      <a href="/about/"> About</a>
+    
+      <a href="/feed.xml"> </a>
+    
+      <a href="/"> </a>
+    
+      <a href="/css/main.css"> </a>
+    
+      <a href="/series/"> Series</a>
+    
+  </nav>
+</header>
+<hr>
+      
+
+
+
+
+
+<article class="content post">
+	<h1 class="post-title">
+	NodeJS(ES2015) + Heroku  
+	</h1>
+	<div class="post-date">
+		<time>22 Nov 2016</time>
+	<span class="reading-time"> -  minutes to read</span>
+	</div>
+
+	<p>Primeiro, “por que Heroku? ” A ideia na verdade é partir de algo mais simples e que todos possam utilizar, como eu creio que essa plataforma é realmente mais pratica, então ela se torna perfeita para a nossa abordagem, em termos relacionados a trabalho em si, o Heroku fica um pouco mais caro, um pouco, porém ela compensa pela sua praticidade, no fim você tem uma cloud que te atende bem, te fornece add-ons que são uteis para os seus projetos, além de ser possível obter SSL free! O que é muito bom, de toda forma Heroku é ótimo tanto para projetos mais simples como o que vamos fazer agora, como para projetos mais elaborados, projetos reais, e com isso vamos para uma outra questão, como criar uma aplicação em Nodejs com Es2015 que funcione perfeitamente com Heroku?! =]</p>
+
+<p>Eu havia pesquisado diversas soluções para isso, principalmente por conta de alguns projetos que eu recebi e os quais eram construídos em NodeJs e Angular, e atualmente (22/11/2016)  se você for olhar a documentação do heroku, o Getting Starter de como buildar um projeto com Nodejs, ele até tem um repositório e instruções de como fazer, porém com uma sintaxe que não corresponde totalmente ao Es2015, e querendo ou não, JS em ES6 fica mais legível, mais prático e facilita de diversas formas no desenvolvimento da sua aplicação, tanto pela adoção do let e a sua forma comportamental em relação ao escopo, a nova forma de construção de functions,  a organização das suas estruturas de classes entre outras coisas mais que contribuem para a manutenção do seu código.</p>
+
+<p>Enfim, vamos ao código!
+Nosso projeto terá os seguintes arquivos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── app.js
+├── package.json
+├── Procfile
+└── server.js
+
+</code></pre>
+</div>
+
+<p>Para começar, vamos setar o nosso package.json e para agilizar vamos digitar o seguinte comando:
+npm init -y
+E agora vamos adicionar os módulos ao package.json, que são básicos para fazer um deploy desse projeto e rodar o npm install</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ "dependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.13.2",
+    "express": "^4.14.0"
+  }
+
+</code></pre>
+</div>
+
+<p>Feito isso, vamos para o nosso próximo arquivo, o app.js, com ele vamos fazer algumas mudanças em torno de sintaxe, até então, em versões mais antigas do Nodejs você fazia requisições de módulos através de requires, por exemplo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var express = require('express')
+</code></pre>
+</div>
+
+<p>No Es2015, a chamada dos módulos são feitos através de imports:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import express from 'express'
+</code></pre>
+</div>
+<p>Então vamos ficar com o import em nosso arquivo para chamar o modulo do express:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># app.js 
+# Importação de módulos 
+import express from 'express'
+
+</code></pre>
+</div>
+
+<p>Em meio a isso, uma outra mudança é a forma de composição, você até então criava uma variável app na qual recebia express e assim fazia uso das funções que derivam do express, algo semelhante a isso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var express =  require('express')
+var app = express()
+
+</code></pre>
+</div>
+
+<p>O ruim dessa abordagem e que a mesma tinha que ser exportada dentro de um module.exports, na verdade um return de todos os middlawares ou functions em um bloco único, por exemplo passar app.set(‘‘port) para poder rodar  a aplicação em produção ou em desenvolvimento, o código até então ficava assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+var express = require('express')
+var app = express()
+module.export = function(){
+
+# aqui você colocaria principalmente os seus middlewares
+# e no fim retornava somente o app carregando tudo
+
+app.set('port', (process.env.PORT || 3000));
+return app
+}
+
+
+</code></pre>
+</div>
+
+<p>Agora com Es6 fica ainda mais simples:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import express from 'express'
+
+const app = express()
+
+app.set('port', (process.env.PORT || 3000))
+
+export default app
+
+</code></pre>
+</div>
+
+<p>Particularmente, penso que dessa forma o código fica mais legível, exatamente por ele ser simples como ele é, mas para um início, o simples de um básico bem feito reflete muito no desenvolvimento de aplicações mais elaboradas.</p>
+
+<p>Outra mudança significativa e a forma de se escrever funções de request e response, você pode escrever elas utilizando arrow functions
+Por exemplo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>app.route(' / ').get((req, res) =&gt; res.end('Hello World'))
+
+</code></pre>
+</div>
+
+<p>Fica mais simples escrever functions assim do que a próxima forma que se encontra a baixo, a leitura é mais fluida, principalmente pela versatilidade de poder nesse caso, escrever a mesma função em uma linha, ao menos isso te traz a sensação de entendimento sobre o que essa função realmente faz, coisa que fica estranho caso você tente concatenar em uma linha a mesma função em  es5.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+app.route(' / ').get( function(req, res){
+      res.end('Hello World')
+})
+
+</code></pre>
+</div>
+
+<p>Tudo em es5 tem a seguinte cara:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+var express = require('express')
+
+var app = express()
+module.export = function(){
+
+app.route(' / ').get( function(req, res){
+      res.end('Hello World')
+})
+
+app.set('port', (process.env.PORT || 3000));
+
+return app
+}
+
+</code></pre>
+</div>
+
+<p>Agora em Es6 o nosso código fica assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+import express from 'express'
+
+const app = express()
+
+app.route(' / ').get((req, res) =&gt; res.end('Hello World'))
+
+app.set('port', (process.env.PORT || 3000))
+
+export default app
+
+</code></pre>
+</div>
+
+<p>O que vimos é o ganho de legibilidade e simplicidade, legibilidade é a palavra-chave nisso tudo, pois em termos de manutenibilidade, essas pequenas mudanças ajudam consideravelmente em  projetos de grande escala, na verdade ainda é possível separar e montar uma arquitetura com pequenos módulos para facilitar a organização da nossa aplicação, pois querendo ou não, quando se tem uma aplicação muito grande, não é interessante ter por exemplo, funções de routes em um arquivo que seta os módulos  básicos para o funcionamento da aplicação como um todo.
+Continuando …</p>
+
+<p>Próximo arquivo é o server.js, na verdade é o mais simples já que compreendemos as pequenas modificações que dão um belo açúcar sintático e facilitam a leitura do nosso código, bem,  primeiro vamos importar o modulo app que contém a nossa configuração para um server básico e a nossa rota principal.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import app from './app'
+</code></pre>
+</div>
+
+<p>Depois vamos adicionar ao nosso server o protocolo de requisição http, que é um modulo nativo node que cria de fato o nosso server, e no fim os nossos imports ficam assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import app from "./app"
+import http from "http"
+
+</code></pre>
+</div>
+
+<p>Feito isso, vamos criar o nosso servidor de fato:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import app from "./app"
+import http from "http"
+
+http.createServer(app.get('port')).listen(port, ()=&gt;{
+  console.log('server is running:'+ port)
+})
+</code></pre>
+</div>
+
+<p>Só para melhorar  isso tudo, vamos criar uma nova constante para port:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import app from "./app"
+import http from "http"
+
+const port = app.get('port')
+
+http.createServer(app).listen(port, ()=&gt;{
+  console.log('server is running:'+ port)
+})
+</code></pre>
+</div>
+
+<p>Vamos a mais um arquivo .babelrc, ele e um arquivo para carregamento de plugins, no caso teremos o nosso plugin para podermos escrever em es2015:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/ * .babelrc */
+{
+  "presets": ["es2015"]
+}
+</code></pre>
+</div>
+
+<p>Ok, estamos quase terminando…quase kkk
+Agora, se você rodar o código, digitar simplesmente, <code class="highlighter-rouge">node server</code>`, ele vai dar o seguinte erro:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(function (exports, require, module, __filename, __dirname) { import app from "./app"
+                                                              ^^^^^^
+SyntaxError: Unexpected token import
+</code></pre>
+</div>
+
+<p>Porque não funciona? Por que o node não tem todas a features de es2015 em seu core, então vamos ter que voltar ao nosso package.json e fazer uma pequena modificação ao nosso escopo de scripts, e vamos escrever o nosso start dessa forma, usando o babel-node para rodar o nosso server:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ "scripts": {
+       "start": "./node_modules/.bin/babel-node server.js",
+       "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  }
+
+</code></pre>
+</div>
+<p>Agora se você digitar o comando npm start, ele vai levantar o server localmente e assim você verá o Hello World da nossa aplicação.
+Até agora nossos arquivos estão assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# app.js
+
+import express from 'express';
+const. app = express();
+app.route('/') .get((req, res)=&gt;res.end('Hello World'))
+app.set('port', (process.env.PORT || 3000))
+
+
+export default app;
+
+
+# server.js 
+
+
+import app from "./app"
+import http from "http"
+const port = app.get('port')
+http.createServer(app).listen(port, ()=&gt;{
+  console.log('server is running:'+ port)
+})
+
+
+# package.json
+
+
+{
+  "name": "node-heroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+    "start": "./node_modules/.bin/babel-node server.js"
+  },
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.13.2",
+    "express": "^4.14.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+</code></pre>
+</div>
+
+<p>Pronto, agora vamos para o gran finale! O Deploy =]
+Vamos adicionar o Procfile em nosso repositório, e só um arquivo sem extensão chamado Procfile.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# Procfile
+
+
+web: ./node modules/.bin/babel-node server.js
+
+</code></pre>
+</div>
+
+<p>Esse arquivo faz com você rode o server da mesma forma que você fez no package.json, mas dessa vez ele irá inicializar nossa aplicação no heroku, é um arquivo muito importante.</p>
+
+<p> Agora para upar todos os nossos arquivos vamos ter que inicializar o git, pois o heroku funciona também por git, na real é a melhor forma de upar o seu repositório e vamos fazer o básico:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+git init /* para inicializar a pasta do git no repositório */
+
+</code></pre>
+</div>
+
+<p>Feito isso, para não importar tudo, não custa nada adicionar um simples arquivo .gitignore para não upar node_modules para o heroku.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#  .gitignore
+
+
+/node_modules
+
+</code></pre>
+</div>
+
+<p>E vamos commitar tudo.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git add .
+git commit -m "initial commit"
+
+</code></pre>
+</div>
+<p>Bem, para  realizar o deploy você precisa ter uma conta no <a href="https://www.heroku.com/"> Heroku</a>  e precisa baixar o cliente do <a href="https://devcenter.heroku.com/articles/heroku-command-line">Heroku Toolbelt</a>
+Após instalar o Heroku toolbelt e ter criado a sua conta, você entrara no repositório onde está o nosso código e digitar o seguinte comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>heroku login
+Ele vai pedir a sua conta do heroku :
+Enter  your Heroku credentials.
+Email: igor.p.r.vieira@gmail.com
+Password (typing will be hidden): 
+</code></pre>
+</div>
+<p>Já devidamente autenticado, vamos para nosso próximo e último passo, criar a nossa aplicação no Heroku, você pode digitar o comando a seguir para criar uma url automaticamente ou pode criar uma url para você manualmente:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#  URL Automática
+
+
+heroku create
+
+
+# URL Especifica
+
+
+heroku create meu-app-nodejs /*nome da minha aplicacao*/
+
+</code></pre>
+</div>
+<p>Após ter criado o nosso app no Heroku e como já comitamos o nosso repositório e só rodar o comando para deploy pelo próprio git.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git push heroku master
+
+</code></pre>
+</div>
+
+<p>Em seguida você vai ver o link para acessar a sua aplicação</p>
+
+<p>No meu caso: 
+https://my-app-nodejs.herokuapp.com/</p>
+
+<p>E por fim o nosso Hello World!
+E é isso, foi longo, o código fonte está abaixo, qualquer dúvida deixe seu comentário, vlw, obrigado e até mais! =]</p>
+
+<p>Código fonte: <a href="https://github.com/IgorVieira/my-app-nodejs">Github!</a></p>
+
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	
+	var disqus_config = function () {
+	this.page.url = 'http://localhost:4000 /nodejs-es2015-heroku'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//igorprvieira.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</article>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Igor Vieira</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Igor Vieira</li>
+          <li><a href="mailto:igor.p.r.vieira@gmail.com">igor.p.r.vieira@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/IgorVieira"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">IgorVieira</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/IgorPRVieira"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">IgorPRVieira</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+     
+    </div>
+
+  </div>
+
+</footer>
+
+  </div>
+
+    
+ 
+</body>
+</html>
+
+   
