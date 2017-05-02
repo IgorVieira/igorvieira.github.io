@@ -5,6 +5,10 @@ date:   2017-05-01
 categories: Javascript, Vuejs, Firebase
 ---
 
+
+![Vuejs](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/vuejs.jpg?raw=true)
+
+
 Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muitas coisas em torno da biblioteca.
 
 
