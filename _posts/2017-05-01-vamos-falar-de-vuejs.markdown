@@ -233,9 +233,9 @@ Ai você me pergunta:
  "Igor mas dentro de template não teria que ter uma div? "
 Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso passar somente essa tag, mesmo se for um componente, não tem problema, agora se eu tiver mais de um componente, eu precisarei colocar tudo dentro de uma div de fato, mas vamos testar somente como está.
 
-Bem, podemos notar que funcionou, agora precisamos implementar a nossa pequena lista de fazeres, e ver o que de fato foi feito!
+Bem, podemos notar que funcionou, agora precisamos implementar a nossa pequena lista de afazeres, e ver o que de fato foi feito!
 
-Para isso vamos trabalhar em nosso script, Vue é tão intuitivo que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:
+Para isso vamos trabalhar em nosso script, Vue é tão intuitivo, que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:
 
 ```
 <template>
@@ -266,7 +266,7 @@ Para isso vamos trabalhar em nosso script, Vue é tão intuitivo que você pode 
 </style>
 ```
 
-Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: 'Hey', agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:
+Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: 'Hey' e o mesmo eu posso chamar na view algo semelhante ao ng-expression do Angular {{ }}, agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:
 
 ```
 <template>
@@ -401,7 +401,7 @@ Próximo passo será a implementação é criar um input, para podermos adiciona
 </style>
 ```
 
-O VueJS tem um evento chamdo de ```@submit```, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, e ai vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:
+O VueJS tem um evento chamdo de ```@submit```, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:
 
 
 
@@ -461,7 +461,7 @@ O VueJS tem um evento chamdo de ```@submit```, no qual vamos inserir no nosso fo
 </style>
 ```
 
-Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar sunto ao evento, um prevent, igual ao ```e.preventDefault()```, mas da seguinte forma ```@submit.prevent="submitTask()"```, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um load na página, bem, passado isso vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, no qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:
+Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar junto ao evento, um prevent, igual ao ```e.preventDefault()```, mas da seguinte forma ```@submit.prevent="submitTask()"```, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um reload na página, bem, passado isso, vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, e qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:
 
 
 ```
@@ -790,7 +790,23 @@ export default {
 
 </style>
 ```
+ E adicionar a tag script do font-awesome no index.html da raiz do  projeto
 
+
+ ```
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>To do List!</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
+    </html>
+ ``` 
 
 Pronto, first step concluído, próximo passo, vamos fazer um pequeno test com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]
 
