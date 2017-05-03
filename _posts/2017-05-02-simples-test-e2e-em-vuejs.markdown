@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Simples test e2e em VueJS - Part II "
+title:  "Simples teste e2e em VueJS - Part II "
 date:   2017-05-01
 categories: Javascript, Vuejs, Firebase
 ---
