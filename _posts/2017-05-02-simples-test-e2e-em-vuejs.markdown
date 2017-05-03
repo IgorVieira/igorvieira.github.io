@@ -5,7 +5,8 @@ date:   2017-05-01
 categories: Javascript, Vuejs, Firebase
 ---
 
-Confesso, tive alguns problemas em realizar testes unitários atráves do que o cli me traz, porém eu prometi trazer um test com e2e, e depois eu passarei mesmo para o teste unitário, enfim, acontece, mas a aplicação tem continuar.
+![night](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true)
+Vamos começar a criar, nossos primeiros testes, confesso, tive alguns problemas em realizar testes unitários atráves do que o cli me traz, porém eu prometi trazer um test com e2e, e depois eu passarei mesmo para o teste unitário, enfim, acontece, mas a aplicação tem continuar.
 
 
 A ideia é seguinte, nesse passo, nós iremos fazer um roteiro para um teste e2e, uma expécie de baby step, o nosso cli já fornece uma boa ferramenta para esse tipo de test, o Nightwatch, porém o mesmo precisa da jvm do java para rodar o Selenium, que é um automatizador de test, ele cria uma simulação de um browser, porém, a ideia é, simular um browser e depois fazer tests apartir da url que for passada junto a ele e as demais sequências com o Nightwatch, então nessa fase você vai precisar instalar java na sua maquina, acontece, o mundo não é perfeito!kkk brincadeira! javeiros, nós te gostamos jovens!
@@ -147,6 +148,7 @@ E vamos rodar nosso teste:
 sudo npm run e2e
 ```
 
+![e2e1](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-1.png?raw=true)
 
 Se você vê ele vai abrir uma instancia junto ao selenium, e vai emular ações junto ao chrome, ao final ele vai dar o resultado dos nossos testes, e como tal, ele passou:
 
@@ -196,6 +198,7 @@ sudo npm run e2e
 
 E ele passou:
 
+![e2e2](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-2.png?raw=true)
 
 Por último, vamos excluir o último valor adicionado e contar os elementos da nossa lista, dessa forma:
 
@@ -228,7 +231,7 @@ sudo npm run e2e
 
 E ele passou:
 
-![]()
+![e2e3](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-3.png?raw=true)
 
 
 Bem, esse foi o nosso roteiro de teste com selenium e nightwatch, conseguimos realizar todas as funcionalidade e alguns elementos da nossa aplicação, garantindo o funcionamento do nosso software,e é isso, quinta-feira, provavelmente quinta, teremos mais um post, caso contrário, de sexta não passa, mais uma vez obrigado e até mais =]
