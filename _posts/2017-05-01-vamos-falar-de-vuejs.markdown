@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Vamos falar de Vuejs "
+title:  "Vamos falar de Vuejs - Part I"
 date:   2017-05-01
 categories: Javascript, Vuejs, Firebase
 ---
