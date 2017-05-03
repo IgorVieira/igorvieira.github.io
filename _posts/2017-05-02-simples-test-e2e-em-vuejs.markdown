@@ -2,7 +2,7 @@
 layout: post
 title:  "Simples teste e2e em VueJS - Part II "
 date:   2017-05-01
-categories: Javascript, Vuejs, Firebase
+categories: Javascript, Vuejs
 ---
 
 ![night](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true)
