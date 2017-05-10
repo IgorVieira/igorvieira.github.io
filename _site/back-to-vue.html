@@ -6,7 +6,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
   <title>
     
-      
+      Back to Back! - Part III
     
       Igor Vieira
     
@@ -37,108 +37,57 @@
 <hr>
       
 
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/back-to-vue">Back to Back! - Part III</a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>01 May 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/simples-test-e2e-em-vuejs">Simples teste e2e em VueJS - Part II </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>01 May 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/vamos-falar-de-vuejs">Vamos falar de Vuejs - Part I</a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>01 May 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/talk-about-arrow-function-again">Talk about arrow functions again! </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>28 Mar 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/a-new-step">A new Step - Variables! </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>23 Mar 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/em-2-meses">EM 2 MESES... </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>19 Mar 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/hey-again">Hey Again! =] </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>18 Mar 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/aprender-e-uma-constante">Aprender é uma Constante!  </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>14 Feb 2017</time>
-      </div>
-    </div>
-  
-    <div class="content list">
-      <div class="list-item">
-        <h2 class="list-post-title">
-          <a href="/nodejs-es2015-heroku">NodeJS(ES2015) + Heroku  </a>
-        </h2>
-      </div>
-      <div class="list-post-date">
-        <time>22 Nov 2016</time>
-      </div>
-    </div>
-  
 
 
+
+
+<article class="content post">
+	<h1 class="post-title">
+	Back to Back! - Part III
+	</h1>
+	<div class="post-date">
+		<time>01 May 2017</time>
+	<span class="reading-time"> - 1 minute to read</span>
+	</div>
+
+	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/vuejs.jpg?raw=true" alt="Vuejs" /></p>
+
+<p>Antes de mais nada eu tenho que pedir desculpa a vocês, estava em um processo de saída de uma empresa, e com um monte de teste e vários trabalhos que estava fazendo, organizar tudo estava complicado, estressante e no fim eu passei mal para caramba, uma bruta enchaqueca, que me levou ao hospital, na verdade, eu nem deveria está escrevendo esse post, meu médico me proibiu, mas… eu queria continuar o nosso projeto com Vuejs, eu acho incrível, fácil e prático, a única coisa que eu estou achando complicado é a parte de testes unitários, entretanto eu vou continuar com nosso app.</p>
+
+<p>Mas, antes, eu quero falar sobre o nosso server, o back da nossa aplicação, daqui em diante, vai ser necessário termos um server, para poder disponibilizar os nosso serviços, e vamos modificar um pouco a nossa aplicação para poder utilizar de fato os serviços vindos da nossa API, e ao fim, e provavelmente, vamos testar a nossa API, é que no primeiro principio, conseguimos de fato testar a parte do nosso front com testes e2e, válidos, quero voltar aos teste unitários no front, que acho muito válido, entretanto, mesmo quando estamos desenvolvendo, temos que ter a sabedoria e entender que existem outras atividade que precisam ser feitas, e nesse caso isso é o nosso server, e vamos ao código.</p>
+
+<p>Nossa estrutura, teremos que montar um certo setup, vamos criar um novo folder para a nossa aplicação, vamos mandar um mkdir <code class="highlighter-rouge">tasks-server</code></p>
+
+<p>Em seguida vamos digitar o seguinte:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  sudo npm init -y
+
+</code></pre>
+</div>
+<p>Ele já vai criar o nosso package.json, o nosso gerenciador de pacotes nodejs, vamos baixar alguns pacotes para o nosso server, entre eles estão o Express, Consig, Mongoose e outros como Mocha e Chai,</p>
+
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	
+	var disqus_config = function () {
+	this.page.url = 'http://localhost:4000 /back-to-vue'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//igorprvieira.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</article>
 
     <footer class="site-footer">
 
