@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
+  <title>
+    
+      Simples teste e2e em VueJS - Part II 
+    
+      Igor Vieira
+    
+  </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="masthead">
+  <h1 class="masthead-title">
+    <a href="/">Igor Vieira</a>
+  </h1>
+  <nav class="masthead-nav">
+    
+      <a href="/about/"> About</a>
+    
+      <a href="/feed.xml"> </a>
+    
+      <a href="/"> </a>
+    
+      <a href="/css/main.css"> </a>
+    
+      <a href="/series/"> Series</a>
+    
+  </nav>
+</header>
+<hr>
+      
+
+
+
+
+
+<article class="content post">
+	<h1 class="post-title">
+	Simples teste e2e em VueJS - Part II 
+	</h1>
+	<div class="post-date">
+		<time>01 May 2017</time>
+	<span class="reading-time"> -  minutes to read</span>
+	</div>
+
+	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true" alt="night" />
+Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas em realizar testes unitários atráves do que o cli me traz, porém eu prometi trazer um teste com e2e, e depois eu realizarei de fato testes unitários junto aos nossos componentes, enfim, acontece, mas a aplicação tem que continuar.</p>
+
+<p>A ideia é seguinte, nesse passo, nós iremos fazer um roteiro para um teste e2e, uma expécie de baby step, o nosso cli já fornece uma boa ferramenta para esse tipo de test, o Nightwatch, porém o mesmo precisa da jvm do java para rodar o Selenium, ele cria uma simulação de um browser, porém, a ideia é, simular um browser e depois fazer tests apartir da url que for passada junto a ele e as demais sequências, e isso ajudo do Nightwatch, então nessa fase você vai precisar instalar java na sua maquina, acontece, o mundo não é perfeito!kkk brincadeira!</p>
+
+<p>Segue o passeio, após instalar java em sua máquina ou se já tiver, vamos ao nosso folder test e vamos entrar dentro do folder e2e, e vamos abrir o arquivo nightwatch.conf.js</p>
+
+<p>Vamos fazer umas pequenas alterações, atualmente o chrome tem um funcionalidade em seu browser que impede de realizar uma simulação do mesmo, entretanto podemos habilitar isso, para de fato realizarmos o nosso teste e vermos as ações segundo o nosso roteiro, então vamos ver o arquivo nightwatch.conf.js:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require('babel-register')
+var config = require('../../config')
+
+// http://nightwatchjs.org/gettingstarted#settings-file
+module.exports = {
+  src_folders: ['test/e2e/specs'],
+  output_folder: 'test/e2e/reports',
+  custom_assertions_path: ['test/e2e/custom-assertions'],
+
+  selenium: {
+    start_process: true,
+    server_path: require('selenium-server').path,
+    host: '127.0.0.1',
+    port: 4444,
+    cli_args: {
+      'webdriver.chrome.driver': require('chromedriver').path
+    }
+  },
+
+  test_settings: {
+    default: {
+      selenium_port: 4444,
+      selenium_host: 'localhost',
+      silent: true,
+      globals: {
+        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+      }
+    },
+
+    chrome: {
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions : {
+          args : ["--no-sandbox"]
+        }
+      }
+    },
+
+    firefox: {
+      desiredCapabilities: {
+        browserName: 'firefox',
+        javascriptEnabled: true,
+        acceptSslCerts: true
+      }
+    }
+  }
+}
+
+</code></pre>
+</div>
+<p>Nesse arquivo vamos fazer uma pequena alteração no Google Chrome!
+Nossa configuração ficará da seguinte forma:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    chrome: {
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions : {
+          args : ["--no-sandbox"]
+        }
+      }
+    },
+</code></pre>
+</div>
+<p>O que adicionamos é o chromeOptions!
+passamos somente um argumento nos permitindo emular uma nova página do browser, para teste e isso junto ao chrome.</p>
+
+<p>Após essa etapa, o que iremos trabalhar é, se notarmos bem a nossa aplicação ela faz as seguintes ações, ela pode criar um novo elementoa nossa lista de tarefas, o que iremos fazer, criar um roteiro de ações, e nesse roteiro nós iremos primeiro acessar a url do browser, contar quantas tarefas nós temos no primeiro momento, adicionar mais uma terefa e contar quantas tem nesse segundo momento e por fim, remover essa terefa e contar quantas tem no total, no caso tem que ter a mesma quantidade do início.</p>
+
+<p>Para isso, vamos para outro folder, no nosso diretório test, vamos para spec, dentro dele tem um arquivo chamdo test.js, é nesse arquivo que iremos trabalhar o nosso roteiro, e vamos fazer em três partes, primeiro eu queror ir a página e quero contar quantos elementos da minha lista eu tenho, quandas li eu tenho, como eu farei isso? Eu irei em browser e apagarei tudo que tem a baixo dele, ficará assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+module.exports = {
+  'default e2e tests': function (browser) {
+    // automatically uses dev Server port from /config.index.js
+    // default: http://localhost:8080
+    // see nightwatch.conf.js
+    const devServer = browser.globals.devServerURL
+
+    browser
+    
+        /* Vamos escrever nosso roteiro aqui! */
+
+      .end()
+  }
+}
+
+
+</code></pre>
+</div>
+
+<p>Agora vamos fazer o seguinte, quero executar o que haviamos planejado, acessar a url, e contar quantas li eu tenho, no caso 3, e vou adicionar mais duas coisas a essa lista de tarefas, quero ver se ele pega o nosso h1 com o texto Hey e o title da nossa página, e será isso nosso test:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+module.exports = {
+  'default e2e tests': function (browser) {
+    // automatically uses dev Server port from /config.index.js
+    // default: http://localhost:8080
+    // see nightwatch.conf.js
+    const devServer = browser.globals.devServerURL
+
+    browser
+      .url(devServer)
+      .assert.title('To do List!')
+      .pause(1000)
+      .assert.containsText('h1', 'Hey')
+      .assert.elementCount('li', 3)
+      .end()
+  }
+}
+
+</code></pre>
+</div>
+
+<p>E vamos rodar nosso teste:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
+</code></pre>
+</div>
+
+<p>Se você vê, ele vai abrir uma instancia junto ao selenium, e vai emular ações junto ao chrome, ao final ele vai dar o resultado dos nossos testes, e como tal, ele passou:</p>
+
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-1.png?raw=true" alt="e2e1" /></p>
+
+<p>O que faremos agora é, adicionar uma nova tarefa e contabilizar quantos elementos tem em nossa lista de tarefas:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>module.exports = {
+  'default e2e tests': function (browser) {
+    // automatically uses dev Server port from /config.index.js
+    // default: http://localhost:8080
+    // see nightwatch.conf.js
+    const devServer = browser.globals.devServerURL
+
+    browser
+     .url(devServer)
+      .assert.title('To do List!')
+      .pause(1000)
+      .assert.containsText('h1', 'Hey')
+      .assert.elementCount('li', 3)
+      .setValue('input[type=text]', 'Make a coffee')
+      .click('input[type=checkbox]')
+      .pause(1000)
+      .click('button[name=add]')
+      .pause(2000)
+      .end()
+  }
+}
+
+</code></pre>
+</div>
+
+<p>O que fizemos foi, setar um valor para o nosso imput text, adicionando um valor ao seu value, e atribuindo também um valor ao seu checkbox, dando ele o valor de true, e vamos aproveitar o nosso name do button, usá-lo para o click, muito importante!</p>
+
+<p>Quando disparamos um teste em um evento de click, devemos colocar um pause após esse evento, pois um click é muito rápido, mas dependendo não é tão rápido quanto o selenium é ao testar uma view, então para garantir que teremos de fato o evento de click, é que adicionamos o evento de pause.</p>
+
+<p>Vamos rodar novamente o nosso teste:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
+</code></pre>
+</div>
+
+<p>E ele passou:</p>
+
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-2.png?raw=true" alt="e2e2" /></p>
+
+<p>Por último, vamos excluir o último valor adicionado e contar os elementos da nossa lista, dessa forma:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>browser
+      .url(devServer)
+      .assert.title('To do List!')
+      .pause(1000)
+      .assert.containsText('h1', 'Hey')
+      .assert.elementCount('li', 3)
+      .setValue('input[type=text]', 'Make a coffee')
+      .setValue('input[type=checkbox]', true)
+      .click('button[name=add]')
+      .pause(2000)
+      .assert.elementCount('li', 4)
+      .click('.fa-trash')
+      .pause(2000)
+      .assert.elementCount('li', 3)
+      .end()
+</code></pre>
+</div>
+
+<p>Vamos rodar novamente o nosso teste:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
+</code></pre>
+</div>
+
+<p>E ele passou:</p>
+
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-3.png?raw=true" alt="e2e3" /></p>
+
+<p>Bem, esse foi o nosso roteiro de teste com selenium e nightwatch, conseguimos realizar todas as funcionalidade e alguns elementos da nossa aplicação, garantindo o funcionamento do nosso software,e é isso, quinta-feira, provavelmente quinta, teremos mais um post, caso contrário, sexta, mas de sexta não passa, mais uma vez obrigado e até mais =]</p>
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	
+	var disqus_config = function () {
+	this.page.url = 'http://localhost:4000 /simples-test-e2e-em-vuejs'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//igorprvieira.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</article>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Igor Vieira</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Igor Vieira</li>
+          <li><a href="mailto:igor.p.r.vieira@gmail.com">igor.p.r.vieira@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/IgorVieira"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">IgorVieira</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/IgorPRVieira"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">IgorPRVieira</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+     
+    </div>
+
+  </div>
+
+</footer>
+
+  </div>
+
+    
+ 
+</body>
+</html>
+
+   
