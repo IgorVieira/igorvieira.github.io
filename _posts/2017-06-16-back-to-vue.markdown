@@ -17,7 +17,7 @@ Nesse momento, eu quero somente trabalhar a parte com front-end, eu desenvolvi u
 Vamos por passos, agora nessa primeria etapa, vamos precisar de duas bibliotecas para melhorar o restante da nossa aplicação, o `vue-router` e o `vue-resource`, e vamos usar um pouco de bootstrap, para agilizar o processo, mas o foco é vue.
 
 
-Step 1, vamos adicionar o `vue-resource`
+Step 1, vamos adicionar o `vue-resource` e `vue-router`
 
 ```
 sudo npm install vue-resource  vue-router
