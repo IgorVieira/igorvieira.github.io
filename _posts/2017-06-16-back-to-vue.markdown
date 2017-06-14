@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Back to Back! - Part III"
-date:   2017-06-16
+date:   2017-06-13
 categories: Javascript, Vuejs
 ---
 
