@@ -6,234 +6,12 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Jun 2017 23:34:23 -0300</pubDate>
-    <lastBuildDate>Tue, 13 Jun 2017 23:34:23 -0300</lastBuildDate>
+    <pubDate>Tue, 02 May 2017 17:46:22 -0300</pubDate>
+    <lastBuildDate>Tue, 02 May 2017 17:46:22 -0300</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>Simples teste e2e em VueJS - Part II </title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true&quot; alt=&quot;night&quot; /&gt;
-Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas em realizar testes unitários atráves do que o cli me traz, porém eu prometi trazer um teste com e2e, e depois eu realizarei de fato testes unitários junto aos nossos componentes, enfim, acontece, mas a aplicação tem que continuar.&lt;/p&gt;
-
-&lt;p&gt;A ideia é seguinte, nesse passo, nós iremos fazer um roteiro para um teste e2e, uma expécie de baby step, o nosso cli já fornece uma boa ferramenta para esse tipo de test, o Nightwatch, porém o mesmo precisa da jvm do java para rodar o Selenium, ele cria uma simulação de um browser, porém, a ideia é, simular um browser e depois fazer tests apartir da url que for passada junto a ele e as demais sequências, e isso ajudo do Nightwatch, então nessa fase você vai precisar instalar java na sua maquina, acontece, o mundo não é perfeito!kkk brincadeira!&lt;/p&gt;
-
-&lt;p&gt;Segue o passeio, após instalar java em sua máquina ou se já tiver, vamos ao nosso folder test e vamos entrar dentro do folder e2e, e vamos abrir o arquivo nightwatch.conf.js&lt;/p&gt;
-
-&lt;p&gt;Vamos fazer umas pequenas alterações, atualmente o chrome tem um funcionalidade em seu browser que impede de realizar uma simulação do mesmo, entretanto podemos habilitar isso, para de fato realizarmos o nosso teste e vermos as ações segundo o nosso roteiro, então vamos ver o arquivo nightwatch.conf.js:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require('babel-register')
-var config = require('../../config')
-
-// http://nightwatchjs.org/gettingstarted#settings-file
-module.exports = {
-  src_folders: ['test/e2e/specs'],
-  output_folder: 'test/e2e/reports',
-  custom_assertions_path: ['test/e2e/custom-assertions'],
-
-  selenium: {
-    start_process: true,
-    server_path: require('selenium-server').path,
-    host: '127.0.0.1',
-    port: 4444,
-    cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path
-    }
-  },
-
-  test_settings: {
-    default: {
-      selenium_port: 4444,
-      selenium_host: 'localhost',
-      silent: true,
-      globals: {
-        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
-      }
-    },
-
-    chrome: {
-      desiredCapabilities: {
-        browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        chromeOptions : {
-          args : [&quot;--no-sandbox&quot;]
-        }
-      }
-    },
-
-    firefox: {
-      desiredCapabilities: {
-        browserName: 'firefox',
-        javascriptEnabled: true,
-        acceptSslCerts: true
-      }
-    }
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Nesse arquivo vamos fazer uma pequena alteração no Google Chrome!
-Nossa configuração ficará da seguinte forma:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    chrome: {
-      desiredCapabilities: {
-        browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        chromeOptions : {
-          args : [&quot;--no-sandbox&quot;]
-        }
-      }
-    },
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;O que adicionamos é o chromeOptions!
-passamos somente um argumento nos permitindo emular uma nova página do browser, para teste e isso junto ao chrome.&lt;/p&gt;
-
-&lt;p&gt;Após essa etapa, o que iremos trabalhar é, se notarmos bem a nossa aplicação ela faz as seguintes ações, ela pode criar um novo elementoa nossa lista de tarefas, o que iremos fazer, criar um roteiro de ações, e nesse roteiro nós iremos primeiro acessar a url do browser, contar quantas tarefas nós temos no primeiro momento, adicionar mais uma terefa e contar quantas tem nesse segundo momento e por fim, remover essa terefa e contar quantas tem no total, no caso tem que ter a mesma quantidade do início.&lt;/p&gt;
-
-&lt;p&gt;Para isso, vamos para outro folder, no nosso diretório test, vamos para spec, dentro dele tem um arquivo chamdo test.js, é nesse arquivo que iremos trabalhar o nosso roteiro, e vamos fazer em três partes, primeiro eu queror ir a página e quero contar quantos elementos da minha lista eu tenho, quandas li eu tenho, como eu farei isso? Eu irei em browser e apagarei tudo que tem a baixo dele, ficará assim:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-module.exports = {
-  'default e2e tests': function (browser) {
-    // automatically uses dev Server port from /config.index.js
-    // default: http://localhost:8080
-    // see nightwatch.conf.js
-    const devServer = browser.globals.devServerURL
-
-    browser
-    
-        /* Vamos escrever nosso roteiro aqui! */
-
-      .end()
-  }
-}
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Agora vamos fazer o seguinte, quero executar o que haviamos planejado, acessar a url, e contar quantas li eu tenho, no caso 3, e vou adicionar mais duas coisas a essa lista de tarefas, quero ver se ele pega o nosso h1 com o texto Hey e o title da nossa página, e será isso nosso test:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-module.exports = {
-  'default e2e tests': function (browser) {
-    // automatically uses dev Server port from /config.index.js
-    // default: http://localhost:8080
-    // see nightwatch.conf.js
-    const devServer = browser.globals.devServerURL
-
-    browser
-      .url(devServer)
-      .assert.title('To do List!')
-      .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
-      .end()
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;E vamos rodar nosso teste:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Se você vê, ele vai abrir uma instancia junto ao selenium, e vai emular ações junto ao chrome, ao final ele vai dar o resultado dos nossos testes, e como tal, ele passou:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-1.png?raw=true&quot; alt=&quot;e2e1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;O que faremos agora é, adicionar uma nova tarefa e contabilizar quantos elementos tem em nossa lista de tarefas:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
-  'default e2e tests': function (browser) {
-    // automatically uses dev Server port from /config.index.js
-    // default: http://localhost:8080
-    // see nightwatch.conf.js
-    const devServer = browser.globals.devServerURL
-
-    browser
-     .url(devServer)
-      .assert.title('To do List!')
-      .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
-      .setValue('input[type=text]', 'Make a coffee')
-      .click('input[type=checkbox]')
-      .pause(1000)
-      .click('button[name=add]')
-      .pause(2000)
-      .end()
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;O que fizemos foi, setar um valor para o nosso imput text, adicionando um valor ao seu value, e atribuindo também um valor ao seu checkbox, dando ele o valor de true, e vamos aproveitar o nosso name do button, usá-lo para o click, muito importante!&lt;/p&gt;
-
-&lt;p&gt;Quando disparamos um teste em um evento de click, devemos colocar um pause após esse evento, pois um click é muito rápido, mas dependendo não é tão rápido quanto o selenium é ao testar uma view, então para garantir que teremos de fato o evento de click, é que adicionamos o evento de pause.&lt;/p&gt;
-
-&lt;p&gt;Vamos rodar novamente o nosso teste:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;E ele passou:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-2.png?raw=true&quot; alt=&quot;e2e2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Por último, vamos excluir o último valor adicionado e contar os elementos da nossa lista, dessa forma:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;browser
-      .url(devServer)
-      .assert.title('To do List!')
-      .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
-      .setValue('input[type=text]', 'Make a coffee')
-      .setValue('input[type=checkbox]', true)
-      .click('button[name=add]')
-      .pause(2000)
-      .assert.elementCount('li', 4)
-      .click('.fa-trash')
-      .pause(2000)
-      .assert.elementCount('li', 3)
-      .end()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Vamos rodar novamente o nosso teste:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;E ele passou:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/e2e-3.png?raw=true&quot; alt=&quot;e2e3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Bem, esse foi o nosso roteiro de teste com selenium e nightwatch, conseguimos realizar todas as funcionalidade e alguns elementos da nossa aplicação, garantindo o funcionamento do nosso software,e é isso, quinta-feira, provavelmente quinta, teremos mais um post, caso contrário, sexta, mas de sexta não passa, mais uma vez obrigado e até mais =]&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 May 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/simples-test-e2e-em-vuejs</link>
-        <guid isPermaLink="true">http://localhost:4000/simples-test-e2e-em-vuejs</guid>
-        
-        
-        <category>Javascript,</category>
-        
-        <category>Vuejs</category>
-        
-      </item>
-    
-      <item>
-        <title>Vamos falar de Vuejs - Part I</title>
+        <title>Vamos falar de Vuejs </title>
         <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/vuejs.jpg?raw=true&quot; alt=&quot;Vuejs&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Bem, eu pensei em falar sobre Vuejs, pensei em escrever algo sobre em inglês, mas antes de traduzir esse texto, quero que as pessoas do meu próprio pais entendam Vue, Vuejs é uma bibliteca para views como o próprio nome diz de fato, tanto que pronuncia é bem semelhante ~ Vu ~, mas do que se trata Vue, em meu ponto de vista, ele é uma junção muito bem feita de React com algumas coisas pertinentes ao Angular, o que de fato facilita o aprendizado do framework, mas não te prende a sua estrutura, sabendo Javascript, você consegue fazer muitas coisas em torno da biblioteca.&lt;/p&gt;
@@ -1014,7 +792,9 @@ export default {
         
         <category>Javascript,</category>
         
-        <category>Vuejs</category>
+        <category>Vuejs,</category>
+        
+        <category>Firebase</category>
         
       </item>
     
@@ -1261,7 +1041,7 @@ De videos, tem um monte, eu vou dar foco aos nascionais, os que eu costumo assis
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/wesbos&quot;&gt;Wes Bos&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/kylerobinsonyoung&quot;&gt;Kyle Robinson&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[Kyle Robinson Young] (https://www.youtube.com/channel/UCpqYfSWEcyBGorRGvPsHkgg)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/LevelUpTuts&quot;&gt;LevelUpTuts&lt;/a&gt;&lt;/p&gt;
 
@@ -1292,7 +1072,7 @@ De leitura, eu divido em dois grupos, eu gosto de blogs, gosto muito mesmo, mas 
 
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@fdaciuk&quot;&gt;Fernando Daciuk&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://willianjusten.com.br&quot;&gt;Willian Justen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[Willian Justen] (https://willianjusten.com.br/)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.akitaonrails.com&quot;&gt;Fábio Akita&lt;/a&gt;&lt;/p&gt;
 
@@ -1345,27 +1125,6 @@ See you soon! =]&lt;/p&gt;
         <pubDate>Sat, 18 Mar 2017 00:00:00 -0300</pubDate>
         <link>http://localhost:4000/hey-again</link>
         <guid isPermaLink="true">http://localhost:4000/hey-again</guid>
-        
-        
-        <category>Lifestyle</category>
-        
-      </item>
-    
-      <item>
-        <title>Aprender é uma Constante!  </title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/movie.png?raw=true&quot; alt=&quot;movie&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Nos últimos meses eu tenho estudado muito, no último mês em questão, tenho dedicado boa parte das minhas noites estudando, não  significa necessariamente que  isso tenha me afetado no trabalho, ainda bem, atualmente meus horários são bem flexíveis, meu trabalho me oferece isso, e gosto realmente de dedicar meu tempo estudando, mesmo que seja tão tarde, de toda forma a questão é a seguinte, estou tentando montar uma rotina para estudar melhor a linguagem que eu mais gosto, javascript.&lt;/p&gt;
-
-&lt;p&gt;Se você estiver acompanhando bem as comunidades ou redes sociais, você consegue ver o quão longe JS cresceu nos últimos 2 anos, foi algo absurdo, e o mais impressionante disso foi o crescimento dos frameworks,  os que surgiram ou ganharam destaque nos últimos 9 meses, como InfernoJS, Preact, MarionetteJs, Aurelia, Cycle entre outros que me deixaram na dúvida em qual escolher, porém entrou outra  questão, uma questão na qual eu fui instigado nos últimos dias, até onde eu sei javascript? Até onde eu sei realmente javascript e não um framework? Eu olhei para mim, 21 anos, 4 anos programando, e desses 4 anos, apenas 2 anos e 3 meses trabalhando realmente em projetos de pequeno, médio e grande porte, então, seria muita presunção minha achar  que já saberia tudo sobre  javascript, que na data de hoje, tem cerca de 21 anos, minha idade, e é óbvio que eu não programo a tanto tempo e nem conheço tudo a respeito dessa linguagem, me viro muito bem, mas isso pra mim não me basta.&lt;/p&gt;
-
-&lt;p&gt;Sendo assim, vou começar uma série nova, realizar algumas coisas com javascript de fato, então resolvi me desafiar, pois uma coisa que me deixa muito embasbacado, é ver alguém que sabe mais do que eu sei, a questão em si não é inveja, é pelo fato de querer aprender para ter o mesmo conhecimento, e eu creio que tenho toda a capacidade de poder aprender como qualquer outra pessoa, assim como eu acredito que você, meu caro leitor, também tem essa capacidade, então o desafio para mim está lançado, criar nessas próximas semanas, funcionalidades que possam ajudar aos outros e ao mesmo tempo me ajudar a fixar o meu conhecimento.&lt;/p&gt;
-
-&lt;p&gt;Bem, hoje era mais isso, eu ainda tenho mais outras surpresas quanto ao blog, mas isso ficará para depois, no mais, eu agradeço a leitura, e seja bem vindo a nova série de JS, think JS, até mais!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Feb 2017 00:00:00 -0200</pubDate>
-        <link>http://localhost:4000/aprender-e-uma-constante</link>
-        <guid isPermaLink="true">http://localhost:4000/aprender-e-uma-constante</guid>
         
         
         <category>Lifestyle</category>
