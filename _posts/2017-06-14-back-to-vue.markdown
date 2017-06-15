@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Back to Back! - Part III"
+title:  "Back to Back! - Part III "
 date:   2017-06-14
 categories: Javascript, Vuejs
 ---
@@ -47,6 +47,10 @@ export const routes = [
 ]
 ```
 
+
+Esse path abaixo fala que qualquer rota fora do descrito, deve voltar para a rota principal, e renderizar o componente Home
+
+`{ path: '*', component: Home, menu: false }`
 
 Step 3, vamos ao nosso App.vue, lá faremos a seguinte alteração!
 
@@ -404,10 +408,10 @@ export default {
 
 Step 5
 
-Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD...mas, elas só funcionam em certa parte se pensarmos em fazer isso com um servidor respondendo do lado, e até agora, nada funciona, nada mesmo, antes de tudo, eu peço que por favor, clone essa API aqui [Base API](https://github.com/IgorVieira/base-api), basicamente você vai entrar no diretório, dar um `npm install` e um `npm run dev`, você precisará do [MongoDB](https://www.mongodb.com/download-center#community), e é isso, continuando...
+Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD...mas, elas só funcionam em certa parte, mas queremos fazer algo pensando em um servidor respondendo do lado, e como até agora, nada funciona, nada mesmo, vamos precisar antes de tudo, e eu peço que por favor, clone essa API aqui [Base API](https://github.com/IgorVieira/base-api), basicamente você vai entrar no diretório, dar um `npm install` e um `npm run dev`, e você precisará do [MongoDB](https://www.mongodb.com/download-center#community) instalado, e é isso, continuando...
 
 
-O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por equanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:
+O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por enquanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:
 
 ```
 ├── App.vue
@@ -506,6 +510,21 @@ export default {
 ```
 
 Primeiro, vamos instalar mais um módulo, `lodash`, e indicar o caminho relativo da nossa service!
+
+
+`sudo npm install lodash --save`
+
+Olhe bem as chamdas do módulo e do nosso serviço!
+
+
+```
+<script>
+
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+```
+
+
 
 E no método created(), vamos chamar a nossa service e renderizar os valores vindos a partir do nosso objeto json que vem da nossa API e ficará assim:
 

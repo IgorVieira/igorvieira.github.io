@@ -6,7 +6,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
   <title>
     
-      Back to Back! - Part III
+      Back to Back! - Part III 
     
       Igor Vieira
     
@@ -43,7 +43,7 @@
 
 <article class="content post">
 	<h1 class="post-title">
-	Back to Back! - Part III
+	Back to Back! - Part III 
 	</h1>
 	<div class="post-date">
 		<time>14 Jun 2017</time>
@@ -86,6 +86,10 @@ export const routes = [
 ]
 </code></pre>
 </div>
+
+<p>Esse path abaixo fala que qualquer rota fora do descrito, deve voltar para a rota principal, e renderizar o componente Home</p>
+
+<p><code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">path:</span><span class="w"> </span><span class="err">'*',</span><span class="w"> </span><span class="err">component:</span><span class="w"> </span><span class="err">Home,</span><span class="w"> </span><span class="err">menu:</span><span class="w"> </span><span class="err">false</span><span class="w"> </span><span class="p">}</span></code></p>
 
 <p>Step 3, vamos ao nosso App.vue, lá faremos a seguinte alteração!</p>
 
@@ -437,9 +441,9 @@ export default {
 
 <p>Step 5</p>
 
-<p>Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD…mas, elas só funcionam em certa parte se pensarmos em fazer isso com um servidor respondendo do lado, e até agora, nada funciona, nada mesmo, antes de tudo, eu peço que por favor, clone essa API aqui <a href="https://github.com/IgorVieira/base-api">Base API</a>, basicamente você vai entrar no diretório, dar um <code class="highlighter-rouge">npm install</code> e um <code class="highlighter-rouge">npm run dev</code>, você precisará do <a href="https://www.mongodb.com/download-center#community">MongoDB</a>, e é isso, continuando…</p>
+<p>Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD…mas, elas só funcionam em certa parte, mas queremos fazer algo pensando em um servidor respondendo do lado, e como até agora, nada funciona, nada mesmo, vamos precisar antes de tudo, e eu peço que por favor, clone essa API aqui <a href="https://github.com/IgorVieira/base-api">Base API</a>, basicamente você vai entrar no diretório, dar um <code class="highlighter-rouge">npm install</code> e um <code class="highlighter-rouge">npm run dev</code>, e você precisará do <a href="https://www.mongodb.com/download-center#community">MongoDB</a> instalado, e é isso, continuando…</p>
 
-<p>O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por equanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:</p>
+<p>O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por enquanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>├── App.vue
 ├── components
@@ -532,6 +536,17 @@ export default {
 </div>
 
 <p>Primeiro, vamos instalar mais um módulo, <code class="highlighter-rouge">lodash</code>, e indicar o caminho relativo da nossa service!</p>
+
+<p><code class="highlighter-rouge">sudo npm install lodash --save</code></p>
+
+<p>Olhe bem as chamdas do módulo e do nosso serviço!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script&gt;
+
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+</code></pre>
+</div>
 
 <p>E no método created(), vamos chamar a nossa service e renderizar os valores vindos a partir do nosso objeto json que vem da nossa API e ficará assim:</p>
 
