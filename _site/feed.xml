@@ -6,12 +6,718 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 14 Jun 2017 13:42:21 -0300</pubDate>
-    <lastBuildDate>Wed, 14 Jun 2017 13:42:21 -0300</lastBuildDate>
+    <pubDate>Thu, 15 Jun 2017 13:16:25 -0300</pubDate>
+    <lastBuildDate>Thu, 15 Jun 2017 13:16:25 -0300</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>Back to Back! - Part III</title>
+        <title>Perto do fim - Part IV </title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ohyeah.jpg?raw=true&quot; alt=&quot;ohyeah&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Okay, vamos continuar o nosso projeto, a ideia é que daqui em diante possamos criar mais dois dos nossos quatro métodos, já criamos um para listar e outro para poder criar novas tasks e um que também realiza updates, que será usado mais a frente, o que iremos fazer agora é criar um método para poder remover uma task na nossa lista, para isso vamos alterar a nossa função de remover em nosso Home.vue e precisamos modificar a nossa service para deletar a task, vamos a nossa service:&lt;/p&gt;
+
+&lt;p&gt;TaskService.js:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+export default class TaskService{
+
+    constructor(resource){
+        this._resource = resource('api/tasks{/id}')
+    }
+
+    /** Métodos anteriores **/
+
+    deleteTask(id){
+        return this._resource
+            .delete({id})
+            .then(null, err =&amp;gt; {
+                console.log(err)
+            })
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Abaixo do método de saveTask()&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem){
+    this.service
+        .deleteTask(taskItem._id)
+        .then(() =&amp;gt;{
+            const taskRemove = this.tasks.indexOf(taskItem)
+            this.tasks.splice(taskRemove,1 ),
+            err =&amp;gt; console.log(`${err}`)
+        })
+
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const taskRemove = this.tasks.indexOf(taskItem)
+this.tasks.splice(taskRemove,1 ),
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pronto, remover já foi, se quiser faça o teste, crie um item e o remova.&lt;/p&gt;
+
+&lt;p&gt;E assim ficará o nosso Home.vue:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+ 
+        &amp;lt;div class=&quot;container&quot;&amp;gt;
+            &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+            &amp;lt;div class=&quot;row&quot;&amp;gt;
+                &amp;lt;ul &amp;gt;
+                    &amp;lt;li v-for=&quot;task in tasks&quot;&amp;gt;
+
+
+                        &amp;lt;div class=&quot;panel panel-success col-md-4&quot;&amp;gt;
+                            &amp;lt;div class=&quot;panel-heading&quot;&amp;gt;
+                                &amp;lt;h3 class=&quot;panel-title&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+                            &amp;lt;/div&amp;gt;
+                            &amp;lt;div class=&quot;panel-body&quot;&amp;gt;
+                                Status: &amp;lt;div v-if=&quot;task.done == true&quot;&amp;gt;
+                                            &amp;lt;span class=&quot;glyphicon glyphicon-ok&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        &amp;lt;/div&amp;gt;
+                                        &amp;lt;div v-else-if=&quot;task.done == false&quot;&amp;gt;
+                                            &amp;lt;span class=&quot;glyphicon glyphicon-remove&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        &amp;lt;/div&amp;gt;
+                                &amp;lt;hr&amp;gt;
+                                       &amp;lt;button class=&quot;btn&quot;&amp;gt;
+                                        &amp;lt;span class=&quot;glyphicon                                                  glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        Editar
+                                       &amp;lt;/button&amp;gt;
+                                            
+                                    &amp;lt;a @click=&quot;removeTask(task)&quot;&amp;gt;
+                                        &amp;lt;button class=&quot;btn&quot;&amp;gt;
+                                        &amp;lt;span class=&quot;glyphicon glyphicon-trash&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        Remover
+                                       &amp;lt;/button&amp;gt;
+                                    &amp;lt;/a&amp;gt;
+                            &amp;lt;/div&amp;gt;
+                        &amp;lt;/div&amp;gt;
+                        
+                    &amp;lt;/li&amp;gt;
+                &amp;lt;/ul&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;hr&amp;gt;
+            &amp;lt;div class=&quot;row&quot;&amp;gt;
+              &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
+                  &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
+                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                        &amp;lt;label for=&quot;&quot;&amp;gt;Atividade:&amp;lt;/label&amp;gt;
+                        &amp;lt;input class=&quot;form-control&quot; type=&quot;text&quot; v-model=&quot;task.activity&quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                        &amp;lt;label for=&quot;&quot;&amp;gt;Status:&amp;lt;/label&amp;gt;
+                        &amp;lt;input  type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                   
+                    &amp;lt;button class=&quot;btn&quot; name=&quot;add&quot;&amp;gt;Add + &amp;lt;/button&amp;gt;
+                &amp;lt;/form&amp;gt;
+              &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data(){
+        return{
+            title:'To do Vue!',
+            tasks:[],
+            task: {
+                name:'',
+                done:false
+            }
+
+        }
+    },
+    methods:{
+
+        submitTask(){
+           this.service
+                .saveTask(this.task) 
+                .then(res =&amp;gt; {
+                    this.tasks.push(res.body)
+                    this.task = {
+                            name:'',
+                            done:false
+                        }
+                })
+        },
+        removeTask(taskItem){
+            this.service
+                .deleteTask(taskItem._id)
+                .then(() =&amp;gt;{
+                    const taskRemove = this.tasks.indexOf(taskItem)
+                    this.tasks.splice(taskRemove,1 ),
+                    err =&amp;gt; console.log(`${err}`)
+                })
+
+          
+        }
+
+
+
+
+    },
+    created(){
+
+    this.service = new TaskService(this.$resource)
+    
+    this.service
+    .listTasks() 
+    .then(tasks =&amp;gt; {
+        const item = _.map(tasks, item =&amp;gt; item);
+        this.tasks = item;
+    }, err =&amp;gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+
+    
+
+  },
+
+}
+
+&amp;lt;/script&amp;gt;
+&amp;lt;style&amp;gt;
+  
+  .panel.panel-success.col-md-4{
+    margin:20px;
+  }
+
+
+  li {
+      list-style-type: none;
+  }
+
+  ul li{
+      margin-left:1em;
+  }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Nota: Eu fiz uma pequena modificação em style, bem simples, para separar as tasks e para remover os bullets, e é isso.&lt;/p&gt;
+
+&lt;p&gt;Para continuarmos temos que fazer algumas pequenas alterações em duas partes, em routes, pois vamos precisar de mais uma view para podermos editar a nossa task, e precisamos adicionar um &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;router-link&amp;gt;&amp;lt;/router-link&amp;gt;&lt;/code&gt; que é uma tag para poder ir para essa route, que é uma nova view e precisamos de um método para poder receber o valor passado pelo nosso route-link e para que possamos trabalhar com ele, então a ordem é  seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;routes&lt;/li&gt;
+  &lt;li&gt;Info.vue&lt;/li&gt;
+  &lt;li&gt;Alterar Home.vue&lt;/li&gt;
+  &lt;li&gt;Criar método para poder
+ receber o valor de uma única task&lt;/li&gt;
+  &lt;li&gt;E testar update nessa nova view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lista feita, vamos agir:&lt;/p&gt;
+
+&lt;p&gt;Em routes.js vamos fazer a seguinte alteração, adicionar mais um caminho de onde é a nossa outra view, Info.vue:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Info from './components/info/Info.vue'
+
+import Home from './components/home/Home.vue';
+
+
+export const routes = [
+    { path: '', name: 'home', component: Home, titulo: 'Home', menu: true },
+    { path: '/info/:id', name:'info', component: Info, titulo: 'Info', menu: false },    
+    { path: '*', component: Home, menu: false }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+├── components
+│   ├── home
+│   │   └── Home.vue
+│   └── info
+│       └── Info.vue
+├── domain
+│   │  
+│   └── task
+│       ├── Task.js
+│       └── TaskService.js
+├── main.js
+└── routes.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A nossa view de Info.vue ficara da seguinte forma:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+        &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+           &amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                    &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
+                    &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
+                &amp;lt;/div&amp;gt;
+                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                    &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
+                    &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
+                &amp;lt;/div&amp;gt;
+                &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+           &amp;lt;/form&amp;gt;
+           
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt; 
+       
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+
+        return {
+            task: new Task(),
+            title:'Info:'
+        }
+     },
+    },
+
+    created() {
+       
+    },
+     
+
+    methods:{
+        updateTask(){
+          
+        }
+    }
+
+    
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;style&amp;gt;
+
+.context{
+    margin-top:10px;
+}
+
+textarea{
+  min-height:15em;
+  width:100%;
+  max-width:100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin: .5em 0 0.8em 0;
+  color: #000;
+}
+
+   
+&amp;lt;/style&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Task{
+
+    constructor(activity, done){
+        this.activity = activity
+        this.done = done
+    }
+
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
+    &amp;lt;button class=&quot;btn&quot;&amp;gt;
+    &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+    Editar
+    &amp;lt;/button&amp;gt;
+        
+&amp;lt;/router-link&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, &lt;code class=&quot;highlighter-rouge&quot;&gt;name:'info'&lt;/code&gt;, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.&lt;/p&gt;
+
+&lt;p&gt;Home.vue:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+ 
+        &amp;lt;div class=&quot;container&quot;&amp;gt;
+            &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+            &amp;lt;div class=&quot;row&quot;&amp;gt;
+                &amp;lt;ul &amp;gt;
+                    &amp;lt;li v-for=&quot;task in tasks&quot;&amp;gt;
+
+
+                        &amp;lt;div class=&quot;panel panel-success col-md-4&quot;&amp;gt;
+                            &amp;lt;div class=&quot;panel-heading&quot;&amp;gt;
+                                &amp;lt;h3 class=&quot;panel-title&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+                            &amp;lt;/div&amp;gt;
+                            &amp;lt;div class=&quot;panel-body&quot;&amp;gt;
+                                Status: &amp;lt;div v-if=&quot;task.done == true&quot;&amp;gt;
+                                            &amp;lt;span class=&quot;glyphicon glyphicon-ok&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        &amp;lt;/div&amp;gt;
+                                        &amp;lt;div v-else-if=&quot;task.done == false&quot;&amp;gt;
+                                            &amp;lt;span class=&quot;glyphicon glyphicon-remove&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        &amp;lt;/div&amp;gt;
+                                &amp;lt;hr&amp;gt;
+                                    &amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
+                                       &amp;lt;button class=&quot;btn&quot;&amp;gt;
+                                        &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        Editar
+                                       &amp;lt;/button&amp;gt;
+                                            
+                                    &amp;lt;/router-link&amp;gt; 
+                                    &amp;lt;a @click=&quot;removeTask(task)&quot;&amp;gt;
+                                        &amp;lt;button class=&quot;btn&quot;&amp;gt;
+                                        &amp;lt;span class=&quot;glyphicon glyphicon-trash&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
+                                        Remover
+                                       &amp;lt;/button&amp;gt;
+                                    &amp;lt;/a&amp;gt;
+                            &amp;lt;/div&amp;gt;
+                        &amp;lt;/div&amp;gt;
+                        
+                    &amp;lt;/li&amp;gt;
+                &amp;lt;/ul&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;hr&amp;gt;
+            &amp;lt;div class=&quot;row&quot;&amp;gt;
+              &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
+                  &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
+                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                        &amp;lt;label for=&quot;&quot;&amp;gt;Atividade:&amp;lt;/label&amp;gt;
+                        &amp;lt;input class=&quot;form-control&quot; type=&quot;text&quot; v-model=&quot;task.activity&quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                        &amp;lt;label for=&quot;&quot;&amp;gt;Status:&amp;lt;/label&amp;gt;
+                        &amp;lt;input  type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                   
+                    &amp;lt;button class=&quot;btn&quot; name=&quot;add&quot;&amp;gt;Add + &amp;lt;/button&amp;gt;
+                &amp;lt;/form&amp;gt;
+              &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data(){
+        return{
+            title:'To do Vue!',
+            tasks:[],
+            task: {
+                name:'',
+                done:false
+            }
+
+        }
+    },
+    methods:{
+
+        submitTask(){
+           this.service
+                .saveTask(this.task) 
+                .then(res =&amp;gt; {
+                    this.tasks.push(res.body)
+                    this.task = {
+                            name:'',
+                            done:false
+                        }
+                })
+        },
+        removeTask(taskItem){
+            this.service
+                .deleteTask(taskItem._id)
+                .then(() =&amp;gt;{
+                    const taskRemove = this.tasks.indexOf(taskItem)
+                    this.tasks.splice(taskRemove,1 ),
+                    err =&amp;gt; console.log(`${err}`)
+                })
+
+          
+        }
+
+
+
+
+    },
+    created(){
+
+    this.service = new TaskService(this.$resource)
+    
+    this.service
+    .listTasks() 
+    .then(tasks =&amp;gt; {
+        const item = _.map(tasks, item =&amp;gt; item);
+        this.tasks = item;
+    }, err =&amp;gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+
+    
+
+  },
+
+}
+
+&amp;lt;/script&amp;gt;
+&amp;lt;style&amp;gt;
+  
+  .panel.panel-success.col-md-4{
+    margin:20px;
+  }
+
+
+  li {
+      list-style-type: none;
+  }
+
+  ul li{
+      margin-left:1em;
+  }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Agora vamos trabalhar o nosso serviço para que ele possa pegar o valor que foi passado como parâmetro, então vamos voltar ao TaskService.js:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+export default class TaskService{
+
+    constructor(resource){
+        this._resource = resource('api/tasks{/id}')
+    }
+
+    /** Métodos anteriores **/
+
+    getTaskById(id) {
+        return this._resource
+            .get({ id })
+            .then(res =&amp;gt; res.json())
+          
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Depois vamos fazer uma alterações no nosso Info.vue, uma em nosso data, outro em nosso created, e em nossos método para ter mais uma função de update, primeiro o nosso created!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+
+        return {
+            task: new Task(),
+            title:'Info:'
+        }
+     },
+    },
+
+    created() {
+        this.service = new TaskService(this.$resource);
+
+        if(this.id) {
+            this.service
+                .getTaskById(this.id)
+                .then(res =&amp;gt;  {
+                    return this.task = res
+                }, err =&amp;gt; {
+                    console.log(`Erro pegar a task pela a id ${err}`)
+                })
+        }
+    },
+     
+
+    methods:{
+        updateTask(){
+          
+        }
+    }
+
+    
+}
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Okay, fizemos uma alteração dizendo que caso tenha uma id eu passo a mesma para o nosso método, e retorno o objeto para a minha task, só que tem um porém, como eu vou receber essa id?, então vamos a nossa alteração no data:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data() {
+    return {
+        task: new Task(),
+        id: this.$route.params.id, &amp;lt;= Here!!
+        title:'Info:'
+    }
+},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Como passamos no router uma id, eu recebo pelo nosso params, que contém o valor da id, e usamos isso no nosso created(), que ao receber um valor da id, faz a busca do nosso objeto, que uma task que vai ser passada a nossa model, e ai vem o conceito da data binding com o Vue,
+vamos a uma observação na nossa template de Info.vue:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+        &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+        &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Como criamos uma class Task que tem um constructor que recebe dois valores, a activity e done,
+nós podemos trabalhar passando esses valores para a nossa model e receber as mesmas através do nosso método de busca, é algo bem legal, e se assemelha muito com o jeito Angular de realizar as coisas.&lt;/p&gt;
+
+&lt;p&gt;Continuando…&lt;/p&gt;
+
+&lt;p&gt;Se você observou bem, eu já tenho ali no meu form uma função, &lt;code class=&quot;highlighter-rouge&quot;&gt;updateTask()&lt;/code&gt;, vamos criar essa mesma dentro do método, já que ela é bem semelhante ao nosso método de save, só vamos básicamente passar o id e receber o valor para atualizarmos a nossa view, e é isso:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;methods:{
+    updateTask(){
+            this.service
+            .saveTask(this.task) 
+            .then(() =&amp;gt; {
+                console.log('Atualizado com sucesso!');
+            },err =&amp;gt; console.log(`Erro em atualizar task ${err}`))
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!&lt;/p&gt;
+
+&lt;p&gt;Veja o Info.vue completo:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
+        &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+           &amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                    &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
+                    &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
+                &amp;lt;/div&amp;gt;
+                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                    &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
+                    &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
+                &amp;lt;/div&amp;gt;
+                &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+           &amp;lt;/form&amp;gt;
+           
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt; 
+       
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+        return {
+            task: new Task(),
+            id: this.$route.params.id, &amp;lt;= Here!!
+            title:'Info:'
+        }
+    },
+
+    created() {
+        this.service = new TaskService(this.$resource);
+
+        if(this.id) {
+            this.service
+                .getTaskById(this.id)
+                .then(res =&amp;gt;  {
+                    return this.task = res
+                }, err =&amp;gt; {
+                    console.log(`Erro pegar a task pela a id ${err}`)
+                })
+        }
+    },
+     
+
+    methods:{
+        updateTask(){
+                this.service
+                .saveTask(this.task) 
+                .then(() =&amp;gt; {
+                    console.log('Atualizado com sucesso!');
+                },err =&amp;gt; console.log(`Erro em atualizar task ${err}`))
+        }
+    }
+
+    
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;style&amp;gt;
+
+.context{
+    margin-top:10px;
+}
+
+textarea{
+  min-height:15em;
+  width:100%;
+  max-width:100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin: .5em 0 0.8em 0;
+  color: #000;
+}
+
+   
+&amp;lt;/style&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 15 Jun 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/perto-do-fim</link>
+        <guid isPermaLink="true">http://localhost:4000/perto-do-fim</guid>
+        
+        
+        <category>Javascript,</category>
+        
+        <category>Vuejs</category>
+        
+      </item>
+    
+      <item>
+        <title>Back to Back! - Part III </title>
         <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/back-to-back.png?raw=true&quot; alt=&quot;back&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Antes de mais nada eu tenho que pedir desculpa a vocês, estava em um processo de saída de uma empresa, e com um monte de teste e vários trabalhos que estava fazendo, organizar tudo estava complicado, estressante na real, e no fim eu passei mal para caramba, uma bruta enchaqueca, que me levou ao hospital, passados alguns dias eu voltei, e fui direto trabalhar, mas… eu queria continuar o nosso projeto com Vuejs, eu acho incrível, fácil e prático, a única coisa que eu estou achando complicado é a parte de testes unitários, entretanto eu vou continuar com nosso app.&lt;/p&gt;
@@ -48,6 +754,10 @@ export const routes = [
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;Esse path abaixo fala que qualquer rota fora do descrito, deve voltar para a rota principal, e renderizar o componente Home&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;path:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'*',&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;component:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Home,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;menu:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Step 3, vamos ao nosso App.vue, lá faremos a seguinte alteração!&lt;/p&gt;
 
@@ -399,9 +1109,9 @@ export default {
 
 &lt;p&gt;Step 5&lt;/p&gt;
 
-&lt;p&gt;Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD…mas, elas só funcionam em certa parte se pensarmos em fazer isso com um servidor respondendo do lado, e até agora, nada funciona, nada mesmo, antes de tudo, eu peço que por favor, clone essa API aqui &lt;a href=&quot;https://github.com/IgorVieira/base-api&quot;&gt;Base API&lt;/a&gt;, basicamente você vai entrar no diretório, dar um &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; e um &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt;, você precisará do &lt;a href=&quot;https://www.mongodb.com/download-center#community&quot;&gt;MongoDB&lt;/a&gt;, e é isso, continuando…&lt;/p&gt;
+&lt;p&gt;Bem, nos outros posts eu havia criado as nossas funções para poder trabalhar um simples CRUD…mas, elas só funcionam em certa parte, mas queremos fazer algo pensando em um servidor respondendo do lado, e como até agora, nada funciona, nada mesmo, vamos precisar antes de tudo, e eu peço que por favor, clone essa API aqui &lt;a href=&quot;https://github.com/IgorVieira/base-api&quot;&gt;Base API&lt;/a&gt;, basicamente você vai entrar no diretório, dar um &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; e um &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run dev&lt;/code&gt;, e você precisará do &lt;a href=&quot;https://www.mongodb.com/download-center#community&quot;&gt;MongoDB&lt;/a&gt; instalado, e é isso, continuando…&lt;/p&gt;
 
-&lt;p&gt;O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por equanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:&lt;/p&gt;
+&lt;p&gt;O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por enquanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ├── components
@@ -494,6 +1204,17 @@ export default {
 &lt;/div&gt;
 
 &lt;p&gt;Primeiro, vamos instalar mais um módulo, &lt;code class=&quot;highlighter-rouge&quot;&gt;lodash&lt;/code&gt;, e indicar o caminho relativo da nossa service!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm install lodash --save&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Olhe bem as chamdas do módulo e do nosso serviço!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;E no método created(), vamos chamar a nossa service e renderizar os valores vindos a partir do nosso objeto json que vem da nossa API e ficará assim:&lt;/p&gt;
 

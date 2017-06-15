@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
+  <title>
+    
+      Perto do fim - Part IV 
+    
+      Igor Vieira
+    
+  </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="masthead">
+  <h1 class="masthead-title">
+    <a href="/">Igor Vieira</a>
+  </h1>
+  <nav class="masthead-nav">
+    
+      <a href="/about/"> About</a>
+    
+      <a href="/feed.xml"> </a>
+    
+      <a href="/"> </a>
+    
+      <a href="/css/main.css"> </a>
+    
+      <a href="/series/"> Series</a>
+    
+  </nav>
+</header>
+<hr>
+      
+
+
+
+
+
+<article class="content post">
+	<h1 class="post-title">
+	Perto do fim - Part IV 
+	</h1>
+	<div class="post-date">
+		<time>15 Jun 2017</time>
+	<span class="reading-time"> -  minutes to read</span>
+	</div>
+
+	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ohyeah.jpg?raw=true" alt="ohyeah" /></p>
+
+<p>Okay, vamos continuar o nosso projeto, a ideia é que daqui em diante possamos criar mais dois dos nossos quatro métodos, já criamos um para listar e outro para poder criar novas tasks e um que também realiza updates, que será usado mais a frente, o que iremos fazer agora é criar um método para poder remover uma task na nossa lista, para isso vamos alterar a nossa função de remover em nosso Home.vue e precisamos modificar a nossa service para deletar a task, vamos a nossa service:</p>
+
+<p>TaskService.js:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+export default class TaskService{
+
+    constructor(resource){
+        this._resource = resource('api/tasks{/id}')
+    }
+
+    /** Métodos anteriores **/
+
+    deleteTask(id){
+        return this._resource
+            .delete({id})
+            .then(null, err =&gt; {
+                console.log(err)
+            })
+    }
+}
+</code></pre>
+</div>
+
+<p>Abaixo do método de saveTask()</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>removeTask(taskItem){
+    this.service
+        .deleteTask(taskItem._id)
+        .then(() =&gt;{
+            const taskRemove = this.tasks.indexOf(taskItem)
+            this.tasks.splice(taskRemove,1 ),
+            err =&gt; console.log(`${err}`)
+        })
+
+    
+}
+</code></pre>
+</div>
+
+<p>Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const taskRemove = this.tasks.indexOf(taskItem)
+this.tasks.splice(taskRemove,1 ),
+</code></pre>
+</div>
+
+<p>Pronto, remover já foi, se quiser faça o teste, crie um item e o remova.</p>
+
+<p>E assim ficará o nosso Home.vue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+ 
+        &lt;div class="container"&gt;
+            &lt;h3 class="page-header"&gt;&lt;/h3&gt;
+            &lt;div class="row"&gt;
+                &lt;ul &gt;
+                    &lt;li v-for="task in tasks"&gt;
+
+
+                        &lt;div class="panel panel-success col-md-4"&gt;
+                            &lt;div class="panel-heading"&gt;
+                                &lt;h3 class="panel-title"&gt;&lt;/h3&gt;
+                            &lt;/div&gt;
+                            &lt;div class="panel-body"&gt;
+                                Status: &lt;div v-if="task.done == true"&gt;
+                                            &lt;span class="glyphicon glyphicon-ok" aria-hidden="true"&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div v-else-if="task.done == false"&gt;
+                                            &lt;span class="glyphicon glyphicon-remove" aria-hidden="true"&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                &lt;hr&gt;
+                                       &lt;button class="btn"&gt;
+                                        &lt;span class="glyphicon                                                  glyphicon-pencil" aria-hidden="true"&gt;&lt;/span&gt;
+                                        Editar
+                                       &lt;/button&gt;
+                                            
+                                    &lt;a @click="removeTask(task)"&gt;
+                                        &lt;button class="btn"&gt;
+                                        &lt;span class="glyphicon glyphicon-trash" aria-hidden="true"&gt;&lt;/span&gt;
+                                        Remover
+                                       &lt;/button&gt;
+                                    &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;hr&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="col-md-5 col-md-offset-2 well"&gt;
+                  &lt;form @submit.prevent="submitTask()"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for=""&gt;Atividade:&lt;/label&gt;
+                        &lt;input class="form-control" type="text" v-model="task.activity"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for=""&gt;Status:&lt;/label&gt;
+                        &lt;input  type="checkbox" v-model="task.done"&gt;
+                    &lt;/div&gt;
+                   
+                    &lt;button class="btn" name="add"&gt;Add + &lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+&lt;/template&gt;
+&lt;script&gt;
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data(){
+        return{
+            title:'To do Vue!',
+            tasks:[],
+            task: {
+                name:'',
+                done:false
+            }
+
+        }
+    },
+    methods:{
+
+        submitTask(){
+           this.service
+                .saveTask(this.task) 
+                .then(res =&gt; {
+                    this.tasks.push(res.body)
+                    this.task = {
+                            name:'',
+                            done:false
+                        }
+                })
+        },
+        removeTask(taskItem){
+            this.service
+                .deleteTask(taskItem._id)
+                .then(() =&gt;{
+                    const taskRemove = this.tasks.indexOf(taskItem)
+                    this.tasks.splice(taskRemove,1 ),
+                    err =&gt; console.log(`${err}`)
+                })
+
+          
+        }
+
+
+
+
+    },
+    created(){
+
+    this.service = new TaskService(this.$resource)
+    
+    this.service
+    .listTasks() 
+    .then(tasks =&gt; {
+        const item = _.map(tasks, item =&gt; item);
+        this.tasks = item;
+    }, err =&gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+
+    
+
+  },
+
+}
+
+&lt;/script&gt;
+&lt;style&gt;
+  
+  .panel.panel-success.col-md-4{
+    margin:20px;
+  }
+
+
+  li {
+      list-style-type: none;
+  }
+
+  ul li{
+      margin-left:1em;
+  }
+&lt;/style&gt;
+</code></pre>
+</div>
+
+<p>Nota: Eu fiz uma pequena modificação em style, bem simples, para separar as tasks e para remover os bullets, e é isso.</p>
+
+<p>Para continuarmos temos que fazer algumas pequenas alterações em duas partes, em routes, pois vamos precisar de mais uma view para podermos editar a nossa task, e precisamos adicionar um <code class="highlighter-rouge">&lt;router-link&gt;&lt;/router-link&gt;</code> que é uma tag para poder ir para essa route, que é uma nova view e precisamos de um método para poder receber o valor passado pelo nosso route-link e para que possamos trabalhar com ele, então a ordem é  seguinte:</p>
+
+<ul>
+  <li>routes</li>
+  <li>Info.vue</li>
+  <li>Alterar Home.vue</li>
+  <li>Criar método para poder
+ receber o valor de uma única task</li>
+  <li>E testar update nessa nova view</li>
+</ul>
+
+<p>Lista feita, vamos agir:</p>
+
+<p>Em routes.js vamos fazer a seguinte alteração, adicionar mais um caminho de onde é a nossa outra view, Info.vue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import Info from './components/info/Info.vue'
+
+import Home from './components/home/Home.vue';
+
+
+export const routes = [
+    { path: '', name: 'home', component: Home, titulo: 'Home', menu: true },
+    { path: '/info/:id', name:'info', component: Info, titulo: 'Info', menu: false },    
+    { path: '*', component: Home, menu: false }
+]
+</code></pre>
+</div>
+
+<p>Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>├── App.vue
+├── components
+│   ├── home
+│   │   └── Home.vue
+│   └── info
+│       └── Info.vue
+├── domain
+│   │  
+│   └── task
+│       ├── Task.js
+│       └── TaskService.js
+├── main.js
+└── routes.js
+</code></pre>
+</div>
+
+<p>A nossa view de Info.vue ficara da seguinte forma:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;h3 class="page-header"&gt;&lt;/h3&gt;
+        &lt;div class="col-md-4"&gt;
+           &lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
+                    &lt;input type="text" class="form-control" v-model="task.activity"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
+                    &lt;input type="checkbox" v-model="task.done"&gt;
+                &lt;/div&gt;
+                &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+           &lt;/form&gt;
+           
+        &lt;/div&gt;
+    &lt;/div&gt; 
+       
+&lt;/template&gt;
+&lt;script&gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+
+        return {
+            task: new Task(),
+            title:'Info:'
+        }
+     },
+    },
+
+    created() {
+       
+    },
+     
+
+    methods:{
+        updateTask(){
+          
+        }
+    }
+
+    
+}
+&lt;/script&gt;
+&lt;style&gt;
+
+.context{
+    margin-top:10px;
+}
+
+textarea{
+  min-height:15em;
+  width:100%;
+  max-width:100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin: .5em 0 0.8em 0;
+  color: #000;
+}
+
+   
+&lt;/style&gt;
+
+</code></pre>
+</div>
+
+<p>Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export default class Task{
+
+    constructor(activity, done){
+        this.activity = activity
+        this.done = done
+    }
+
+
+}
+</code></pre>
+</div>
+
+<p>Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;router-link :to="{ name: 'info', params: { id : task._id }}"&gt;
+    &lt;button class="btn"&gt;
+    &lt;span class="glyphicon glyphicon-pencil" aria-hidden="true"&gt;&lt;/span&gt;
+    Editar
+    &lt;/button&gt;
+        
+&lt;/router-link&gt; 
+</code></pre>
+</div>
+
+<p>Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, <code class="highlighter-rouge">name:'info'</code>, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.</p>
+
+<p>Home.vue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+ 
+        &lt;div class="container"&gt;
+            &lt;h3 class="page-header"&gt;&lt;/h3&gt;
+            &lt;div class="row"&gt;
+                &lt;ul &gt;
+                    &lt;li v-for="task in tasks"&gt;
+
+
+                        &lt;div class="panel panel-success col-md-4"&gt;
+                            &lt;div class="panel-heading"&gt;
+                                &lt;h3 class="panel-title"&gt;&lt;/h3&gt;
+                            &lt;/div&gt;
+                            &lt;div class="panel-body"&gt;
+                                Status: &lt;div v-if="task.done == true"&gt;
+                                            &lt;span class="glyphicon glyphicon-ok" aria-hidden="true"&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div v-else-if="task.done == false"&gt;
+                                            &lt;span class="glyphicon glyphicon-remove" aria-hidden="true"&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                &lt;hr&gt;
+                                    &lt;router-link :to="{ name: 'info', params: { id : task._id }}"&gt;
+                                       &lt;button class="btn"&gt;
+                                        &lt;span class="glyphicon glyphicon-pencil" aria-hidden="true"&gt;&lt;/span&gt;
+                                        Editar
+                                       &lt;/button&gt;
+                                            
+                                    &lt;/router-link&gt; 
+                                    &lt;a @click="removeTask(task)"&gt;
+                                        &lt;button class="btn"&gt;
+                                        &lt;span class="glyphicon glyphicon-trash" aria-hidden="true"&gt;&lt;/span&gt;
+                                        Remover
+                                       &lt;/button&gt;
+                                    &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;hr&gt;
+            &lt;div class="row"&gt;
+              &lt;div class="col-md-5 col-md-offset-2 well"&gt;
+                  &lt;form @submit.prevent="submitTask()"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for=""&gt;Atividade:&lt;/label&gt;
+                        &lt;input class="form-control" type="text" v-model="task.activity"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for=""&gt;Status:&lt;/label&gt;
+                        &lt;input  type="checkbox" v-model="task.done"&gt;
+                    &lt;/div&gt;
+                   
+                    &lt;button class="btn" name="add"&gt;Add + &lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+&lt;/template&gt;
+&lt;script&gt;
+import _ from 'lodash';
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data(){
+        return{
+            title:'To do Vue!',
+            tasks:[],
+            task: {
+                name:'',
+                done:false
+            }
+
+        }
+    },
+    methods:{
+
+        submitTask(){
+           this.service
+                .saveTask(this.task) 
+                .then(res =&gt; {
+                    this.tasks.push(res.body)
+                    this.task = {
+                            name:'',
+                            done:false
+                        }
+                })
+        },
+        removeTask(taskItem){
+            this.service
+                .deleteTask(taskItem._id)
+                .then(() =&gt;{
+                    const taskRemove = this.tasks.indexOf(taskItem)
+                    this.tasks.splice(taskRemove,1 ),
+                    err =&gt; console.log(`${err}`)
+                })
+
+          
+        }
+
+
+
+
+    },
+    created(){
+
+    this.service = new TaskService(this.$resource)
+    
+    this.service
+    .listTasks() 
+    .then(tasks =&gt; {
+        const item = _.map(tasks, item =&gt; item);
+        this.tasks = item;
+    }, err =&gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+
+    
+
+  },
+
+}
+
+&lt;/script&gt;
+&lt;style&gt;
+  
+  .panel.panel-success.col-md-4{
+    margin:20px;
+  }
+
+
+  li {
+      list-style-type: none;
+  }
+
+  ul li{
+      margin-left:1em;
+  }
+&lt;/style&gt;
+</code></pre>
+</div>
+
+<p>Agora vamos trabalhar o nosso serviço para que ele possa pegar o valor que foi passado como parâmetro, então vamos voltar ao TaskService.js:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+export default class TaskService{
+
+    constructor(resource){
+        this._resource = resource('api/tasks{/id}')
+    }
+
+    /** Métodos anteriores **/
+
+    getTaskById(id) {
+        return this._resource
+            .get({ id })
+            .then(res =&gt; res.json())
+          
+    }
+}
+</code></pre>
+</div>
+
+<p>Depois vamos fazer uma alterações no nosso Info.vue, uma em nosso data, outro em nosso created, e em nossos método para ter mais uma função de update, primeiro o nosso created!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script&gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+
+        return {
+            task: new Task(),
+            title:'Info:'
+        }
+     },
+    },
+
+    created() {
+        this.service = new TaskService(this.$resource);
+
+        if(this.id) {
+            this.service
+                .getTaskById(this.id)
+                .then(res =&gt;  {
+                    return this.task = res
+                }, err =&gt; {
+                    console.log(`Erro pegar a task pela a id ${err}`)
+                })
+        }
+    },
+     
+
+    methods:{
+        updateTask(){
+          
+        }
+    }
+
+    
+}
+&lt;/script&gt;
+
+</code></pre>
+</div>
+
+<p>Okay, fizemos uma alteração dizendo que caso tenha uma id eu passo a mesma para o nosso método, e retorno o objeto para a minha task, só que tem um porém, como eu vou receber essa id?, então vamos a nossa alteração no data:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>data() {
+    return {
+        task: new Task(),
+        id: this.$route.params.id, &lt;= Here!!
+        title:'Info:'
+    }
+},
+</code></pre>
+</div>
+
+<p>Como passamos no router uma id, eu recebo pelo nosso params, que contém o valor da id, e usamos isso no nosso created(), que ao receber um valor da id, faz a busca do nosso objeto, que uma task que vai ser passada a nossa model, e ai vem o conceito da data binding com o Vue,
+vamos a uma observação na nossa template de Info.vue:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
+        &lt;input type="text" class="form-control" v-model="task.activity"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
+        &lt;input type="checkbox" v-model="task.done"&gt;
+    &lt;/div&gt;
+    &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+
+<p>Como criamos uma class Task que tem um constructor que recebe dois valores, a activity e done,
+nós podemos trabalhar passando esses valores para a nossa model e receber as mesmas através do nosso método de busca, é algo bem legal, e se assemelha muito com o jeito Angular de realizar as coisas.</p>
+
+<p>Continuando…</p>
+
+<p>Se você observou bem, eu já tenho ali no meu form uma função, <code class="highlighter-rouge">updateTask()</code>, vamos criar essa mesma dentro do método, já que ela é bem semelhante ao nosso método de save, só vamos básicamente passar o id e receber o valor para atualizarmos a nossa view, e é isso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>methods:{
+    updateTask(){
+            this.service
+            .saveTask(this.task) 
+            .then(() =&gt; {
+                console.log('Atualizado com sucesso!');
+            },err =&gt; console.log(`Erro em atualizar task ${err}`))
+    }
+}
+
+</code></pre>
+</div>
+
+<p>E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!</p>
+
+<p>Veja o Info.vue completo:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;h3 class="page-header"&gt;&lt;/h3&gt;
+        &lt;div class="col-md-4"&gt;
+           &lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
+                    &lt;input type="text" class="form-control" v-model="task.activity"&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
+                    &lt;input type="checkbox" v-model="task.done"&gt;
+                &lt;/div&gt;
+                &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+           &lt;/form&gt;
+           
+        &lt;/div&gt;
+    &lt;/div&gt; 
+       
+&lt;/template&gt;
+&lt;script&gt;
+
+import Task from  '../../domain/task/Task'
+import TaskService from '../../domain/task/TaskService'
+
+export default {
+
+    data() {
+        return {
+            task: new Task(),
+            id: this.$route.params.id, &lt;= Here!!
+            title:'Info:'
+        }
+    },
+
+    created() {
+        this.service = new TaskService(this.$resource);
+
+        if(this.id) {
+            this.service
+                .getTaskById(this.id)
+                .then(res =&gt;  {
+                    return this.task = res
+                }, err =&gt; {
+                    console.log(`Erro pegar a task pela a id ${err}`)
+                })
+        }
+    },
+     
+
+    methods:{
+        updateTask(){
+                this.service
+                .saveTask(this.task) 
+                .then(() =&gt; {
+                    console.log('Atualizado com sucesso!');
+                },err =&gt; console.log(`Erro em atualizar task ${err}`))
+        }
+    }
+
+    
+}
+&lt;/script&gt;
+&lt;style&gt;
+
+.context{
+    margin-top:10px;
+}
+
+textarea{
+  min-height:15em;
+  width:100%;
+  max-width:100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin: .5em 0 0.8em 0;
+  color: #000;
+}
+
+   
+&lt;/style&gt;
+
+</code></pre>
+</div>
+
+<p>Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]</p>
+
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	
+	var disqus_config = function () {
+	this.page.url = 'http://localhost:4000 /perto-do-fim'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//igorprvieira.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</article>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Igor Vieira</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Igor Vieira</li>
+          <li><a href="mailto:igor.p.r.vieira@gmail.com">igor.p.r.vieira@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/IgorVieira"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">IgorVieira</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/IgorPRVieira"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">IgorPRVieira</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+     
+    </div>
+
+  </div>
+
+</footer>
+
+  </div>
+
+    
+ 
+</body>
+</html>
+
+   
