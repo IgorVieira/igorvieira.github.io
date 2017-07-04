@@ -42,9 +42,9 @@
 
 
 <article class="content post">
-	<h1 class="post-title">
+	<h3 class="post-title">
 	Perto do fim - Part IV 
-	</h1>
+	</h3>
 	<div class="post-date">
 		<time>15 Jun 2017</time>
 	<span class="reading-time"> -  minutes to read</span>
@@ -76,20 +76,19 @@ export default class TaskService{
 </code></pre>
 </div>
 
-<p>Abaixo do método de saveTask()</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>removeTask(taskItem){
+<p>Abaixo do método de saveTask()
+```
+removeTask(taskItem){
     this.service
         .deleteTask(taskItem._id)
         .then(() =&gt;{
             const taskRemove = this.tasks.indexOf(taskItem)
             this.tasks.splice(taskRemove,1 ),
-            err =&gt; console.log(`${err}`)
-        })
+            err =&gt; console.log(<code class="highlighter-rouge">${err}</code>)
+        })</p>
 
-    
-}
-</code></pre>
-</div>
+<p>}
+```</p>
 
 <p>Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:</p>
 
@@ -272,8 +271,9 @@ export const routes = [
 </code></pre>
 </div>
 
-<p>Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>├── App.vue
+<p>Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:
+<code class="highlighter-rouge">
+├── App.vue
 ├── components
 │   ├── home
 │   │   └── Home.vue
@@ -286,31 +286,31 @@ export const routes = [
 │       └── TaskService.js
 ├── main.js
 └── routes.js
-</code></pre>
-</div>
+</code></p>
 
-<p>A nossa view de Info.vue ficara da seguinte forma:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
-    &lt;div&gt;
-        &lt;h3 class="page-header"&gt;&lt;/h3&gt;
-        &lt;div class="col-md-4"&gt;
+<p>A nossa view de Info.vue ficara da seguinte forma:
+```</p>
+<template>
+    <div>
+        <h3 class="page-header"></h3>
+        <div class="col-md-4">
            &lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
-                &lt;div class="form-group"&gt;
-                    &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
-                    &lt;input type="text" class="form-control" v-model="task.activity"&gt;
-                &lt;/div&gt;
-                &lt;div class="form-group"&gt;
-                    &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
-                    &lt;input type="checkbox" v-model="task.done"&gt;
-                &lt;/div&gt;
-                &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+                <div class="form-group">
+                    <label for="">Nome da Atividade:</label>
+                    <input type="text" class="form-control" v-model="task.activity" />
+                </div>
+                <div class="form-group">
+                    <label for="">Status da atividade:</label>
+                    <input type="checkbox" v-model="task.done" />
+                </div>
+                <input type="submit" value="Salvar" class="btn btn-success" />
            &lt;/form&gt;
            
-        &lt;/div&gt;
-    &lt;/div&gt; 
+        </div>
+    </div> 
        
-&lt;/template&gt;
-&lt;script&gt;
+</template>
+<script>
 
 import Task from  '../../domain/task/Task'
 import TaskService from '../../domain/task/TaskService'
@@ -339,8 +339,9 @@ export default {
 
     
 }
-&lt;/script&gt;
-&lt;style&gt;
+</script>
+
+<style>
 
 .context{
     margin-top:10px;
@@ -358,24 +359,24 @@ textarea{
 }
 
    
-&lt;/style&gt;
+</style>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:
 
 </code></pre>
 </div>
+<p>export default class Task{</p>
 
-<p>Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>export default class Task{
-
-    constructor(activity, done){
-        this.activity = activity
-        this.done = done
-    }
-
-
+<div class="highlighter-rouge"><pre class="highlight"><code>constructor(activity, done){
+    this.activity = activity
+    this.done = done
 }
 </code></pre>
 </div>
+
+<p>}
+```</p>
 
 <p>Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.</p>
 
@@ -653,28 +654,29 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
 
 <p>E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!</p>
 
-<p>Veja o Info.vue completo:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
-    &lt;div&gt;
-        &lt;h3 class="page-header"&gt;&lt;/h3&gt;
-        &lt;div class="col-md-4"&gt;
+<p>Veja o Info.vue completo:
+```</p>
+<template>
+    <div>
+        <h3 class="page-header"></h3>
+        <div class="col-md-4">
            &lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
-                &lt;div class="form-group"&gt;
-                    &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
-                    &lt;input type="text" class="form-control" v-model="task.activity"&gt;
-                &lt;/div&gt;
-                &lt;div class="form-group"&gt;
-                    &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
-                    &lt;input type="checkbox" v-model="task.done"&gt;
-                &lt;/div&gt;
-                &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+                <div class="form-group">
+                    <label for="">Nome da Atividade:</label>
+                    <input type="text" class="form-control" v-model="task.activity" />
+                </div>
+                <div class="form-group">
+                    <label for="">Status da atividade:</label>
+                    <input type="checkbox" v-model="task.done" />
+                </div>
+                <input type="submit" value="Salvar" class="btn btn-success" />
            &lt;/form&gt;
            
-        &lt;/div&gt;
-    &lt;/div&gt; 
+        </div>
+    </div> 
        
-&lt;/template&gt;
-&lt;script&gt;
+</template>
+<script>
 
 import Task from  '../../domain/task/Task'
 import TaskService from '../../domain/task/TaskService'
@@ -684,7 +686,7 @@ export default {
     data() {
         return {
             task: new Task(),
-            id: this.$route.params.id, &lt;= Here!!
+            id: this.$route.params.id, <= Here!!
             title:'Info:'
         }
     },
@@ -695,9 +697,9 @@ export default {
         if(this.id) {
             this.service
                 .getTaskById(this.id)
-                .then(res =&gt;  {
+                .then(res =>  {
                     return this.task = res
-                }, err =&gt; {
+                }, err => {
                     console.log(`Erro pegar a task pela a id ${err}`)
                 })
         }
@@ -708,16 +710,17 @@ export default {
         updateTask(){
                 this.service
                 .saveTask(this.task) 
-                .then(() =&gt; {
+                .then(() => {
                     console.log('Atualizado com sucesso!');
-                },err =&gt; console.log(`Erro em atualizar task ${err}`))
+                },err => console.log(`Erro em atualizar task ${err}`))
         }
     }
 
     
 }
-&lt;/script&gt;
-&lt;style&gt;
+</script>
+
+<style>
 
 .context{
     margin-top:10px;
@@ -735,10 +738,9 @@ textarea{
 }
 
    
-&lt;/style&gt;
+</style>
 
-</code></pre>
-</div>
+<p>```</p>
 
 <p>Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]</p>
 
@@ -749,7 +751,7 @@ textarea{
 	
 	
 	var disqus_config = function () {
-	this.page.url = 'http://localhost:4000 /perto-do-fim'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.url = 'https://igorprvieira.com.br /perto-do-fim'; // Replace PAGE_URL with your page's canonical URL variable
 	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 	};
 	

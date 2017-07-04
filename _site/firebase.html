@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
+  <title>
+    
+      Firebase - Part V 
+    
+      Igor Vieira
+    
+  </title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="masthead">
+  <h1 class="masthead-title">
+    <a href="/">Igor Vieira</a>
+  </h1>
+  <nav class="masthead-nav">
+    
+      <a href="/about/"> About</a>
+    
+      <a href="/feed.xml"> </a>
+    
+      <a href="/"> </a>
+    
+      <a href="/css/main.css"> </a>
+    
+      <a href="/series/"> Series</a>
+    
+  </nav>
+</header>
+<hr>
+      
+
+
+
+
+
+<article class="content post">
+	<h3 class="post-title">
+	Firebase - Part V 
+	</h3>
+	<div class="post-date">
+		<time>04 Jul 2017</time>
+	<span class="reading-time"> -  minutes to read</span>
+	</div>
+
+	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase.png?raw=true" alt="firebase" /></p>
+
+<p>Bem, a ideia de hoje e adicionar o Firebase a nossa aplicação, como assim? Colocar mais um serviço integrado a nossa aplicação, a sua única funcionalidade será adicionar comentários a nossa aplicação mostrando algo a respeito da nossa tarefa.</p>
+
+<p>Primeiro passo, vamos ao site do firebase!</p>
+
+<p>Depois vamos entrar na nossa parte de console e vamos criar um novo projeto, a pós isso ele vai nos redirecionar para uma dashboard, lá mostra as diferentes aplicações para a qual o seu projeto pode ser utilizado, a ideia é o seguinte, o Firebase te dá multiplas possibilidades de poder trabalhar seu projeto tanto com aplicações mobile para iOS e android, quanto para web, o nosso caso aqui vai ser web, vamos clicar no icone de para adicionar a firebase a nossa aplicação.</p>
+
+<p>Ele vai nos dar o seguinte código:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Código do firebase
+</code></pre>
+</div>
+
+<p>Precisamos, agora desabilitar para que possamos fazer acesso em nossa aplicação de forma completa, liberando todas as roles, é só ir em Database, depois seguir para Regras e alterar os objeto rules e suas keys para true! =]</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"rules"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">".read"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">".write"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>PS: Isso é somente demonstrativo para fins didáticos!</p>
+
+<p>Vamos fazer algumas modificações mais a frente, mas enfim, é o básico que precisamos, a ideia é o seguinte, vamos criar um serviço que será utilizado na nossa aplicação para poder adicionar comentários sobre as tasks e poder removê-los, vai ser interessante, essa parte é só um plus, o que precisamos agora é adicionar o firebase e o vue-fire, um módulo vue para fazer comunicação com o firebase.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm i vue-fire firebase --save
+</code></pre>
+</div>
+
+<p>A primeria alteração será em main.js:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import Vue from 'vue'
+/* import de Vuefire */
+import VueFire from 'vuefire'
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import App from './App.vue'
+import { routes } from './routes'
+
+Vue.config.productionTip = false
+Vue.use(VueFire)
+/* Código anterior */
+
+</code></pre>
+</div>
+
+<p>Depois precisamos criar a nossa service, ela vai nos ajudar a deixar a comunicação com o firebase separada das nossas funções e poder chamar nossas funções na nossa template Vue, e para isso é necessário criar em domain, mais outro diretório, firebase:</p>
+
+<p><code class="highlighter-rouge">./src/domain/firebase/FirebaseService.js</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+import Firebase from 'firebase'
+
+
+
+const config = {
+    apiKey: "AIzaSyBY-eZPJrb8Ws_jc1pWCfEhNhF4VzdgC-Q",
+    authDomain: "to-do-list-7eabf.firebaseapp.com",
+    databaseURL: "https://to-do-list-7eabf.firebaseio.com",
+    projectId: "to-do-list-7eabf",
+    storageBucket: "to-do-list-7eabf.appspot.com",
+    messagingSenderId: "893610260697"
+};
+
+
+const app = Firebase.initializeApp(config);
+const commentsRef  = app.database()
+
+
+export default commentsRef
+</code></pre>
+</div>
+
+<p>Vou comentar a respeito do que fizemos, aqui nós básicamente  importamos o Firebase, precisamos dele para a parte de configuração junto a nossa aplicação, o que precisamos é criar uma forma de referenciar a onde e como acessar a nossa aplicação, fazemos o import do módulo(Firebase), passamos a config de acesso, referenciando a key de acesso, domínio, a url, o id do projeto, storage , tudo isso através do initializeApp(), que depois nos dá acesso a função database(), que atráves dela passada ao nosso commentsRef nos permite realizar a criação dos nossos objetos ou deletar nossos objetos da nossa base de dados.</p>
+
+<p>Vamos a nossa Info.vue, nela vamos fazer algumas modificações:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script&gt;
+
+/* imports anteriores */
+import Comment from '../../domain/comment/Comment'
+import commentsRef  from '../../domain/firebase/FirebaseService'
+
+
+export default {
+    data() {
+
+        return {
+            task: new Task(),
+            newComments: new Comment(),
+            id: this.$route.params.id,
+            msg:'',
+            title:'Info:'
+        }
+     },
+
+      firebase() {
+        return { 
+            comments: commentsRef.ref('comments/' + this.$route.params.id),
+            
+        }
+    },
+     
+/* código anterior */
+
+
+    methods:{
+        updateTask(){
+             this.service
+             .saveTask(this.task) 
+             .then(res =&gt; console.log(res))
+        },
+        sendComment(){
+            const justComment = commentsRef.ref(`comments/${this.$route.params.id}`)
+            justComment.push(this.newComments)
+            this.newComments = new Comment();
+        },
+        removeComment(comment){
+           const justComment = commentsRef.ref(`comments/${this.$route.params.id}`)
+           justComment.child(comment['.key']).remove()
+        }
+    }
+
+    
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+
+<p>O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E é a mesma coisa, é pegar o valor recebido e passar ele para o nosso array, em Firebase, <code class="highlighter-rouge">não no data!</code>, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.</p>
+
+<p>Se você notou temos dois imports a mais, o que é esse segundo import, é uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export default class Comment {
+
+    constructor(comment, owner) {
+        this.comment = comment
+        this.owner = owner
+    }
+
+
+}
+</code></pre>
+</div>
+<p>Isso é somente para poder definir o que iremos receber nos nossos comentários e o que vai ser passado em nosso contrutor e que pode ser definido a cada novo comentário, é bem básico, nada de mais, uma coisinha para melhorar nosso jogo.</p>
+
+<p>No nosso template, vamos fazer pequenas moficações:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="col-md-4"&gt;
+    &lt;div class="panel panel-info"&gt;
+        &lt;div class="panel-heading"&gt;
+        &lt;h3 class="panel-title"&gt;Comentários&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;ul v-for="comment in comments" &gt;
+        &lt;li class="context"&gt;
+            &lt;span class="person"&gt;&lt;/span&gt; - &lt;span class="comment"&gt;&lt;/span&gt; 
+            &lt;i @click="removeComment(comment)" class="glyphicon glyphicon-trash" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;form @submit.prevent="sendComment()" form class="form-horizontal"&gt;
+        &lt;input v-model="newComments.comment" placeholder="Comentário..." id="activity" type="text" required  class="form-control"&gt;
+        &lt;input v-model="newComments.owner" placeholder="Name..." id="name" type="text" required  class="form-control"&gt;
+        &lt;hr&gt;
+        &lt;button class="btn red"&gt;
+            &lt;i class="fa fa-send"&gt;&lt;/i&gt;
+            Post
+        &lt;/button&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>No nosso template, nós iremos pegar os comentários recebidos no nosso comments, vindos do Firebase, e passar em nosso vue-for que vai dar render nos objetos a serem referenciandos comment e owner, e nossos <code class="highlighter-rouge">&lt;i/&gt;</code> vamos passar a nossa função de removeComment(comment), recebe o comment e remove aquele em específico, a nossa outra função é somente um @submit.prevent, importante colocar o prevent para evitar dar refresh na página, e ai ele recebe os valores pela nossa model e atráves da nossa model enviamos os dados para a nossa função vinda da nossa service do Firebase, que no final atualiza os dados no nosso firebase!</p>
+
+<p>Bem, é isso, depois vamos fazer algumas pequenas alterações, uso de linters e alguns testes e2e, e é isso, muito obrigado e até a próxima! =]</p>
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	
+	var disqus_config = function () {
+	this.page.url = 'http://localhost:4000 /firebase'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//igorprvieira.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</article>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Igor Vieira</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Igor Vieira</li>
+          <li><a href="mailto:igor.p.r.vieira@gmail.com">igor.p.r.vieira@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/IgorVieira"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">IgorVieira</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/IgorPRVieira"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">IgorPRVieira</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+     
+    </div>
+
+  </div>
+
+</footer>
+
+  </div>
+
+    
+ 
+</body>
+</html>
+
+   
