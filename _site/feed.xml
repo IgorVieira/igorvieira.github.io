@@ -4,11 +4,206 @@
     <title>Igor Vieira</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>https://igorprvieira.com.br/</link>
-    <atom:link href="https://igorprvieira.com.br/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Jul 2017 21:36:53 -0300</pubDate>
-    <lastBuildDate>Mon, 03 Jul 2017 21:36:53 -0300</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 04 Jul 2017 14:35:22 -0300</pubDate>
+    <lastBuildDate>Tue, 04 Jul 2017 14:35:22 -0300</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Firebase - Part V </title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase.png?raw=true&quot; alt=&quot;firebase&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bem, a ideia de hoje e adicionar o Firebase a nossa aplicação, como assim? Colocar mais um serviço integrado a nossa aplicação, a sua única funcionalidade será adicionar comentários a nossa aplicação mostrando algo a respeito da nossa tarefa.&lt;/p&gt;
+
+&lt;p&gt;Primeiro passo, vamos ao site do firebase!&lt;/p&gt;
+
+&lt;p&gt;Depois vamos entrar na nossa parte de console e vamos criar um novo projeto, a pós isso ele vai nos redirecionar para uma dashboard, lá mostra as diferentes aplicações para a qual o seu projeto pode ser utilizado, a ideia é o seguinte, o Firebase te dá multiplas possibilidades de poder trabalhar seu projeto tanto com aplicações mobile para iOS e android, quanto para web, o nosso caso aqui vai ser web, vamos clicar no icone de para adicionar a firebase a nossa aplicação.&lt;/p&gt;
+
+&lt;p&gt;Ele vai nos dar o seguinte código:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Código do firebase
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Precisamos, agora desabilitar para que possamos fazer acesso em nossa aplicação de forma completa, liberando todas as roles, é só ir em Database, depois seguir para Regras e alterar os objeto rules e suas keys para true! =]&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;.read&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;.write&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;PS: Isso é somente demonstrativo para fins didáticos!&lt;/p&gt;
+
+&lt;p&gt;Vamos fazer algumas modificações mais a frente, mas enfim, é o básico que precisamos, a ideia é o seguinte, vamos criar um serviço que será utilizado na nossa aplicação para poder adicionar comentários sobre as tasks e poder removê-los, vai ser interessante, essa parte é só um plus, o que precisamos agora é adicionar o firebase e o vue-fire, um módulo vue para fazer comunicação com o firebase.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm i vue-fire firebase --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A primeria alteração será em main.js:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
+/* import de Vuefire */
+import VueFire from 'vuefire'
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import App from './App.vue'
+import { routes } from './routes'
+
+Vue.config.productionTip = false
+Vue.use(VueFire)
+/* Código anterior */
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Depois precisamos criar a nossa service, ela vai nos ajudar a deixar a comunicação com o firebase separada das nossas funções e poder chamar nossas funções na nossa template Vue, e para isso é necessário criar em domain, mais outro diretório, firebase:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./src/domain/firebase/FirebaseService.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+import Firebase from 'firebase'
+
+
+
+const config = {
+    apiKey: &quot;AIzaSyBY-eZPJrb8Ws_jc1pWCfEhNhF4VzdgC-Q&quot;,
+    authDomain: &quot;to-do-list-7eabf.firebaseapp.com&quot;,
+    databaseURL: &quot;https://to-do-list-7eabf.firebaseio.com&quot;,
+    projectId: &quot;to-do-list-7eabf&quot;,
+    storageBucket: &quot;to-do-list-7eabf.appspot.com&quot;,
+    messagingSenderId: &quot;893610260697&quot;
+};
+
+
+const app = Firebase.initializeApp(config);
+const commentsRef  = app.database()
+
+
+export default commentsRef
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Vou comentar a respeito do que fizemos, aqui nós básicamente  importamos o Firebase, precisamos dele para a parte de configuração junto a nossa aplicação, o que precisamos é criar uma forma de referenciar a onde e como acessar a nossa aplicação, fazemos o import do módulo(Firebase), passamos a config de acesso, referenciando a key de acesso, domínio, a url, o id do projeto, storage , tudo isso através do initializeApp(), que depois nos dá acesso a função database(), que atráves dela passada ao nosso commentsRef nos permite realizar a criação dos nossos objetos ou deletar nossos objetos da nossa base de dados.&lt;/p&gt;
+
+&lt;p&gt;Vamos a nossa Info.vue, nela vamos fazer algumas modificações:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+
+/* imports anteriores */
+import Comment from '../../domain/comment/Comment'
+import commentsRef  from '../../domain/firebase/FirebaseService'
+
+
+export default {
+    data() {
+
+        return {
+            task: new Task(),
+            newComments: new Comment(),
+            id: this.$route.params.id,
+            msg:'',
+            title:'Info:'
+        }
+     },
+
+      firebase() {
+        return { 
+            comments: commentsRef.ref('comments/' + this.$route.params.id),
+            
+        }
+    },
+     
+/* código anterior */
+
+
+    methods:{
+        updateTask(){
+             this.service
+             .saveTask(this.task) 
+             .then(res =&amp;gt; console.log(res))
+        },
+        sendComment(){
+            const justComment = commentsRef.ref(`comments/${this.$route.params.id}`)
+            justComment.push(this.newComments)
+            this.newComments = new Comment();
+        },
+        removeComment(comment){
+           const justComment = commentsRef.ref(`comments/${this.$route.params.id}`)
+           justComment.child(comment['.key']).remove()
+        }
+    }
+
+    
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E é a mesma coisa, é pegar o valor recebido e passar ele para o nosso array, em Firebase, &lt;code class=&quot;highlighter-rouge&quot;&gt;não no data!&lt;/code&gt;, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.&lt;/p&gt;
+
+&lt;p&gt;Se você notou temos dois imports a mais, o que é esse segundo import, é uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Comment {
+
+    constructor(comment, owner) {
+        this.comment = comment
+        this.owner = owner
+    }
+
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Isso é somente para poder definir o que iremos receber nos nossos comentários e o que vai ser passado em nosso contrutor e que pode ser definido a cada novo comentário, é bem básico, nada de mais, uma coisinha para melhorar nosso jogo.&lt;/p&gt;
+
+&lt;p&gt;No nosso template, vamos fazer pequenas moficações:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+    &amp;lt;div class=&quot;panel panel-info&quot;&amp;gt;
+        &amp;lt;div class=&quot;panel-heading&quot;&amp;gt;
+        &amp;lt;h3 class=&quot;panel-title&quot;&amp;gt;Comentários&amp;lt;/h3&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;ul v-for=&quot;comment in comments&quot; &amp;gt;
+        &amp;lt;li class=&quot;context&quot;&amp;gt;
+            &amp;lt;span class=&quot;person&quot;&amp;gt;&amp;lt;/span&amp;gt; - &amp;lt;span class=&quot;comment&quot;&amp;gt;&amp;lt;/span&amp;gt; 
+            &amp;lt;i @click=&quot;removeComment(comment)&quot; class=&quot;glyphicon glyphicon-trash&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/i&amp;gt;
+        &amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;form @submit.prevent=&quot;sendComment()&quot; form class=&quot;form-horizontal&quot;&amp;gt;
+        &amp;lt;input v-model=&quot;newComments.comment&quot; placeholder=&quot;Comentário...&quot; id=&quot;activity&quot; type=&quot;text&quot; required  class=&quot;form-control&quot;&amp;gt;
+        &amp;lt;input v-model=&quot;newComments.owner&quot; placeholder=&quot;Name...&quot; id=&quot;name&quot; type=&quot;text&quot; required  class=&quot;form-control&quot;&amp;gt;
+        &amp;lt;hr&amp;gt;
+        &amp;lt;button class=&quot;btn red&quot;&amp;gt;
+            &amp;lt;i class=&quot;fa fa-send&quot;&amp;gt;&amp;lt;/i&amp;gt;
+            Post
+        &amp;lt;/button&amp;gt;
+    &amp;lt;/form&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;No nosso template, nós iremos pegar os comentários recebidos no nosso comments, vindos do Firebase, e passar em nosso vue-for que vai dar render nos objetos a serem referenciandos comment e owner, e nossos &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;i/&amp;gt;&lt;/code&gt; vamos passar a nossa função de removeComment(comment), recebe o comment e remove aquele em específico, a nossa outra função é somente um @submit.prevent, importante colocar o prevent para evitar dar refresh na página, e ai ele recebe os valores pela nossa model e atráves da nossa model enviamos os dados para a nossa função vinda da nossa service do Firebase, que no final atualiza os dados no nosso firebase!&lt;/p&gt;
+
+&lt;p&gt;Bem, é isso, depois vamos fazer algumas pequenas alterações, uso de linters e alguns testes e2e, e é isso, muito obrigado e até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Jul 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/firebase</link>
+        <guid isPermaLink="true">http://localhost:4000/firebase</guid>
+        
+        
+        <category>Javascript,</category>
+        
+        <category>Vuejs</category>
+        
+      </item>
     
       <item>
         <title>Perto do fim - Part IV </title>
@@ -2692,6 +2887,7 @@ See you soon! =]&lt;/p&gt;
         
       </item>
     
+<<<<<<< HEAD
       <item>
         <title>NodeJS(ES2015) + Heroku  </title>
         <description>&lt;p&gt;Primeiro, “por que Heroku? ” A ideia na verdade é partir de algo mais simples e que todos possam utilizar, como eu creio que essa plataforma é realmente mais pratica, então ela se torna perfeita para a nossa abordagem, em termos relacionados a trabalho em si, o Heroku fica um pouco mais caro, um pouco, porém ela compensa pela sua praticidade, no fim você tem uma cloud que te atende bem, te fornece add-ons que são uteis para os seus projetos, além de ser possível obter SSL free! O que é muito bom, de toda forma Heroku é ótimo tanto para projetos mais simples como o que vamos fazer agora, como para projetos mais elaborados, projetos reais, e com isso vamos para uma outra questão, como criar uma aplicação em Nodejs com Es2015 que funcione perfeitamente com Heroku?! =]&lt;/p&gt;
@@ -3057,5 +3253,7 @@ E é isso, foi longo, o código fonte está abaixo, qualquer dúvida deixe seu 
         
       </item>
     
+=======
+>>>>>>> b7ff188aa1ec0908e1722e15fac1fb79af1d19a0
   </channel>
 </rss>
