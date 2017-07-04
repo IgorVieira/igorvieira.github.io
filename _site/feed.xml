@@ -4,11 +4,11 @@
     <title>Igor Vieira</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Jun 2017 13:30:04 -0300</pubDate>
-    <lastBuildDate>Thu, 15 Jun 2017 13:30:04 -0300</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <link>https://igorprvieira.com.br/</link>
+    <atom:link href="https://igorprvieira.com.br/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 03 Jul 2017 21:36:53 -0300</pubDate>
+    <lastBuildDate>Mon, 03 Jul 2017 21:36:53 -0300</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Perto do fim - Part IV </title>
@@ -22,7 +22,7 @@
 export default class TaskService{
 
     constructor(resource){
-        this._resource = resource('api/tasks{/id}')
+        this._resource = resource(&#39;api/tasks{/id}&#39;)
     }
 
     /** Métodos anteriores **/
@@ -38,20 +38,19 @@ export default class TaskService{
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Abaixo do método de saveTask()&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem){
+&lt;p&gt;Abaixo do método de saveTask()
+```
+removeTask(taskItem){
     this.service
         .deleteTask(taskItem._id)
         .then(() =&amp;gt;{
             const taskRemove = this.tasks.indexOf(taskItem)
             this.tasks.splice(taskRemove,1 ),
-            err =&amp;gt; console.log(`${err}`)
-        })
+            err =&amp;gt; console.log(&lt;code class=&quot;highlighter-rouge&quot;&gt;${err}&lt;/code&gt;)
+        })&lt;/p&gt;
 
-    
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;}
+```&lt;/p&gt;
 
 &lt;p&gt;Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:&lt;/p&gt;
 
@@ -123,17 +122,17 @@ this.tasks.splice(taskRemove,1 ),
 
 &amp;lt;/template&amp;gt;
 &amp;lt;script&amp;gt;
-import _ from 'lodash';
-import TaskService from '../../domain/task/TaskService'
+import _ from &#39;lodash&#39;;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
     data(){
         return{
-            title:'To do Vue!',
+            title:&#39;To do Vue!&#39;,
             tasks:[],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -147,7 +146,7 @@ export default {
                 .then(res =&amp;gt; {
                     this.tasks.push(res.body)
                     this.task = {
-                            name:'',
+                            name:&#39;&#39;,
                             done:false
                         }
                 })
@@ -221,21 +220,22 @@ export default {
 
 &lt;p&gt;Em routes.js vamos fazer a seguinte alteração, adicionar mais um caminho de onde é a nossa outra view, Info.vue:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Info from './components/info/Info.vue'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Info from &#39;./components/info/Info.vue&#39;
 
-import Home from './components/home/Home.vue';
+import Home from &#39;./components/home/Home.vue&#39;;
 
 
 export const routes = [
-    { path: '', name: 'home', component: Home, titulo: 'Home', menu: true },
-    { path: '/info/:id', name:'info', component: Info, titulo: 'Info', menu: false },    
-    { path: '*', component: Home, menu: false }
+    { path: &#39;&#39;, name: &#39;home&#39;, component: Home, titulo: &#39;Home&#39;, menu: true },
+    { path: &#39;/info/:id&#39;, name:&#39;info&#39;, component: Info, titulo: &#39;Info&#39;, menu: false },    
+    { path: &#39;*&#39;, component: Home, menu: false }
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+&lt;p&gt;Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+├── App.vue
 ├── components
 │   ├── home
 │   │   └── Home.vue
@@ -248,34 +248,34 @@ export const routes = [
 │       └── TaskService.js
 ├── main.js
 └── routes.js
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;A nossa view de Info.vue ficara da seguinte forma:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-    &amp;lt;div&amp;gt;
-        &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
-        &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+&lt;p&gt;A nossa view de Info.vue ficara da seguinte forma:
+```&lt;/p&gt;
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;h3 class=&quot;page-header&quot;&gt;&lt;/h3&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
            &amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
-                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                    &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
-                    &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
-                &amp;lt;/div&amp;gt;
-                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                    &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
-                    &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
-                &amp;lt;/div&amp;gt;
-                &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;&quot;&gt;Nome da Atividade:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;&quot;&gt;Status da atividade:&lt;/label&gt;
+                    &lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot; /&gt;
+                &lt;/div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot; /&gt;
            &amp;lt;/form&amp;gt;
            
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt; 
+        &lt;/div&gt;
+    &lt;/div&gt; 
        
-&amp;lt;/template&amp;gt;
-&amp;lt;script&amp;gt;
+&lt;/template&gt;
+&lt;script&gt;
 
-import Task from  '../../domain/task/Task'
-import TaskService from '../../domain/task/TaskService'
+import Task from  &#39;../../domain/task/Task&#39;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
@@ -283,7 +283,7 @@ export default {
 
         return {
             task: new Task(),
-            title:'Info:'
+            title:&#39;Info:&#39;
         }
      },
     },
@@ -301,8 +301,9 @@ export default {
 
     
 }
-&amp;lt;/script&amp;gt;
-&amp;lt;style&amp;gt;
+&lt;/script&gt;
+
+&lt;style&gt;
 
 .context{
     margin-top:10px;
@@ -320,28 +321,28 @@ textarea{
 }
 
    
-&amp;lt;/style&amp;gt;
+&lt;/style&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;export default class Task{&lt;/p&gt;
 
-&lt;p&gt;Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Task{
-
-    constructor(activity, done){
-        this.activity = activity
-        this.done = done
-    }
-
-
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;constructor(activity, done){
+    this.activity = activity
+    this.done = done
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;}
+```&lt;/p&gt;
+
 &lt;p&gt;Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;router-link :to=&quot;{ name: &#39;info&#39;, params: { id : task._id }}&quot;&amp;gt;
     &amp;lt;button class=&quot;btn&quot;&amp;gt;
     &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
     Editar
@@ -351,7 +352,7 @@ textarea{
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, &lt;code class=&quot;highlighter-rouge&quot;&gt;name:'info'&lt;/code&gt;, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.&lt;/p&gt;
+&lt;p&gt;Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, &lt;code class=&quot;highlighter-rouge&quot;&gt;name:&#39;info&#39;&lt;/code&gt;, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.&lt;/p&gt;
 
 &lt;p&gt;Home.vue:&lt;/p&gt;
 
@@ -376,7 +377,7 @@ textarea{
                                             &amp;lt;span class=&quot;glyphicon glyphicon-remove&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
                                         &amp;lt;/div&amp;gt;
                                 &amp;lt;hr&amp;gt;
-                                    &amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
+                                    &amp;lt;router-link :to=&quot;{ name: &#39;info&#39;, params: { id : task._id }}&quot;&amp;gt;
                                        &amp;lt;button class=&quot;btn&quot;&amp;gt;
                                         &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
                                         Editar
@@ -416,17 +417,17 @@ textarea{
 
 &amp;lt;/template&amp;gt;
 &amp;lt;script&amp;gt;
-import _ from 'lodash';
-import TaskService from '../../domain/task/TaskService'
+import _ from &#39;lodash&#39;;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
     data(){
         return{
-            title:'To do Vue!',
+            title:&#39;To do Vue!&#39;,
             tasks:[],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -440,7 +441,7 @@ export default {
                 .then(res =&amp;gt; {
                     this.tasks.push(res.body)
                     this.task = {
-                            name:'',
+                            name:&#39;&#39;,
                             done:false
                         }
                 })
@@ -503,7 +504,7 @@ export default {
 export default class TaskService{
 
     constructor(resource){
-        this._resource = resource('api/tasks{/id}')
+        this._resource = resource(&#39;api/tasks{/id}&#39;)
     }
 
     /** Métodos anteriores **/
@@ -522,8 +523,8 @@ export default class TaskService{
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 
-import Task from  '../../domain/task/Task'
-import TaskService from '../../domain/task/TaskService'
+import Task from  &#39;../../domain/task/Task&#39;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
@@ -531,7 +532,7 @@ export default {
 
         return {
             task: new Task(),
-            title:'Info:'
+            title:&#39;Info:&#39;
         }
      },
     },
@@ -570,7 +571,7 @@ export default {
     return {
         task: new Task(),
         id: this.$route.params.id, &amp;lt;= Here!!
-        title:'Info:'
+        title:&#39;Info:&#39;
     }
 },
 &lt;/code&gt;&lt;/pre&gt;
@@ -605,7 +606,7 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
             this.service
             .saveTask(this.task) 
             .then(() =&amp;gt; {
-                console.log('Atualizado com sucesso!');
+                console.log(&#39;Atualizado com sucesso!&#39;);
             },err =&amp;gt; console.log(`Erro em atualizar task ${err}`))
     }
 }
@@ -615,39 +616,40 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
 
 &lt;p&gt;E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!&lt;/p&gt;
 
-&lt;p&gt;Veja o Info.vue completo:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-    &amp;lt;div&amp;gt;
-        &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
-        &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+&lt;p&gt;Veja o Info.vue completo:
+```&lt;/p&gt;
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;h3 class=&quot;page-header&quot;&gt;&lt;/h3&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
            &amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
-                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                    &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
-                    &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
-                &amp;lt;/div&amp;gt;
-                &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                    &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
-                    &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;&amp;gt;
-                &amp;lt;/div&amp;gt;
-                &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;&quot;&gt;Nome da Atividade:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form-group&quot;&gt;
+                    &lt;label for=&quot;&quot;&gt;Status da atividade:&lt;/label&gt;
+                    &lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot; /&gt;
+                &lt;/div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot; /&gt;
            &amp;lt;/form&amp;gt;
            
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt; 
+        &lt;/div&gt;
+    &lt;/div&gt; 
        
-&amp;lt;/template&amp;gt;
-&amp;lt;script&amp;gt;
+&lt;/template&gt;
+&lt;script&gt;
 
-import Task from  '../../domain/task/Task'
-import TaskService from '../../domain/task/TaskService'
+import Task from  &#39;../../domain/task/Task&#39;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
     data() {
         return {
             task: new Task(),
-            id: this.$route.params.id, &amp;lt;= Here!!
-            title:'Info:'
+            id: this.$route.params.id, &lt;= Here!!
+            title:&#39;Info:&#39;
         }
     },
 
@@ -657,9 +659,9 @@ export default {
         if(this.id) {
             this.service
                 .getTaskById(this.id)
-                .then(res =&amp;gt;  {
+                .then(res =&gt;  {
                     return this.task = res
-                }, err =&amp;gt; {
+                }, err =&gt; {
                     console.log(`Erro pegar a task pela a id ${err}`)
                 })
         }
@@ -670,16 +672,17 @@ export default {
         updateTask(){
                 this.service
                 .saveTask(this.task) 
-                .then(() =&amp;gt; {
-                    console.log('Atualizado com sucesso!');
-                },err =&amp;gt; console.log(`Erro em atualizar task ${err}`))
+                .then(() =&gt; {
+                    console.log(&#39;Atualizado com sucesso!&#39;);
+                },err =&gt; console.log(`Erro em atualizar task ${err}`))
         }
     }
 
     
 }
-&amp;lt;/script&amp;gt;
-&amp;lt;style&amp;gt;
+&lt;/script&gt;
+
+&lt;style&gt;
 
 .context{
     margin-top:10px;
@@ -697,17 +700,16 @@ textarea{
 }
 
    
-&amp;lt;/style&amp;gt;
+&lt;/style&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
 
 &lt;p&gt;Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 15 Jun 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/perto-do-fim</link>
-        <guid isPermaLink="true">http://localhost:4000/perto-do-fim</guid>
+        <link>https://igorprvieira.com.br/perto-do-fim</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/perto-do-fim</guid>
         
         
         <category>Javascript,</category>
@@ -738,32 +740,32 @@ textarea{
 ...
 │   
 ├── main.js
-└── routes.js &amp;lt;= 'Here!'
+└── routes.js &amp;lt;= &#39;Here!&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Esse arquivo vai fazer o gerenciamento das rotas da nossa aplicação e criaremos da seguinte forma:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-import Home from './components/home/Home.vue';
+import Home from &#39;./components/home/Home.vue&#39;;
 
 
 export const routes = [
-    { path: '', name: 'home', component: Home, titulo: 'Home', menu: true },
-    { path: '*', component: Home, menu: false }
+    { path: &#39;&#39;, name: &#39;home&#39;, component: Home, titulo: &#39;Home&#39;, menu: true },
+    { path: &#39;*&#39;, component: Home, menu: false }
 ]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Esse path abaixo fala que qualquer rota fora do descrito, deve voltar para a rota principal, e renderizar o componente Home&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;path:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'*',&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;component:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Home,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;menu:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;path:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;*&#39;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;component:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Home,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;menu:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Step 3, vamos ao nosso App.vue, lá faremos a seguinte alteração!&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
   &amp;lt;div&amp;gt;
-        &amp;lt;a href=&quot;#&quot;&amp;gt; &amp;lt;router-link :to=&quot;{ name: 'home'}&quot;&amp;gt;
+        &amp;lt;a href=&quot;#&quot;&amp;gt; &amp;lt;router-link :to=&quot;{ name: &#39;home&#39;}&quot;&amp;gt;
           &amp;lt;i class=&quot;fa fa-home&quot;&amp;gt;&amp;lt;/i&amp;gt;
           Home
         &amp;lt;/router-link &amp;gt;&amp;lt;/a&amp;gt;
@@ -777,7 +779,7 @@ export const routes = [
 &amp;lt;/template&amp;gt;
 
 &amp;lt;script&amp;gt;
-import { routes } from './routes'
+import { routes } from &#39;./routes&#39;
 
 export default {
   data(){
@@ -813,15 +815,15 @@ export default {
 
 &lt;p&gt;Step 4, precisamos fazer alterações em nosso main.js, vamos adicionar alguns dos nossos novos módulos:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
-import VueResource from 'vue-resource'
-import VueRouter from 'vue-router'
-import App from './App.vue'
-import { routes } from './routes'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from &#39;vue&#39;
+import VueResource from &#39;vue-resource&#39;
+import VueRouter from &#39;vue-router&#39;
+import App from &#39;./App.vue&#39;
+import { routes } from &#39;./routes&#39;
 
 Vue.config.productionTip = false
 Vue.use(VueResource)
-Vue.http.options.root = 'http://localhost:3000'
+Vue.http.options.root = &#39;http://localhost:3000&#39;
 
 
 Vue.use(VueRouter)
@@ -830,12 +832,12 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes,
-  mode:'history'
+  mode:&#39;history&#39;
 })
 
 
 new Vue({
-  el: '#app',
+  el: &#39;#app&#39;,
   router,
   render: h =&amp;gt; h(App)
 })
@@ -880,8 +882,8 @@ new Vue({
 
 &amp;lt;/template&amp;gt;
 &amp;lt;script&amp;gt;
-import _ from 'lodash';
-import TaskService from '../../domain/task/TaskService'
+import _ from &#39;lodash&#39;;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
@@ -942,7 +944,7 @@ export default {
                     &amp;lt;span class=&quot;icon-bar&quot;&amp;gt;&amp;lt;/span&amp;gt;
                     &amp;lt;span class=&quot;icon-bar&quot;&amp;gt;&amp;lt;/span&amp;gt;
                     &amp;lt;/button&amp;gt;
-                    &amp;lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&amp;gt; &amp;lt;router-link :to=&quot;{ name: 'home'}&quot;&amp;gt;
+                    &amp;lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&amp;gt; &amp;lt;router-link :to=&quot;{ name: &#39;home&#39;}&quot;&amp;gt;
                     &amp;lt;i class=&quot;fa fa-home&quot;&amp;gt;&amp;lt;/i&amp;gt;
                     Home
                     &amp;lt;/router-link &amp;gt;&amp;lt;/a&amp;gt;
@@ -970,7 +972,7 @@ export default {
 &amp;lt;/template&amp;gt;
 
 &amp;lt;script&amp;gt;
-import { routes } from './routes'
+import { routes } from &#39;./routes&#39;
 
 export default {
   data(){
@@ -1057,10 +1059,10 @@ export default {
 
     data(){
         return{
-            title:'To do Vue!',
+            title:&#39;To do Vue!&#39;,
             tasks:[],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -1131,7 +1133,7 @@ export default {
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
 
     constructor(resource){
-        this._resource =  resource('api/tasks{/id}')
+        this._resource =  resource(&#39;api/tasks{/id}&#39;)
     }
 
 
@@ -1144,7 +1146,7 @@ export default {
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
 
     constructor(resource){
-        this._resource =  resource('api/tasks{/id}')
+        this._resource =  resource(&#39;api/tasks{/id}&#39;)
     }
 
 
@@ -1162,17 +1164,17 @@ export default {
 &lt;p&gt;E vamos fazer mais outra alteração bem simples no nosso Home.vue, no nosso created():&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-import _ from 'lodash';
-import TaskService from '../../domain/task/TaskService'
+import _ from &#39;lodash&#39;;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 
 export default {
 
     data(){
         return{
-            title:'To do Vue!',
+            title:&#39;To do Vue!&#39;,
             tasks:[],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -1211,8 +1213,8 @@ export default {
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 
-import _ from 'lodash';
-import TaskService from '../../domain/task/TaskService'
+import _ from &#39;lodash&#39;;
+import TaskService from &#39;../../domain/task/TaskService&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1247,7 +1249,7 @@ import TaskService from '../../domain/task/TaskService'
 
 &lt;p&gt;Depois digitar o seguinte comando:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;db.tasks.insert({activity:'Make a coffee', done:true})&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;db.tasks.insert({activity:&#39;Make a coffee&#39;, done:true})&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;E é isso, se você olhar agora a nossa aplicação, ela está funcionando e você verá a nossa primeira task!&lt;/p&gt;
 
@@ -1302,7 +1304,7 @@ import TaskService from '../../domain/task/TaskService'
                 .then(res =&amp;gt; {
                     this.tasks.push(res.body)
                     this.task = {
-                            name:'',
+                            name:&#39;&#39;,
                             done:false
                         }
                 })
@@ -1318,8 +1320,8 @@ import TaskService from '../../domain/task/TaskService'
 &lt;p&gt;Por hoje é só, eu continuo o restante da aplicação no próximo post, muito obrigado e até mais!&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Jun 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/back-to-vue</link>
-        <guid isPermaLink="true">http://localhost:4000/back-to-vue</guid>
+        <link>https://igorprvieira.com.br/back-to-vue</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/back-to-vue</guid>
         
         
         <category>Javascript,</category>
@@ -1339,38 +1341,38 @@ Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas 
 
 &lt;p&gt;Vamos fazer umas pequenas alterações, atualmente o chrome tem um funcionalidade em seu browser que impede de realizar uma simulação do mesmo, entretanto podemos habilitar isso, para de fato realizarmos o nosso teste e vermos as ações segundo o nosso roteiro, então vamos ver o arquivo nightwatch.conf.js:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require('babel-register')
-var config = require('../../config')
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require(&#39;babel-register&#39;)
+var config = require(&#39;../../config&#39;)
 
 // http://nightwatchjs.org/gettingstarted#settings-file
 module.exports = {
-  src_folders: ['test/e2e/specs'],
-  output_folder: 'test/e2e/reports',
-  custom_assertions_path: ['test/e2e/custom-assertions'],
+  src_folders: [&#39;test/e2e/specs&#39;],
+  output_folder: &#39;test/e2e/reports&#39;,
+  custom_assertions_path: [&#39;test/e2e/custom-assertions&#39;],
 
   selenium: {
     start_process: true,
-    server_path: require('selenium-server').path,
-    host: '127.0.0.1',
+    server_path: require(&#39;selenium-server&#39;).path,
+    host: &#39;127.0.0.1&#39;,
     port: 4444,
     cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path
+      &#39;webdriver.chrome.driver&#39;: require(&#39;chromedriver&#39;).path
     }
   },
 
   test_settings: {
     default: {
       selenium_port: 4444,
-      selenium_host: 'localhost',
+      selenium_host: &#39;localhost&#39;,
       silent: true,
       globals: {
-        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+        devServerURL: &#39;http://localhost:&#39; + (process.env.PORT || config.dev.port)
       }
     },
 
     chrome: {
       desiredCapabilities: {
-        browserName: 'chrome',
+        browserName: &#39;chrome&#39;,
         javascriptEnabled: true,
         acceptSslCerts: true,
         chromeOptions : {
@@ -1381,7 +1383,7 @@ module.exports = {
 
     firefox: {
       desiredCapabilities: {
-        browserName: 'firefox',
+        browserName: &#39;firefox&#39;,
         javascriptEnabled: true,
         acceptSslCerts: true
       }
@@ -1396,7 +1398,7 @@ Nossa configuração ficará da seguinte forma:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    chrome: {
       desiredCapabilities: {
-        browserName: 'chrome',
+        browserName: &#39;chrome&#39;,
         javascriptEnabled: true,
         acceptSslCerts: true,
         chromeOptions : {
@@ -1415,7 +1417,7 @@ passamos somente um argumento nos permitindo emular uma nova página do browser,
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 module.exports = {
-  'default e2e tests': function (browser) {
+  &#39;default e2e tests&#39;: function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -1437,7 +1439,7 @@ module.exports = {
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 module.exports = {
-  'default e2e tests': function (browser) {
+  &#39;default e2e tests&#39;: function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -1445,10 +1447,10 @@ module.exports = {
 
     browser
       .url(devServer)
-      .assert.title('To do List!')
+      .assert.title(&#39;To do List!&#39;)
       .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
+      .assert.containsText(&#39;h1&#39;, &#39;Hey&#39;)
+      .assert.elementCount(&#39;li&#39;, 3)
       .end()
   }
 }
@@ -1469,7 +1471,7 @@ module.exports = {
 &lt;p&gt;O que faremos agora é, adicionar uma nova tarefa e contabilizar quantos elementos tem em nossa lista de tarefas:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
-  'default e2e tests': function (browser) {
+  &#39;default e2e tests&#39;: function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
@@ -1477,14 +1479,14 @@ module.exports = {
 
     browser
      .url(devServer)
-      .assert.title('To do List!')
+      .assert.title(&#39;To do List!&#39;)
       .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
-      .setValue('input[type=text]', 'Make a coffee')
-      .click('input[type=checkbox]')
+      .assert.containsText(&#39;h1&#39;, &#39;Hey&#39;)
+      .assert.elementCount(&#39;li&#39;, 3)
+      .setValue(&#39;input[type=text]&#39;, &#39;Make a coffee&#39;)
+      .click(&#39;input[type=checkbox]&#39;)
       .pause(1000)
-      .click('button[name=add]')
+      .click(&#39;button[name=add]&#39;)
       .pause(2000)
       .end()
   }
@@ -1511,18 +1513,18 @@ module.exports = {
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;browser
       .url(devServer)
-      .assert.title('To do List!')
+      .assert.title(&#39;To do List!&#39;)
       .pause(1000)
-      .assert.containsText('h1', 'Hey')
-      .assert.elementCount('li', 3)
-      .setValue('input[type=text]', 'Make a coffee')
-      .setValue('input[type=checkbox]', true)
-      .click('button[name=add]')
+      .assert.containsText(&#39;h1&#39;, &#39;Hey&#39;)
+      .assert.elementCount(&#39;li&#39;, 3)
+      .setValue(&#39;input[type=text]&#39;, &#39;Make a coffee&#39;)
+      .setValue(&#39;input[type=checkbox]&#39;, true)
+      .click(&#39;button[name=add]&#39;)
       .pause(2000)
-      .assert.elementCount('li', 4)
-      .click('.fa-trash')
+      .assert.elementCount(&#39;li&#39;, 4)
+      .click(&#39;.fa-trash&#39;)
       .pause(2000)
-      .assert.elementCount('li', 3)
+      .assert.elementCount(&#39;li&#39;, 3)
       .end()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1540,8 +1542,8 @@ module.exports = {
 &lt;p&gt;Bem, esse foi o nosso roteiro de teste com selenium e nightwatch, conseguimos realizar todas as funcionalidade e alguns elementos da nossa aplicação, garantindo o funcionamento do nosso software,e é isso, quinta-feira, provavelmente quinta, teremos mais um post, caso contrário, sexta, mas de sexta não passa, mais uma vez obrigado e até mais =]&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 May 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/simples-test-e2e-em-vuejs</link>
-        <guid isPermaLink="true">http://localhost:4000/simples-test-e2e-em-vuejs</guid>
+        <link>https://igorprvieira.com.br/simples-test-e2e-em-vuejs</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/simples-test-e2e-em-vuejs</guid>
         
         
         <category>Javascript,</category>
@@ -1656,10 +1658,10 @@ vue-cli · Generated &quot;to-do-list&quot;.
 
 
 &amp;lt;script&amp;gt;
-import Home from './components/home/Home'
+import Home from &#39;./components/home/Home&#39;
 
 export default {
-  name: 'app',
+  name: &#39;app&#39;,
   components: {
     Home
   }
@@ -1683,10 +1685,10 @@ export default {
 &amp;lt;/template&amp;gt;
 
 &amp;lt;script&amp;gt;
-import Home from './components/home/Home'
+import Home from &#39;./components/home/Home&#39;
 
 export default {
-  name: 'app',
+  name: &#39;app&#39;,
   components: {
     Home
   }
@@ -1694,9 +1696,9 @@ export default {
 &amp;lt;/script&amp;gt;
 
 &amp;lt;style&amp;gt;
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url(&#39;https://fonts.googleapis.com/css?family=Indie+Flower&#39;);
 #app {
-  font-family: 'Indie Flower', cursive;
+  font-family: &#39;Indie Flower&#39;, cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -1786,7 +1788,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         data(){
              
              return{
-                title:'Hey',
+                title:&#39;Hey&#39;,
                 
              }
 
@@ -1817,18 +1819,18 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         data(){
              
              return{
-                title:'Hey',
+                title:&#39;Hey&#39;,
                 tasks:[
                     {
-                        name:'Read about Elixir',
+                        name:&#39;Read about Elixir&#39;,
                         done:true
                     },
                     {
-                        name:'Write more about VueJS',
+                        name:&#39;Write more about VueJS&#39;,
                         done:true
                     },
                     {
-                        name:'Make a coffee',
+                        name:&#39;Make a coffee&#39;,
                         done:true
                     }
 
@@ -1901,18 +1903,18 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         data(){
              
              return{
-                title:'Hey',
+                title:&#39;Hey&#39;,
                 tasks:[
                     {
-                        name:'Read about Elixir',
+                        name:&#39;Read about Elixir&#39;,
                         done:true
                     },
                     {
-                        name:'Write more about VueJS',
+                        name:&#39;Write more about VueJS&#39;,
                         done:true
                     },
                     {
-                        name:'Make a coffee',
+                        name:&#39;Make a coffee&#39;,
                         done:true
                     }
 
@@ -1950,18 +1952,18 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         data(){
              
              return{
-                title:'Hey',
+                title:&#39;Hey&#39;,
                 tasks:[
                     {
-                        name:'Read about Elixir',
+                        name:&#39;Read about Elixir&#39;,
                         done:true
                     },
                     {
-                        name:'Write more about VueJS',
+                        name:&#39;Write more about VueJS&#39;,
                         done:true
                     },
                     {
-                        name:'Make a coffee',
+                        name:&#39;Make a coffee&#39;,
                         done:true
                     }
 
@@ -1973,7 +1975,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         methods:{
 
             submitTask(){
-                console.log('I'm here!')
+                console.log(&#39;I&#39;m here!&#39;)
             }
 
         }
@@ -2002,24 +2004,24 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         data(){
              
              return{
-                title:'Hey',
+                title:&#39;Hey&#39;,
                 tasks:[
                     {
-                        name:'Read about Elixir',
+                        name:&#39;Read about Elixir&#39;,
                         done:true
                     },
                     {
-                        name:'Write more about VueJS',
+                        name:&#39;Write more about VueJS&#39;,
                         done:true
                     },
                     {
-                        name:'Make a coffee',
+                        name:&#39;Make a coffee&#39;,
                         done:true
                     }
 
                 ],
                 task:{
-                    name:'',
+                    name:&#39;&#39;,
                     done:false
                 }
                 
@@ -2048,7 +2050,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
             submitTask(){
                 this.tasks.push(this.task)
                 this.task = {
-                    name:'',
+                    name:&#39;&#39;,
                     done:false
                 }
             }
@@ -2109,7 +2111,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
             submitTask(){
                 this.tasks.push(this.task)
                 this.task = {
-                    name:'',
+                    name:&#39;&#39;,
                     done:false
                 }
             },
@@ -2161,24 +2163,24 @@ export default {
 
     data(){
         return{
-            title:'Hey!',
+            title:&#39;Hey!&#39;,
             tasks:[
                 {
-                    name:'Read about Elixir',
+                    name:&#39;Read about Elixir&#39;,
                     done:true
                 },
                 {
-                    name:'Write more about VueJS',
+                    name:&#39;Write more about VueJS&#39;,
                     done:true
                 },
                 {
-                    name:'Make a coffee',
+                    name:&#39;Make a coffee&#39;,
                     done:true
                 }
 
             ],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -2189,7 +2191,7 @@ export default {
         submitTask(){
            this.tasks.push(this.task)
            this.task = {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
         },
@@ -2244,24 +2246,24 @@ export default {
 
     data(){
         return{
-            title:'Hey!',
+            title:&#39;Hey!&#39;,
             tasks:[
                 {
-                    name:'Read about Elixir',
+                    name:&#39;Read about Elixir&#39;,
                     done:true
                 },
                 {
-                    name:'Write more about VueJS',
+                    name:&#39;Write more about VueJS&#39;,
                     done:true
                 },
                 {
-                    name:'Make a coffee',
+                    name:&#39;Make a coffee&#39;,
                     done:true
                 }
 
             ],
             task: {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
 
@@ -2272,7 +2274,7 @@ export default {
         submitTask(){
            this.tasks.push(this.task)
            this.task = {
-                name:'',
+                name:&#39;&#39;,
                 done:false
             }
         },
@@ -2307,7 +2309,8 @@ export default {
 &lt;/div&gt;
 &lt;p&gt;E adicionar a tag script do font-awesome no index.html da raiz do  projeto&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+    &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -2319,15 +2322,14 @@ export default {
         &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- built files will be auto injected --&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Pronto, first step concluído, próximo passo, vamos fazer dois pequenos testes com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 01 May 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/vamos-falar-de-vuejs</link>
-        <guid isPermaLink="true">http://localhost:4000/vamos-falar-de-vuejs</guid>
+        <link>https://igorprvieira.com.br/vamos-falar-de-vuejs</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/vamos-falar-de-vuejs</guid>
         
         
         <category>Javascript,</category>
@@ -2349,7 +2351,7 @@ function iDOSomething (name) {
 
 
 
-console.log (iDoSomething ('Igor'))
+console.log (iDoSomething (&#39;Igor&#39;))
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -2358,7 +2360,7 @@ console.log (iDoSomething ('Igor'))
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 IDoSomething = (name) =&amp;gt; `My name is $ {name}`;
-Console.log (iDoSomething ('Igor'))
+Console.log (iDoSomething (&#39;Igor&#39;))
 
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -2383,7 +2385,7 @@ is a code in your read is easy, just like baby steps, go back to code, step by s
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log (iDoSomething ('Igor'))
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log (iDoSomething (&#39;Igor&#39;))
 
 // undefine
 
@@ -2410,8 +2412,8 @@ console.log(`Possible multiply: ${calc.mult(5,10)}`)
 &lt;p&gt;In the end this arrow function, is the syntax sugar, is the way more easy to read and write, perfect to use with promises and the little way to distinct, organize and standardize your code for the other programers, and is possible to write just like a describe function, is possible to build a stack for resolve functions, especially if you have a stack of asynchronous functions,but the big power about this way to write is organization and the simplicity of writing code, probably you work in team and other people read you do, so… in the end you do not write for you, you Write for the others, so write a good code just like baby steps, thank you for your time and see you soon!&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/talk-about-arrow-function-again</link>
-        <guid isPermaLink="true">http://localhost:4000/talk-about-arrow-function-again</guid>
+        <link>https://igorprvieira.com.br/talk-about-arrow-function-again</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/talk-about-arrow-function-again</guid>
         
         
         <category>Javascript</category>
@@ -2436,7 +2438,7 @@ but is possible use you have for other stuff’s&lt;/p&gt;
 
 const saySomething = (name) =&amp;gt; {
   
-  let hey = 'Hey'
+  let hey = &#39;Hey&#39;
   
   return `${hey} ${name}`;
 
@@ -2536,8 +2538,8 @@ console.log(typeof foo)
 &lt;p&gt;Thanks and see you soon!&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/a-new-step</link>
-        <guid isPermaLink="true">http://localhost:4000/a-new-step</guid>
+        <link>https://igorprvieira.com.br/a-new-step</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/a-new-step</guid>
         
         
         <category>Javascript</category>
@@ -2639,8 +2641,8 @@ Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui p
 
 </description>
         <pubDate>Sun, 19 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/em-2-meses</link>
-        <guid isPermaLink="true">http://localhost:4000/em-2-meses</guid>
+        <link>https://igorprvieira.com.br/em-2-meses</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/em-2-meses</guid>
         
         
         <category>Lifestyle</category>
@@ -2661,8 +2663,8 @@ so…
 See you soon! =]&lt;/p&gt;
 </description>
         <pubDate>Sat, 18 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/hey-again</link>
-        <guid isPermaLink="true">http://localhost:4000/hey-again</guid>
+        <link>https://igorprvieira.com.br/hey-again</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/hey-again</guid>
         
         
         <category>Lifestyle</category>
@@ -2682,8 +2684,8 @@ See you soon! =]&lt;/p&gt;
 &lt;p&gt;Bem, hoje era mais isso, eu ainda tenho mais outras surpresas quanto ao blog, mas isso ficará para depois, no mais, eu agradeço a leitura, e seja bem vindo a nova série de JS, think JS, até mais!&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Feb 2017 00:00:00 -0200</pubDate>
-        <link>http://localhost:4000/aprender-e-uma-constante</link>
-        <guid isPermaLink="true">http://localhost:4000/aprender-e-uma-constante</guid>
+        <link>https://igorprvieira.com.br/aprender-e-uma-constante</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/aprender-e-uma-constante</guid>
         
         
         <category>Lifestyle</category>
@@ -2725,27 +2727,27 @@ E agora vamos adicionar os módulos ao package.json, que são básicos para faze
 
 &lt;p&gt;Feito isso, vamos para o nosso próximo arquivo, o app.js, com ele vamos fazer algumas mudanças em torno de sintaxe, até então, em versões mais antigas do Nodejs você fazia requisições de módulos através de requires, por exemplo:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var express = require('express')
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var express = require(&#39;express&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;No Es2015, a chamada dos módulos são feitos através de imports:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import express from 'express'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import express from &#39;express&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Então vamos ficar com o import em nosso arquivo para chamar o modulo do express:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# app.js 
 # Importação de módulos 
-import express from 'express'
+import express from &#39;express&#39;
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Em meio a isso, uma outra mudança é a forma de composição, você até então criava uma variável app na qual recebia express e assim fazia uso das funções que derivam do express, algo semelhante a isso:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var express =  require('express')
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var express =  require(&#39;express&#39;)
 var app = express()
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -2754,14 +2756,14 @@ var app = express()
 &lt;p&gt;O ruim dessa abordagem e que a mesma tinha que ser exportada dentro de um module.exports, na verdade um return de todos os middlawares ou functions em um bloco único, por exemplo passar app.set(‘‘port) para poder rodar  a aplicação em produção ou em desenvolvimento, o código até então ficava assim:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-var express = require('express')
+var express = require(&#39;express&#39;)
 var app = express()
 module.export = function(){
 
 # aqui você colocaria principalmente os seus middlewares
 # e no fim retornava somente o app carregando tudo
 
-app.set('port', (process.env.PORT || 3000));
+app.set(&#39;port&#39;, (process.env.PORT || 3000));
 return app
 }
 
@@ -2771,11 +2773,11 @@ return app
 
 &lt;p&gt;Agora com Es6 fica ainda mais simples:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import express from 'express'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import express from &#39;express&#39;
 
 const app = express()
 
-app.set('port', (process.env.PORT || 3000))
+app.set(&#39;port&#39;, (process.env.PORT || 3000))
 
 export default app
 
@@ -2787,7 +2789,7 @@ export default app
 &lt;p&gt;Outra mudança significativa e a forma de se escrever funções de request e response, você pode escrever elas utilizando arrow functions
 Por exemplo:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app.route(' / ').get((req, res) =&amp;gt; res.end('Hello World'))
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;app.route(&#39; / &#39;).get((req, res) =&amp;gt; res.end(&#39;Hello World&#39;))
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -2795,8 +2797,8 @@ Por exemplo:&lt;/p&gt;
 &lt;p&gt;Fica mais simples escrever functions assim do que a próxima forma que se encontra a baixo, a leitura é mais fluida, principalmente pela versatilidade de poder nesse caso, escrever a mesma função em uma linha, ao menos isso te traz a sensação de entendimento sobre o que essa função realmente faz, coisa que fica estranho caso você tente concatenar em uma linha a mesma função em  es5.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-app.route(' / ').get( function(req, res){
-      res.end('Hello World')
+app.route(&#39; / &#39;).get( function(req, res){
+      res.end(&#39;Hello World&#39;)
 })
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -2805,16 +2807,16 @@ app.route(' / ').get( function(req, res){
 &lt;p&gt;Tudo em es5 tem a seguinte cara:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-var express = require('express')
+var express = require(&#39;express&#39;)
 
 var app = express()
 module.export = function(){
 
-app.route(' / ').get( function(req, res){
-      res.end('Hello World')
+app.route(&#39; / &#39;).get( function(req, res){
+      res.end(&#39;Hello World&#39;)
 })
 
-app.set('port', (process.env.PORT || 3000));
+app.set(&#39;port&#39;, (process.env.PORT || 3000));
 
 return app
 }
@@ -2825,13 +2827,13 @@ return app
 &lt;p&gt;Agora em Es6 o nosso código fica assim:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-import express from 'express'
+import express from &#39;express&#39;
 
 const app = express()
 
-app.route(' / ').get((req, res) =&amp;gt; res.end('Hello World'))
+app.route(&#39; / &#39;).get((req, res) =&amp;gt; res.end(&#39;Hello World&#39;))
 
-app.set('port', (process.env.PORT || 3000))
+app.set(&#39;port&#39;, (process.env.PORT || 3000))
 
 export default app
 
@@ -2843,7 +2845,7 @@ Continuando …&lt;/p&gt;
 
 &lt;p&gt;Próximo arquivo é o server.js, na verdade é o mais simples já que compreendemos as pequenas modificações que dão um belo açúcar sintático e facilitam a leitura do nosso código, bem,  primeiro vamos importar o modulo app que contém a nossa configuração para um server básico e a nossa rota principal.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import app from './app'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import app from &#39;./app&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -2860,8 +2862,8 @@ import http from &quot;http&quot;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import app from &quot;./app&quot;
 import http from &quot;http&quot;
 
-http.createServer(app.get('port')).listen(port, ()=&amp;gt;{
-  console.log('server is running:'+ port)
+http.createServer(app.get(&#39;port&#39;)).listen(port, ()=&amp;gt;{
+  console.log(&#39;server is running:&#39;+ port)
 })
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -2871,10 +2873,10 @@ http.createServer(app.get('port')).listen(port, ()=&amp;gt;{
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import app from &quot;./app&quot;
 import http from &quot;http&quot;
 
-const port = app.get('port')
+const port = app.get(&#39;port&#39;)
 
 http.createServer(app).listen(port, ()=&amp;gt;{
-  console.log('server is running:'+ port)
+  console.log(&#39;server is running:&#39;+ port)
 })
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -2913,10 +2915,10 @@ Até agora nossos arquivos estão assim:&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 # app.js
 
-import express from 'express';
+import express from &#39;express&#39;;
 const. app = express();
-app.route('/') .get((req, res)=&amp;gt;res.end('Hello World'))
-app.set('port', (process.env.PORT || 3000))
+app.route(&#39;/&#39;) .get((req, res)=&amp;gt;res.end(&#39;Hello World&#39;))
+app.set(&#39;port&#39;, (process.env.PORT || 3000))
 
 
 export default app;
@@ -2927,9 +2929,9 @@ export default app;
 
 import app from &quot;./app&quot;
 import http from &quot;http&quot;
-const port = app.get('port')
+const port = app.get(&#39;port&#39;)
 http.createServer(app).listen(port, ()=&amp;gt;{
-  console.log('server is running:'+ port)
+  console.log(&#39;server is running:&#39;+ port)
 })
 
 
@@ -3045,8 +3047,8 @@ E é isso, foi longo, o código fonte está abaixo, qualquer dúvida deixe seu 
 
 </description>
         <pubDate>Tue, 22 Nov 2016 00:00:00 -0200</pubDate>
-        <link>http://localhost:4000/nodejs-es2015-heroku</link>
-        <guid isPermaLink="true">http://localhost:4000/nodejs-es2015-heroku</guid>
+        <link>https://igorprvieira.com.br/nodejs-es2015-heroku</link>
+        <guid isPermaLink="true">https://igorprvieira.com.br/nodejs-es2015-heroku</guid>
         
         
         <category>Nodejs</category>
