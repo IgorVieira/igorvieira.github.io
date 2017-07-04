@@ -67,7 +67,7 @@ Vamos fazer algumas modificações mais a frente, mas enfim, é o básico que pr
 
 
 ```
-sudo npm i vue-fire firebase --save
+sudo npm i vuefire firebase --save
 ```
 
 A primeria alteração será em main.js:
@@ -179,7 +179,7 @@ export default {
 
 O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E depois é a mesma coisa de adicionar valores a um array, é pegar o valor recebido e passar ele para o nosso array através de um push, em Firebase, `não no data!`, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.
 
-Se você notou temos dois imports a mais, o que é esse segundo import, é uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:
+Se você notou temos dois imports a mais, o que é esse segundo import? É uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:
 
 
 
