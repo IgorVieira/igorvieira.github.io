@@ -50,20 +50,43 @@
 	<span class="reading-time"> -  minutes to read</span>
 	</div>
 
-	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase.png?raw=true" alt="firebase" /></p>
+	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-1.png?raw=true" alt="firebase" /></p>
 
 <p>Bem, a ideia de hoje e adicionar o Firebase a nossa aplicação, como assim? Colocar mais um serviço integrado a nossa aplicação, a sua única funcionalidade será adicionar comentários a nossa aplicação mostrando algo a respeito da nossa tarefa.</p>
 
 <p>Primeiro passo, vamos ao site do firebase!</p>
 
-<p>Depois vamos entrar na nossa parte de console e vamos criar um novo projeto, a pós isso ele vai nos redirecionar para uma dashboard, lá mostra as diferentes aplicações para a qual o seu projeto pode ser utilizado, a ideia é o seguinte, o Firebase te dá multiplas possibilidades de poder trabalhar seu projeto tanto com aplicações mobile para iOS e android, quanto para web, o nosso caso aqui vai ser web, vamos clicar no icone de para adicionar a firebase a nossa aplicação.</p>
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-3.png?raw=true" alt="firebase" /></p>
 
-<p>Ele vai nos dar o seguinte código:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>Código do firebase
-</code></pre>
-</div>
+<p>Depois vamos entrar na nossa parte de console e vamos criar um novo projeto.
+<img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-2.png?raw=true" alt="firebase" /></p>
+
+<p>Após isso ele vai nos redirecionar para uma dashboard:</p>
+
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-4.png?raw=true" alt="firebase" /></p>
+
+<p>Aqui são postas as diferentes aplicações para a qual o seu projeto pode ser utilizado, a ideia é o seguinte, o Firebase te dá multiplas possibilidades de poder trabalhar seu projeto tanto com aplicações mobile para iOS e android, quanto para web, o nosso caso aqui vai ser web, vamos clicar no icone de para adicionar a firebase a nossa aplicação.</p>
+
+<p>Ele vai nos dar o seguinte código:
+<code class="highlighter-rouge">
+&lt;script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Initialize Firebase
+  var config = {
+    apiKey: "sua key",
+    authDomain: "to-do-list-7eabf.firebaseapp.com",
+    databaseURL: "https://to-do-list-7eabf.firebaseio.com",
+    projectId: "to-do-list-7eabf",
+    storageBucket: "to-do-list-7eabf.appspot.com",
+    messagingSenderId: "seu MessagingSenderId"
+  };
+  firebase.initializeApp(config);
+&lt;/script&gt;
+</code></p>
 
 <p>Precisamos, agora desabilitar para que possamos fazer acesso em nossa aplicação de forma completa, liberando todas as roles, é só ir em Database, depois seguir para Regras e alterar os objeto rules e suas keys para true! =]</p>
+
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-5.png?raw=true" alt="firebase" /></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"rules"</span><span class="p">:{</span><span class="w">
@@ -78,7 +101,7 @@
 
 <p>Vamos fazer algumas modificações mais a frente, mas enfim, é o básico que precisamos, a ideia é o seguinte, vamos criar um serviço que será utilizado na nossa aplicação para poder adicionar comentários sobre as tasks e poder removê-los, vai ser interessante, essa parte é só um plus, o que precisamos agora é adicionar o firebase e o vue-fire, um módulo vue para fazer comunicação com o firebase.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm i vue-fire firebase --save
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm i vuefire firebase --save
 </code></pre>
 </div>
 
@@ -182,9 +205,9 @@ export default {
 </code></pre>
 </div>
 
-<p>O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E é a mesma coisa, é pegar o valor recebido e passar ele para o nosso array, em Firebase, <code class="highlighter-rouge">não no data!</code>, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.</p>
+<p>O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E depois é a mesma coisa de adicionar valores a um array, é pegar o valor recebido e passar ele para o nosso array através de um push, em Firebase, <code class="highlighter-rouge">não no data!</code>, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.</p>
 
-<p>Se você notou temos dois imports a mais, o que é esse segundo import, é uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:</p>
+<p>Se você notou temos dois imports a mais, o que é esse segundo import? É uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>export default class Comment {
 
@@ -197,7 +220,7 @@ export default {
 }
 </code></pre>
 </div>
-<p>Isso é somente para poder definir o que iremos receber nos nossos comentários e o que vai ser passado em nosso contrutor e que pode ser definido a cada novo comentário, é bem básico, nada de mais, uma coisinha para melhorar nosso jogo.</p>
+<p>Isso é somente para poder definir o que iremos receber nos nossos comentários e o que vai ser passado em nosso contrutor e que pode ser definido a cada novo comentário, é bem básico, nada de mais, uma coisinha para melhorar nossa aplicação.</p>
 
 <p>No nosso template, vamos fazer pequenas moficações:</p>
 
@@ -227,7 +250,7 @@ export default {
 </code></pre>
 </div>
 
-<p>No nosso template, nós iremos pegar os comentários recebidos no nosso comments, vindos do Firebase, e passar em nosso vue-for que vai dar render nos objetos a serem referenciandos comment e owner, e nossos <code class="highlighter-rouge">&lt;i/&gt;</code> vamos passar a nossa função de removeComment(comment), recebe o comment e remove aquele em específico, a nossa outra função é somente um @submit.prevent, importante colocar o prevent para evitar dar refresh na página, e ai ele recebe os valores pela nossa model e atráves da nossa model enviamos os dados para a nossa função vinda da nossa service do Firebase, que no final atualiza os dados no nosso firebase!</p>
+<p>No nosso template, nós iremos pegar os comentários recebidos no nosso comments, vindos do Firebase, e passar em nosso vue-for que vai dar render nos objetos a serem referenciandos comment e owner, e nossos <code class="highlighter-rouge">&lt;i/&gt;</code> vamos passar a nossa função de removeComment(comment), que recebe o comment e remove aquele em específico pela a sua id, a nossa outra função é somente um @submit.prevent, importante colocar o prevent para evitar dar refresh na página, e ai ele recebe os valores pela nossa model e atráves da nossa model enviamos os dados para a nossa função vinda da nossa service do Firebase, que no final atualiza os dados no nosso firebase!</p>
 
 <p>Bem, é isso, depois vamos fazer algumas pequenas alterações, uso de linters e alguns testes e2e, e é isso, muito obrigado e até a próxima! =]</p>
 
@@ -237,7 +260,7 @@ export default {
 	
 	
 	var disqus_config = function () {
-	this.page.url = 'http://localhost:4000 /firebase'; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.url = 'https://igorprvieira.com.br /firebase'; // Replace PAGE_URL with your page's canonical URL variable
 	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 	};
 	
