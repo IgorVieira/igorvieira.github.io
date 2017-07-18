@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Testes e2e para verificar a nossa aplicação VII "
+title: "Testes e2e para verificar a nossa aplicação - VII "
 date: 2017-07-18
 categories: Javascript, Vuejs
 ---
