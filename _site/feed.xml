@@ -6,15 +6,85 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 Jul 2017 16:11:04 -0300</pubDate>
-    <lastBuildDate>Sat, 15 Jul 2017 16:11:04 -0300</lastBuildDate>
+    <pubDate>Tue, 18 Jul 2017 16:12:17 -0300</pubDate>
+    <lastBuildDate>Tue, 18 Jul 2017 16:12:17 -0300</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Testes e2e para verificar a nossa aplicação </title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/checklist.jpg?raw=true&quot; alt=&quot;checklist&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hoje vamos falar a respeito de teste e2e, a ideia é poder entregar uma aplicação no qual você pode testar ela
+de ponta a ponta, e poder falar no final que nossa aplicação que a mesma está funcionando perfeitamente, e 
+poder entregar de fato aquilo que foi projetado da forma que foi projetado.&lt;/p&gt;
+
+&lt;p&gt;Vamos abrir a nossa aplicação e precisamos realizar algumas alterações, e indo direto no nossa parte e2e, base
+desse post, no nossos specs, vamos ter somente uma suite de teste, só que dessa vez queremos realizar dois testes
+um para ver adicionar uma nova tarefa e outra para poder editar uma tarefa.&lt;/p&gt;
+
+&lt;p&gt;E podemos excluir o que temos por default, nosso objetivo é criar um novo, e  mas tão simples quanto, esse será 
+o nome dele, firstTaskSpec.js&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
+    'new task': function (browser) {
+      const devServer = browser.globals.devServerURL;
+      browser
+       .url(devServer)
+       .waitForElementVisible('.page-header', 5000)
+       .assert.containsText('h3', 'To do Vue!')
+       .setValue('input[name=activity_input]', 'Make a coffee')
+       .setValue('input[name=checkbox_input]', true)
+       .pause(2000)
+       .click('button[name=add]')
+       .pause(3000)
+       .assert.containsText('.panel-title', 'Make a coffee')
+       .end();
+     },
+  };
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;O que definimos aqui é, temos uma sequencia de atividades que vão sendo realizadas , é como se tivessemos um roteiro
+e ele vai seguindo o roteiro de cada uma das nossas ações, but … antes de continuarmos, temos que fazer mais três alterações
+temos que alterar nosso form, observe o nosso  &lt;code class=&quot;highlighter-rouge&quot;&gt;.setValue('input[name=activity_input]', 'Make a coffee')&lt;/code&gt;, ele está buscando 
+uma tag input no qual o seu name é acitivity_input, assim como nosso outro .setValue, tem um name tentando buscar o que é o
+seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que iremos fazer:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;
+              &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
+                                &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
+                                                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                                                                            &amp;lt;label for=&quot;&quot;&amp;gt;Atividade:&amp;lt;/label&amp;gt;
+                                                                                                    &amp;lt;input class=&quot;form-control&quot; type=&quot;text&quot; name=&quot;activity_input&quot; v-model=&quot;task.activity&quot;&amp;gt;
+                                                                                                                        &amp;lt;/div&amp;gt;
+                                                                                                                                            &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+                                                                                                                                                                    &amp;lt;label for=&quot;&quot;&amp;gt;Status:&amp;lt;/label&amp;gt;
+                                                                                                                                                                                            &amp;lt;input  type=&quot;checkbox&quot;  name=&quot;checkbox_input&quot; v-model=&quot;task.done&quot;&amp;gt;
+                                                                                                                                                                                                                &amp;lt;/div&amp;gt;
+                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                       &amp;lt;button class=&quot;btn&quot; name=&quot;add&quot;&amp;gt;Add + &amp;lt;/button&amp;gt;
+                                                                                                                                                                                                                                                                       &amp;lt;/form&amp;gt;
+                                                                                                                                                                                                                                                                                     &amp;lt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 18 Jul 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/e2e-test-all-application</link>
+        <guid isPermaLink="true">http://localhost:4000/e2e-test-all-application</guid>
+        
+        
+        <category>Javascript,</category>
+        
+        <category>Vuejs</category>
+        
+      </item>
     
       <item>
         <title>Airbnb - Part VI </title>
         <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/airbnb.png?raw=true&quot; alt=&quot;airbnb&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Hoje vamos falar sobre linters, confesso, eu nem sempre usava, na real como bom iniciante e tolo, achava desnecessário, but…a vida mostra que na real eles podem ser muito úteis na hora que você está desenvolvendo, não somente mostrando os espaços que você está deixando a mais, mas te mostram boas formas de você desenvolver a sua aplicação, por exemplo quando você escreve uma promise, até então, eu, Igo Vieira, escrevia assim:&lt;/p&gt;
+&lt;p&gt;Hoje vamos falar sobre linters, confesso, eu nem sempre usava, na real como bom iniciante e tolo, achava desnecessário, but…a vida mostra que na real eles podem ser muito úteis na hora que você está desenvolvendo, não somente mostrando os espaços que você está deixando a mais, mas te mostram boas formas de você desenvolver a sua aplicação, gerar um padrão de fato para a sua stack de desenvolvimento, e coisas mais simples também, por exemplo quando você escreve uma promise, até então, eu, Igo Vieira, escrevia assim:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const umaFuncaoQualquer = () =&amp;gt; {
     return new Promise((resolve, reject) =&amp;gt; {
@@ -37,7 +107,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Pode parecer uma coisa muito pequena, mas na real resumiu a forma como escrevemos, quanto menos você escrever, e quanto mais legivel e sintatico for seu código, melhor ele será, acredite, menos é mais, então a ideia é sempre fazer menos para poder fazer mais e melhor, enfim, vamos usar em nosso projeto o pacote &lt;a href=&quot;https://www.npmjs.com/package/eslint-config-airbnb&quot;&gt;eslint-config-airbnb&lt;/a&gt;, mas calma, não vamos instalar da mesma forma que intalamos os demais pacotes via npm, vamos copiar um trecho de código, e ele vai instalar as demais dependencias que precisamos para a nossa aplicação, e depois vamos fazer umas pequenas configurações, roles que vão definir como será o padrão de código para a nossa aplicação, isso é ótimo para poder organizar toda a nossa aplicação e facilitar a manutenção do nosso produto!&lt;/p&gt;
+&lt;p&gt;Pode parecer uma coisa muito pequena, mas na real resumiu a forma como escrevemos, quanto menos você escrever, e quanto mais legivel e sintatico for seu código, melhor ele será, acredite, menos é mais, então a ideia é sempre fazer menos para poder fazer mais e melhor, enfim,e para começarmos, vamos usar em nosso projeto o pacote &lt;a href=&quot;https://www.npmjs.com/package/eslint-config-airbnb&quot;&gt;eslint-config-airbnb&lt;/a&gt;, mas calma, não vamos instalar da mesma forma que intalamos os demais pacotes via npm, vamos copiar um trecho de código, e ele vai instalar as demais dependencias que precisamos para a nossa aplicação, e depois vamos fazer umas pequenas configurações, roles que vão definir como será o padrão de código para a nossa aplicação, isso é ótimo para poder organizar toda a nossa aplicação e facilitar a manutenção do nosso produto!&lt;/p&gt;
 
 &lt;p&gt;Enfim, no site do npm você vai encontrar como instalar, vamos copiar esse trecho aqui e vamos copiar no terminal, onde está o nosso projeto:&lt;/p&gt;
 
@@ -78,11 +148,25 @@ module.exports = {
   // add your custom rules here
   'rules': {
     // don't require .vue extension when importing
+    
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'
     }],
-	&quot;no-tabs&quot;: 0,
+    &quot;semi&quot;: 2,
+    &quot;indent&quot;: [2, &quot;tab&quot;],
+    &quot;no-param-reassign&quot;: [2, {&quot;props&quot;: false}],
+    &quot;no-console&quot;:0,
+    &quot;no-useless-constructor&quot;:0,
+    &quot;no-empty-function&quot;:0,
+    &quot;no-tabs&quot;:0,
+    &quot;no-unused-vars&quot;:0,
+    &quot;no-unused-expressions&quot;:0,
+    &quot;no-prototype-builtins&quot;:0,
+    &quot;no-restricted-syntax&quot;: 0,
+    &quot;no-underscore-dangle&quot;:0,
+    &quot;no-plusplus&quot;:0,
+    &quot;radix&quot;: 0,
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
       'optionalDependencies': ['test/unit/index.js']
@@ -141,15 +225,66 @@ trim_trailing_whitespace = true
 
 &lt;p&gt;O sufixo –fix, tentará arrumar aquilo que ele pode arrumar em nossa aplicação, não será tudo, mas boa parte ele pode melhorar em torno da nossa aplicação, e ai vamos rodar o seguinte comando:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm run dev lint:fix&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm run lint:fix&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;E ai, conseguimos ver o que precisamos arrumar em nossa aplicação&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/airbnb-3.png?raw=true&quot; alt=&quot;airbnb3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;O que temos a fazer é corrigir! =]&lt;/p&gt;
+
+&lt;p&gt;São erros bem simples, o primeiro é tirar o comma &lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;, na real vamos usar um catch para poder tornar mais fácil escrever essa function, ficará assim:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem) {
+			this.service
+        .deleteTask(taskItem._id)
+        .then(() =&amp;gt; {
+          const taskRemove = this.tasks.indexOf(taskItem);
+          this.tasks.splice(taskRemove, 1);
+        }, err =&amp;gt; console.log(`${err}`));
+		},
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Para created vamos fazer algumas mudanças, no map vamos alterar o nome da váriavel de retorno, pois ele disse que o valor do parametro é mesmo do escopo acima, então mudamos para &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
+		this.service = new TaskService(this.$resource);
+
+		this.service
+    .listTasks()
+    .then((tasks) =&amp;gt; {
+      const item = _.map(tasks, x =&amp;gt; x);
+      this.tasks = item;
+    }, err =&amp;gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+	},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E Info.vue, é bem mais de boa, só vamos tirar o return da função, ela em si já devolve os valores já alterados através da função:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
+		this.service = new TaskService(this.$resource);
+
+		if (this.id) {
+			this.service
+        .getTaskById(this.id)
+        .then((res) =&amp;gt; {
+          this.task = res;
+        }, (err) =&amp;gt; {
+          this.msg = err.message;
+      });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Guys, é isso, algo bem simples a respeito de uso linter, airbnb cresceu muito e vem ajudando absurdamente o cenário voltado a desenvolvimento de aplicações web, principalmente no que se refere a react, js e ruby, então tem muito ai para poder estudar e trabalhar,&lt;/p&gt;
+
+&lt;p&gt;Novamente, obrigado e até mais!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 06 Jul 2017 00:00:00 -0300</pubDate>
+        <pubDate>Sat, 15 Jul 2017 00:00:00 -0300</pubDate>
         <link>http://localhost:4000/airbnb</link>
         <guid isPermaLink="true">http://localhost:4000/airbnb</guid>
         
@@ -3008,28 +3143,6 @@ Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui p
         <pubDate>Sun, 19 Mar 2017 00:00:00 -0300</pubDate>
         <link>http://localhost:4000/em-2-meses</link>
         <guid isPermaLink="true">http://localhost:4000/em-2-meses</guid>
-        
-        
-        <category>Lifestyle</category>
-        
-      </item>
-    
-      <item>
-        <title>Hey Again! =] </title>
-        <description>&lt;p&gt;Today, I ‘m completing three months in Belo Horizonte is a long history, but I simplificading for you, I was living in Goiânia a Capital of state Goiás, in Brazil, is a nice city but a little poor in oportunities for new tecnologies, is not impossible but is hard find a job  people work with Nodejs, JS, Ruby or React, Ember, Angular and other languages and frameworks, i love Goiânia, but is true,
-sorry guys ¯_(ツ)_/¯&lt;/p&gt;
-
-&lt;p&gt;I moved on from Goiânia , and I living BH, its a form I call Belo Horizonte, is more simple rsrs so here, in BH I work in Lett insights a little big startup rsrs, i love the place, I like the people, is very cool,
-and I love this city, BH, is more spensive but is great place and I have good neighbors and i  maked good friends, the street on i live, exist a lot good restaurants, japanese food, hamburguers and pizza’s I miss a place just like a coffee shop but its ok!
-Today I ‘m pass my day studing and building a setup for a new project for my cousin, I will build a site in PHP for the offices lawyers, its very nice code a site again, my plans for this next days is build this site, study for Mongodb University, study more, go out with my new friends and talk more with you guys!&lt;/p&gt;
-
-&lt;p&gt;I will try, is no promise, but I  will try post one blogpost for day
-so…
-See you soon! =]&lt;/p&gt;
-</description>
-        <pubDate>Sat, 18 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/hey-again</link>
-        <guid isPermaLink="true">http://localhost:4000/hey-again</guid>
         
         
         <category>Lifestyle</category>
