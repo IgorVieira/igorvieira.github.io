@@ -46,13 +46,13 @@
 	Airbnb - Part VI 
 	</h3>
 	<div class="post-date">
-		<time>06 Jul 2017</time>
+		<time>15 Jul 2017</time>
 	<span class="reading-time"> -  minutes to read</span>
 	</div>
 
 	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/airbnb.png?raw=true" alt="airbnb" /></p>
 
-<p>Hoje vamos falar sobre linters, confesso, eu nem sempre usava, na real como bom iniciante e tolo, achava desnecessário, but…a vida mostra que na real eles podem ser muito úteis na hora que você está desenvolvendo, não somente mostrando os espaços que você está deixando a mais, mas te mostram boas formas de você desenvolver a sua aplicação, por exemplo quando você escreve uma promise, até então, eu, Igo Vieira, escrevia assim:</p>
+<p>Hoje vamos falar sobre linters, confesso, eu nem sempre usava, na real como bom iniciante e tolo, achava desnecessário, but…a vida mostra que na real eles podem ser muito úteis na hora que você está desenvolvendo, não somente mostrando os espaços que você está deixando a mais, mas te mostram boas formas de você desenvolver a sua aplicação, gerar um padrão de fato para a sua stack de desenvolvimento, e coisas mais simples também, por exemplo quando você escreve uma promise, até então, eu, Igo Vieira, escrevia assim:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>const umaFuncaoQualquer = () =&gt; {
     return new Promise((resolve, reject) =&gt; {
@@ -75,7 +75,7 @@
 </code></pre>
 </div>
 
-<p>Pode parecer uma coisa muito pequena, mas na real resumiu a forma como escrevemos, quanto menos você escrever, e quanto mais legivel e sintatico for seu código, melhor ele será, acredite, menos é mais, então a ideia é sempre fazer menos para poder fazer mais e melhor, enfim, vamos usar em nosso projeto o pacote <a href="https://www.npmjs.com/package/eslint-config-airbnb">eslint-config-airbnb</a>, mas calma, não vamos instalar da mesma forma que intalamos os demais pacotes via npm, vamos copiar um trecho de código, e ele vai instalar as demais dependencias que precisamos para a nossa aplicação, e depois vamos fazer umas pequenas configurações, roles que vão definir como será o padrão de código para a nossa aplicação, isso é ótimo para poder organizar toda a nossa aplicação e facilitar a manutenção do nosso produto!</p>
+<p>Pode parecer uma coisa muito pequena, mas na real resumiu a forma como escrevemos, quanto menos você escrever, e quanto mais legivel e sintatico for seu código, melhor ele será, acredite, menos é mais, então a ideia é sempre fazer menos para poder fazer mais e melhor, enfim,e para começarmos, vamos usar em nosso projeto o pacote <a href="https://www.npmjs.com/package/eslint-config-airbnb">eslint-config-airbnb</a>, mas calma, não vamos instalar da mesma forma que intalamos os demais pacotes via npm, vamos copiar um trecho de código, e ele vai instalar as demais dependencias que precisamos para a nossa aplicação, e depois vamos fazer umas pequenas configurações, roles que vão definir como será o padrão de código para a nossa aplicação, isso é ótimo para poder organizar toda a nossa aplicação e facilitar a manutenção do nosso produto!</p>
 
 <p>Enfim, no site do npm você vai encontrar como instalar, vamos copiar esse trecho aqui e vamos copiar no terminal, onde está o nosso projeto:</p>
 
@@ -116,11 +116,25 @@ module.exports = {
   // add your custom rules here
   'rules': {
     // don't require .vue extension when importing
+    
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'
     }],
-	"no-tabs": 0,
+    "semi": 2,
+    "indent": [2, "tab"],
+    "no-param-reassign": [2, {"props": false}],
+    "no-console":0,
+    "no-useless-constructor":0,
+    "no-empty-function":0,
+    "no-tabs":0,
+    "no-unused-vars":0,
+    "no-unused-expressions":0,
+    "no-prototype-builtins":0,
+    "no-restricted-syntax": 0,
+    "no-underscore-dangle":0,
+    "no-plusplus":0,
+    "radix": 0,
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
       'optionalDependencies': ['test/unit/index.js']
@@ -179,13 +193,64 @@ trim_trailing_whitespace = true
 
 <p>O sufixo –fix, tentará arrumar aquilo que ele pode arrumar em nossa aplicação, não será tudo, mas boa parte ele pode melhorar em torno da nossa aplicação, e ai vamos rodar o seguinte comando:</p>
 
-<p><code class="highlighter-rouge">sudo npm run dev lint:fix</code></p>
+<p><code class="highlighter-rouge">sudo npm run lint:fix</code></p>
 
 <p>E ai, conseguimos ver o que precisamos arrumar em nossa aplicação</p>
 
 <p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/airbnb-3.png?raw=true" alt="airbnb3" /></p>
 
 <p>O que temos a fazer é corrigir! =]</p>
+
+<p>São erros bem simples, o primeiro é tirar o comma <code class="highlighter-rouge">,</code>, na real vamos usar um catch para poder tornar mais fácil escrever essa function, ficará assim:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>removeTask(taskItem) {
+			this.service
+        .deleteTask(taskItem._id)
+        .then(() =&gt; {
+          const taskRemove = this.tasks.indexOf(taskItem);
+          this.tasks.splice(taskRemove, 1);
+        }, err =&gt; console.log(`${err}`));
+		},
+
+</code></pre>
+</div>
+
+<p>Para created vamos fazer algumas mudanças, no map vamos alterar o nome da váriavel de retorno, pois ele disse que o valor do parametro é mesmo do escopo acima, então mudamos para <code class="highlighter-rouge">x</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>created() {
+		this.service = new TaskService(this.$resource);
+
+		this.service
+    .listTasks()
+    .then((tasks) =&gt; {
+      const item = _.map(tasks, x =&gt; x);
+      this.tasks = item;
+    }, err =&gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
+	},
+</code></pre>
+</div>
+
+<p>E Info.vue, é bem mais de boa, só vamos tirar o return da função, ela em si já devolve os valores já alterados através da função:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>created() {
+		this.service = new TaskService(this.$resource);
+
+		if (this.id) {
+			this.service
+        .getTaskById(this.id)
+        .then((res) =&gt; {
+          this.task = res;
+        }, (err) =&gt; {
+          this.msg = err.message;
+      });
+    }
+}
+</code></pre>
+</div>
+
+<p>Guys, é isso, algo bem simples a respeito de uso linter, airbnb cresceu muito e vem ajudando absurdamente o cenário voltado a desenvolvimento de aplicações web, principalmente no que se refere a react, js e ruby, então tem muito ai para poder estudar e trabalhar,</p>
+
+<p>Novamente, obrigado e até mais!</p>
 
 
 	<div id="disqus_thread"></div>
