@@ -6,16 +6,40 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jul 2017 16:12:17 -0300</pubDate>
-    <lastBuildDate>Tue, 18 Jul 2017 16:12:17 -0300</lastBuildDate>
-    <generator>Jekyll v3.5.0</generator>
+    <pubDate>Fri, 04 Aug 2017 14:57:44 -0300</pubDate>
+    <lastBuildDate>Fri, 04 Aug 2017 14:57:44 -0300</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
     
       <item>
-        <title>Testes e2e para verificar a nossa aplicação </title>
+        <title>Um pequeno path para quem está começando </title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ruby.jpg?raw=true&quot; alt=&quot;ruby&quot; /&gt;
+Se eu tivesse a oportunidade de poder falar para o Igor de 6 anos atrás, uma linguagem a qual aprender para iniciar no área de desenvolvimento, eu indicaria antes de tudo Inglês, sem Inglês você não vai muito longe nessa área, sério, não que eu seja o melhor também, mas eu escrevo, leio e falo bem, as vezes dou uma de mestre Yoda, mas no geral eu me saio bem, porém o foco desse post e outro, Ruby, e isso para você poder iniciar, admito que hoje eu mais trabalho com Javascript do que Ruby, uso bem frameworks como Vuejs, Angular2 ou React do que Ruby e Rails,tenho até mais projetos em Rails do que tenho com qualquer outro framework em JS, entretanto qual a razão de Ruby? Ao meu ver, a opinião de alguém que até aprendeu cedo programação, mas ficou sem utilizar por falta de interesse no que tinha (eu aprendi Pascal, VB e Java) então com tempo eu fiquei sem programar,sem criar nada por uns 3 anos, pois não achava interessante nenhuma das linguagens citadas, não é preconceito com as mesmas, depois de um tempo eu até dei aula em uma empresa de RH sobre JAVA, contudo a praticidade de Ruby é algo muito bom para problemas em que se faz necessário a abstração, é interessante para se entender problemas do mundo real e os resolvê-los de forma prática e rápida.&lt;/p&gt;
+
+&lt;p&gt;Conceitos a respeito de Ruby, tudo é objeto, então praticamente tudo é mutavel de alguma forma,polimorfismo, classes e funções são presentes na mesma, assim como programação funcional, que na real existe bem antes de 2015, meta programação e testes são coisas inerentes a Ruby, se bem que a parte de teste é algo muito mais cultural e forte dentro da comunidade, e é algo imprecidivel mesmo em outras linguagens, pois querendo ou não, aplicações grandes ou pequenas precisam ser minimamente testáveis, pois talvez você não vai estar para sempre em um projeto, você nem sempre vai ser único a trabalhar em um produto ou talvez você vai precisar ter multiplos recursos adjuntos a sua aplicação, porém testes são fundamentais, como eu disse, creio que isso foi algo cresceu devido a cultura, e se expandiu para outras comunidades, e fico feliz com isso, e é por esse motivo que gosto muito de Ruby, não é somente a linguagem, não é somente um framework, ou a sua forma de organização de pacotes que no caso de Ruby são as gems, mas é todo o ecossistema.&lt;/p&gt;
+
+&lt;p&gt;Atualmente você não precisa de muito para criar aplicações com Ruby on Rails, mas é bom que entenda bem os conceitos da linguagem, aquilo que pode te ajudar a escrever um bom código de forma clara,mas de fato você não precisa de muito para criar algo, e como eu disse no quesito comunidade tem muita coisa boa para poder aprender, em português e em inglês, maior parte em inglês e por isso a ressalva no início do post, porém continuando, se você não tem muito mas quer começar a aprender e a dar seus primeiros passos, eu recomendo fortemente  a apostila da &lt;a href=&quot;https://www.caelum.com.br/download/caelum-ruby-on-rails-rr71.pdf&quot;&gt;Caelum&lt;/a&gt;, ela tem uma escrita bem simples, para quem está começando, fora que a Caelum é uma empresa que já tem uma certa reputação na criação de conteúdo de qualidade e em treinamentos para companhias, outra dica é a comunidade no &lt;a href=&quot;https://www.facebook.com/groups/rubyonrailsbrasil/&quot;&gt;Facebook&lt;/a&gt;, que é muito boa, Rails tem uma comunidade forte, com várias pessoas dispostas a ajudar para que você dê seus primeiros passos dentro da área, você também encontra muito matérial bom a respeito de Rails no Youtube, entretanto, eu ainda recomendo fortemente a estudar Ruby antes de cair para os tutoriais de Rails, pelo seguinte motivo, entenda a linguagem, entenda o que ela pode fazer por você, entenda como você pode usar os melhores recursos que ela tem a disposição, teste, crie pequenas aplicações, coisas simples, e as teste,passado isso, vá para Rails, dentre os canais que eu mais recomendo estão o &lt;a href=&quot;https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww&quot;&gt;Go Rails&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/user/mackenziechild&quot;&gt;Machenzie Child&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ&quot;&gt;One Bit Code&lt;/a&gt; e &lt;a href=&quot;https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A&quot;&gt;RubyThursday&lt;/a&gt;, o básico que você vai precisar para dar seus 
+primeiros passos e criar seus primeiros produtos, e trabalhar nos seus primeiros projetos.&lt;/p&gt;
+
+&lt;p&gt;Para encerrar, Ruby e Rails não são balas de prata, são excelentes soluções para vários problemas porém, e isso ao meu ver, Rails é e te ajuda a tornar mais fácil a criação daquilo que você precisa para fato entregar algo de valor aos seus clientes, então, esse é um post rápido falando sobre uma das linguagens e de um dos frameworks que já estão a bastante tempo no mercado e que de fato atendem ao proposito para o qual eles foram criados e provavelmente estarão ai por mais um tempo fazendo o que eles fazem de melhor, serem úteis e agregando valor para alguém, mais uma vez obrigado e até mais.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 18 Jul 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/um-pequeno-path-para-quem-esta-comecando</link>
+        <guid isPermaLink="true">http://localhost:4000/um-pequeno-path-para-quem-esta-comecando</guid>
+        
+        
+        <category>Ruby,</category>
+        
+        <category>Lifestyle</category>
+        
+      </item>
+    
+      <item>
+        <title>Testes e2e para verificar a nossa aplicação - Part VII </title>
         <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/checklist.jpg?raw=true&quot; alt=&quot;checklist&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Hoje vamos falar a respeito de teste e2e, a ideia é poder entregar uma aplicação no qual você pode testar ela
-de ponta a ponta, e poder falar no final que nossa aplicação que a mesma está funcionando perfeitamente, e 
+de ponta a ponta, e poder falar no final que nossa aplicação está funcionando perfeitamente, e 
 poder entregar de fato aquilo que foi projetado da forma que foi projetado.&lt;/p&gt;
 
 &lt;p&gt;Vamos abrir a nossa aplicação e precisamos realizar algumas alterações, e indo direto no nossa parte e2e, base
@@ -51,23 +75,74 @@ uma tag input no qual o seu name é acitivity_input, assim como nosso outro .set
 seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que iremos fazer:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;
-              &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
-                                &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
-                                                    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                                                                            &amp;lt;label for=&quot;&quot;&amp;gt;Atividade:&amp;lt;/label&amp;gt;
-                                                                                                    &amp;lt;input class=&quot;form-control&quot; type=&quot;text&quot; name=&quot;activity_input&quot; v-model=&quot;task.activity&quot;&amp;gt;
-                                                                                                                        &amp;lt;/div&amp;gt;
-                                                                                                                                            &amp;lt;div class=&quot;form-group&quot;&amp;gt;
-                                                                                                                                                                    &amp;lt;label for=&quot;&quot;&amp;gt;Status:&amp;lt;/label&amp;gt;
-                                                                                                                                                                                            &amp;lt;input  type=&quot;checkbox&quot;  name=&quot;checkbox_input&quot; v-model=&quot;task.done&quot;&amp;gt;
-                                                                                                                                                                                                                &amp;lt;/div&amp;gt;
-                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                       &amp;lt;button class=&quot;btn&quot; name=&quot;add&quot;&amp;gt;Add + &amp;lt;/button&amp;gt;
-                                                                                                                                                                                                                                                                       &amp;lt;/form&amp;gt;
-                                                                                                                                                                                                                                                                                     &amp;lt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
+      &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
+        &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+            &amp;lt;label for=&quot;&quot;&amp;gt;Atividade:&amp;lt;/label&amp;gt;
+            &amp;lt;input class=&quot;form-control&quot; type=&quot;text&quot; name=&quot;activity_input&quot; v-model=&quot;task.activity&quot;&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+            &amp;lt;label for=&quot;&quot;&amp;gt;Status:&amp;lt;/label&amp;gt;
+            &amp;lt;input  type=&quot;checkbox&quot;  name=&quot;checkbox_input&quot; v-model=&quot;task.done&quot;&amp;gt;
+        &amp;lt;/div&amp;gt;
+        
+        &amp;lt;button class=&quot;btn&quot; name=&quot;add&quot;&amp;gt;Add + &amp;lt;/button&amp;gt;
+    &amp;lt;/form&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;Semelhantemente teremos que fazer alterações em info.vue, visto que vamos ter um spec para ele também.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+        &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;  name=&quot;activity_input&quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;form-group&quot;&amp;gt;
+        &amp;lt;label for=&quot;&quot; &amp;gt;Status da atividade:&amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;checkbox&quot; v-model=&quot;task.done&quot;  name=&quot;checkbox_input&quot;&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;E são somente essas as alterações, para podermos testar as funcionalidade de update, feito você pode rodar um primeiro test:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Se o status para assetions foi completo, vamos para o nosso segundo teste:&lt;/p&gt;
+
+&lt;p&gt;secondTaskSpec.js&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
+	'update task': function (browser) {
+		const devServer = browser.globals.devServerURL;
+
+		browser
+			.url(devServer)
+      .waitForElementVisible('.page-header', 5000)
+      .assert.containsText('h3', 'To do Vue!')
+      .click('button[name=edit_task]')
+			.pause(3000)
+			.setValue('input[name=activity_input]', 'Make a omelete!')
+      .setValue('input[name=checkbox_input]', true)
+      .pause(2000)
+			.assert.containsText('.page-header', 'Info:')
+			.click('input[type=submit]')
+			.pause(2000)
+      .end();
+	},
+};
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A ideia desse é clicar no primeiro edit_task  e alterar a view e alterar o input dessa task para &lt;code class=&quot;highlighter-rouge&quot;&gt;Make a omelete!&lt;/code&gt; e é isso, submeter e alterar, nada de mais, bem acho que por hoje é só, um post simples sobre algo bem tranquilo de se abordar, mais uma vez, obrigado =]&lt;/p&gt;
 </description>
         <pubDate>Tue, 18 Jul 2017 00:00:00 -0300</pubDate>
         <link>http://localhost:4000/e2e-test-all-application</link>
@@ -3043,109 +3118,6 @@ console.log(typeof foo)
         
         
         <category>Javascript</category>
-        
-      </item>
-    
-      <item>
-        <title>EM 2 MESES... </title>
-        <description>&lt;p&gt;Nesses meses, eu tenho gasto boa parte do meu tempo lendo, assistindo ou somente ouvindo sobre diversos assuntos sobre tecnologia, front-end, back, UX/UI, startupismo, Design, padrões de projetos, ferramentas, frameworks, testes, SEO  e tudo isso em diversos meios, entre eles o Medium, Youtube, Podcasts e claro, Blogs !&lt;/p&gt;
-
-&lt;p&gt;A maioria são coisas que você pode fazer nos seus fins de semana,  podcasts que você pode ouvir indo para o trabalho e  artigos que você pode ler durante o seu almoço, ou em qualquer intervalo que tiver, bem, é informação pra caramba, em português e em inglês, e eu sei, nem todos falam em Inglês, mesmo concordando, que, se você está em algum meio voltado a tecnologia, o minimo que você deveria saber é inglês… mesmo que pouco, te garanto, esse pouco já faz uma bruta diferença quando você começa a compreender e a criar projetos baseados naquilo que você obteve de informação, o que na sua maioria está em inglês, enfim, tem muito conteúdo e muito conteúdo útil, que pode te ajudar, à aprender a sua primeira linguagem, a usar o seu primeiro framework, a criar a sua primeira aplicação, a ter seu primeiro negócio, ou a quem sabe a ter o seu primeiro milhão kkk, quem sabe não é mesmo?!&lt;/p&gt;
-
-&lt;p&gt;#Videos!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/youtube.jpg?raw=true&quot; alt=&quot;youtube&quot; /&gt;
-De videos, tem um monte, eu vou dar foco aos nascionais, os que eu costumo assistir e quando possível compartilho e mostro para os meus amigos ou jogo nas comunidades, e realmente tem muito material bom, de qualidade que vale a pena você disponibilizar um tempo para acompanhar, se organizar bem dá para montar um roteiro bem de boas para acompanhar a esses canais, alguns até soltam tudo de uma vez, igual ao Waldemar Neto, com ele a parada é igual Netflix, tu assiste tudo de uma vez, e como todos os outros, tem um conteúdo incrível, assinem e apoiem esses canais, realmente vale a pena!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw&quot;&gt;Filipe Deschamps&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCnLdHOuue5i1O7TsH6oh07w&quot;&gt;BrazilJS&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/rodrigobranas&quot;&gt;Rodrigo Branas&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/Loianeg&quot;&gt;Loiane Groner&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCqmJGTdcMIRXOZuukHZ8TqA&quot;&gt;Waldemar Neto&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ&quot;&gt;One Bit Code&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/aluracursosonline&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Além do pessoal Brazuca, temos vários outros devs de fora do país, pessoal que trabalha em diversos projetos bem da hora, então para quem não conhece, esses são alguns dos canais que eu sigo, são muito bons, postam constantemente e vem sempre com umas soluções ou discussões que realmente valem a pena parar para prestar atenção e analisar bem sobre as mesmas.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q&quot;&gt;MPJ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCfWZwsP8trUy5uHJg8gcGIQ&quot;&gt;Mackenzie Child&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/wesbos&quot;&gt;Wes Bos&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/kylerobinsonyoung&quot;&gt;Kyle Robinson&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/LevelUpTuts&quot;&gt;LevelUpTuts&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/MrRemchi&quot;&gt;MrRemchi&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/whobeatpinkled/videos&quot;&gt;Kurt Weiberth&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww&quot;&gt;Go Rails&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A&quot;&gt;RubyThursday&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;#Leitura!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/medium.jpg?raw=true&quot; alt=&quot;medium&quot; /&gt;
-De leitura, eu divido em dois grupos, eu gosto de blogs, gosto muito mesmo, mas boa parte dos autores que conheço tem migrado para o Medium, ou mantiveram o seus blogs e volta e meia postam em suas páginas no Medium, aqui sim é muito conteúdo, fora que ler é um hábito muito bom, e por mais que tenhamos tantas facilidades visuais, leitura refina a nossa habilidade de compreensão, e isso é algo bom…mentira é bom pra caramba!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://thedesignteam.io/&quot;&gt;The Design Team&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@marcobrunobr&quot;&gt;Marco Bruno&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@oieduardorabelo&quot;&gt;Eduardo Rabelo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@diegoeis&quot;&gt;Diego Eis&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@zenorocha&quot;&gt;Zeno Rocha&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@fdaciuk&quot;&gt;Fernando Daciuk&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://willianjusten.com.br&quot;&gt;Willian Justen&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.akitaonrails.com&quot;&gt;Fábio Akita&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://nipher.io&quot;&gt;Jonas Mendes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.felipefialho.com&quot;&gt;Felipe Fialho&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.alura.com.br&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;podcast&quot;&gt;Podcast!&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/hipster.png?raw=true&quot; alt=&quot;podcast&quot; /&gt;
-Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui podcast, alguns dos quais eu ouvia, pararam de realizar os programas, então eu resolvi postar esses que acompanho/voltei a acompanhar com mais frequência , se tiverem mais que vocês conheçam, por favor, coloquem nos comentários!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://thewebplatform.libsyn.com&quot;&gt;The web platform podcast&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;hipsters.tech&quot;&gt;Hipsters Ponto Tech&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://devnaestrada.com.br/&quot;&gt;Dev na Estrada&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Esses foram alguns dos materiais que tenho criado uma certa rotina em torno deles, e acompanhado, quando posso kkkk, no mais, eu espero sinceramente  que isso possa lhe ajudar, e até a próxima!&lt;/p&gt;
-
-&lt;p&gt;PS: Esse post era do blog antigo, mas é valido, então resolvi colocar ele de volta! =]&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Mar 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/em-2-meses</link>
-        <guid isPermaLink="true">http://localhost:4000/em-2-meses</guid>
-        
-        
-        <category>Lifestyle</category>
         
       </item>
     

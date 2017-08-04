@@ -6,7 +6,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/IgorVieira/igorvieira.github.io/master/_images/favicon.ico" />
   <title>
     
-      Testes e2e para verificar a nossa aplicação 
+      Testes e2e para verificar a nossa aplicação - Part VII 
     
       Igor Vieira
     
@@ -43,17 +43,17 @@
 
 <article class="content post">
 	<h3 class="post-title">
-	Testes e2e para verificar a nossa aplicação 
+	Testes e2e para verificar a nossa aplicação - Part VII 
 	</h3>
 	<div class="post-date">
 		<time>18 Jul 2017</time>
-	<span class="reading-time"> - 1 minute to read</span>
+	<span class="reading-time"> -  minutes to read</span>
 	</div>
 
 	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/checklist.jpg?raw=true" alt="checklist" /></p>
 
 <p>Hoje vamos falar a respeito de teste e2e, a ideia é poder entregar uma aplicação no qual você pode testar ela
-de ponta a ponta, e poder falar no final que nossa aplicação que a mesma está funcionando perfeitamente, e 
+de ponta a ponta, e poder falar no final que nossa aplicação está funcionando perfeitamente, e 
 poder entregar de fato aquilo que foi projetado da forma que foi projetado.</p>
 
 <p>Vamos abrir a nossa aplicação e precisamos realizar algumas alterações, e indo direto no nossa parte e2e, base
@@ -89,23 +89,74 @@ uma tag input no qual o seu name é acitivity_input, assim como nosso outro .set
 seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que iremos fazer:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="row"&gt;
-              &lt;div class="col-md-5 col-md-offset-2 well"&gt;
-                                &lt;form @submit.prevent="submitTask()"&gt;
-                                                    &lt;div class="form-group"&gt;
-                                                                            &lt;label for=""&gt;Atividade:&lt;/label&gt;
-                                                                                                    &lt;input class="form-control" type="text" name="activity_input" v-model="task.activity"&gt;
-                                                                                                                        &lt;/div&gt;
-                                                                                                                                            &lt;div class="form-group"&gt;
-                                                                                                                                                                    &lt;label for=""&gt;Status:&lt;/label&gt;
-                                                                                                                                                                                            &lt;input  type="checkbox"  name="checkbox_input" v-model="task.done"&gt;
-                                                                                                                                                                                                                &lt;/div&gt;
-                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                       &lt;button class="btn" name="add"&gt;Add + &lt;/button&gt;
-                                                                                                                                                                                                                                                                       &lt;/form&gt;
-                                                                                                                                                                                                                                                                                     &lt;&lt;/div&gt;
+  &lt;div class="col-md-5 col-md-offset-2 well"&gt;
+      &lt;form @submit.prevent="submitTask()"&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for=""&gt;Atividade:&lt;/label&gt;
+            &lt;input class="form-control" type="text" name="activity_input" v-model="task.activity"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for=""&gt;Status:&lt;/label&gt;
+            &lt;input  type="checkbox"  name="checkbox_input" v-model="task.done"&gt;
+        &lt;/div&gt;
+        
+        &lt;button class="btn" name="add"&gt;Add + &lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 </div>
 
+<p>Semelhantemente teremos que fazer alterações em info.vue, visto que vamos ter um spec para ele também.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
+        &lt;input type="text" class="form-control" v-model="task.activity"  name="activity_input"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="" &gt;Status da atividade:&lt;/label&gt;
+        &lt;input type="checkbox" v-model="task.done"  name="checkbox_input"&gt;
+    &lt;/div&gt;
+    &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+
+<p>E são somente essas as alterações, para podermos testar as funcionalidade de update, feito você pode rodar um primeiro test:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run test
+</code></pre>
+</div>
+
+<p>Se o status para assetions foi completo, vamos para o nosso segundo teste:</p>
+
+<p>secondTaskSpec.js</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>module.exports = {
+	'update task': function (browser) {
+		const devServer = browser.globals.devServerURL;
+
+		browser
+			.url(devServer)
+      .waitForElementVisible('.page-header', 5000)
+      .assert.containsText('h3', 'To do Vue!')
+      .click('button[name=edit_task]')
+			.pause(3000)
+			.setValue('input[name=activity_input]', 'Make a omelete!')
+      .setValue('input[name=checkbox_input]', true)
+      .pause(2000)
+			.assert.containsText('.page-header', 'Info:')
+			.click('input[type=submit]')
+			.pause(2000)
+      .end();
+	},
+};
+
+</code></pre>
+</div>
+
+<p>A ideia desse é clicar no primeiro edit_task  e alterar a view e alterar o input dessa task para <code class="highlighter-rouge">Make a omelete!</code> e é isso, submeter e alterar, nada de mais, bem acho que por hoje é só, um post simples sobre algo bem tranquilo de se abordar, mais uma vez, obrigado =]</p>
 
 
 	<div id="disqus_thread"></div>
