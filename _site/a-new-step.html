@@ -30,6 +30,8 @@
     
       <a href="/css/main.css"> </a>
     
+      <a href="/portifolio/"> Portifolio</a>
+    
       <a href="/series/"> Series</a>
     
   </nav>
@@ -42,15 +44,15 @@
 
 
 <article class="content post">
-	<h3 class="post-title">
-	A new Step - Variables! 
-	</h3>
-	<div class="post-date">
-		<time>23 Mar 2017</time>
-	<span class="reading-time"> -  minutes to read</span>
-	</div>
+  <h3 class="post-title">
+  A new Step - Variables! 
+  </h3>
+<div class="post-date">
+  <time>23 Mar 2017</time>
+<span class="reading-time"> -  minutes to read</span>
+</div>
 
-	<p>Today I proposed my self study JS, again, but I proposed to use the new features just like let, const, arrow function, template string, class, map, filter and other awesome functions and it’s not new, I use, but some people dont and is not a problem, but I have a problem in seeing simple applications, like baby steps for you to see in “real life” and more, why you need to use these new features, for example, var is different from let and cont</p>
+<p>Today I proposed my self study JS, again, but I proposed to use the new features just like let, const, arrow function, template string, class, map, filter and other awesome functions and it’s not new, I use, but some people dont and is not a problem, but I have a problem in seeing simple applications, like baby steps for you to see in “real life” and more, why you need to use these new features, for example, var is different from let and cont</p>
 
 <p>var is a global variable
 let specified a scope
@@ -61,7 +63,7 @@ but is possible use you have for other stuff’s</p>
 
 <p>So let in go for a example</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var name = "Igor"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var name = "Igor"
 
 
 const saySomething = (name) =&gt; {
@@ -76,8 +78,7 @@ console.log(saySomething(name))
 
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This is a function and I call this function “saySomething” this function have one paramter and for const is a perfect use, no have changes because this function receive one paramter and return one value, one value in and one value out, but inside in this function has a let variable
 and this variable receive a string, this string return on template string in your value and the value pass in paramter but
@@ -88,15 +89,14 @@ this is beautifull!</p>
 
 <p>This variable return a error, because this variable belongs to a one scope, saySomething()</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//code
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//code
 ...
 
 console.log(hey)
 
 //Error: "ReferenceError: hey is not defined"
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>So Let belongs to a scope, var is now global and const is for a specific variable where i receive a value and i no have possibilities to change this value but is possible work in this value, var is terrible variable if you stop for think, is possible manipulated in all part in script and change your value, horever let your have warranty about value inside in your variable is possible work inside a function and return in a const function for exemplo.</p>
 
@@ -108,7 +108,7 @@ console.log(hey)
   <li>Now var depends a lot, since var is now synonymous with something volatile, for example, const declared as an array, receives values, is still an array even if its values ​​inside the array change, it still continues an array so i can replace var by const and ensure that it remains an array</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Just Const
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Just Const
 
 
 const foo = []
@@ -132,10 +132,9 @@ foo.splice(1,1)
 console.log(foo)
 //["Hey"]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Const if I try change your type
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Const if I try change your type
 
 const foo = []
 console.log(typeof foo)
@@ -145,10 +144,9 @@ foo = ""
 console.log(typeof foo)
 
 //"TypeError: Assignment to constant variable."
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Var be a var :p
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Var be a var :p
 
 var foo = []
 console.log(typeof foo)
@@ -158,34 +156,33 @@ console.log(typeof foo)
 foo = ""
 console.log(typeof foo)
 // string
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For now I belive is a good first baby step and in this week I promise  write another post about new features, next step we will talk more about arrow functions!</p>
 
 <p>Thanks and see you soon!</p>
 
 
-	<div id="disqus_thread"></div>
-	<script>
-	
-	
-	var disqus_config = function () {
-	this.page.url = 'http://localhost:4000 /a-new-step'; // Replace PAGE_URL with your page's canonical URL variable
-	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	};
-	
-	(function() { // DON'T EDIT BELOW THIS LINE
-	var d = document, s = d.createElement('script');
+<div id="disqus_thread"></div>
+<script>
 
-	s.src = '//igorprvieira.disqus.com/embed.js';
 
-	s.setAttribute('data-timestamp', +new Date());
-	(d.head || d.body).appendChild(s);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	</article>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000 /a-new-step'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+
+  s.src = '//igorprvieira.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
 
     <footer class="site-footer">
 
@@ -230,9 +227,6 @@ console.log(typeof foo)
 
   </div>
 
-    
- 
 </body>
 </html>
 
-   

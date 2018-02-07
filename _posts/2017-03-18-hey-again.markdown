@@ -5,7 +5,6 @@ date:   2017-03-18
 categories: Lifestyle
 ---
 
-
 Today, I 'm completing three months in Belo Horizonte is a long history, but I simplificading for you, I was living in Goiânia a Capital of state Goiás, in Brazil, is a nice city but a little poor in oportunities for new tecnologies, is not impossible but is hard find a job  people work with Nodejs, JS, Ruby or React, Ember, Angular and other languages and frameworks, i love Goiânia, but is true,
 sorry guys ¯\_(ツ)_/¯
 
@@ -15,4 +14,4 @@ Today I 'm pass my day studing and building a setup for a new project for my cou
 
 I will try, is no promise, but I  will try post one blogpost for day
 so...
-See you soon! =]   
+See you soon! =]

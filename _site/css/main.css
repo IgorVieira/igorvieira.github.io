@@ -7,6 +7,7 @@
 
 html,
 body {
+  font-family: Muli;
   margin: 0;
   padding: 0; }
 
@@ -229,10 +230,12 @@ tbody tr:nth-child(odd) th {
   letter-spacing: 3.5px;
   font-size: 0.6em; }
   .masthead .masthead-nav a {
-    color: #000; }
+    color: #000;
+    transition: .4s; }
     .masthead .masthead-nav a:hover {
       color: #ffffff;
-      background-color: #E82C0C; }
+      background-color: #E82C0C;
+      transition: .4s; }
 
 .page-title {
   margin-bottom: 2rem; }
@@ -257,6 +260,35 @@ tbody tr:nth-child(odd) th {
 
 .projects-list a {
   color: #333; }
+
+.grid-link {
+  color: inherit; }
+.grid-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around; }
+  .grid-container img {
+    box-shadow: 3px 6px; }
+.grid-item {
+  overflow: hidden;
+  padding: 5px;
+  width: 350px;
+  height: 400px;
+  margin-top: 10px;
+  color: #a29797;
+  font-weight: bold;
+  text-align: justify; }
+.grid-item-description {
+  margin-top: -20px;
+  font-size: 14px;
+  text-align: left; }
 
 /** Icons */
 .icon > svg {

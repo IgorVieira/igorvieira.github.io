@@ -30,6 +30,8 @@
     
       <a href="/css/main.css"> </a>
     
+      <a href="/portifolio/"> Portifolio</a>
+    
       <a href="/series/"> Series</a>
     
   </nav>
@@ -42,21 +44,21 @@
 
 
 <article class="content post">
-	<h3 class="post-title">
-	Perto do fim - Part IV 
-	</h3>
-	<div class="post-date">
-		<time>15 Jun 2017</time>
-	<span class="reading-time"> -  minutes to read</span>
-	</div>
+  <h3 class="post-title">
+  Perto do fim - Part IV 
+  </h3>
+<div class="post-date">
+  <time>15 Jun 2017</time>
+<span class="reading-time"> -  minutes to read</span>
+</div>
 
-	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ohyeah.jpg?raw=true" alt="ohyeah" /></p>
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ohyeah.jpg?raw=true" alt="ohyeah" /></p>
 
 <p>Okay, vamos continuar o nosso projeto, a ideia é que daqui em diante possamos criar mais dois dos nossos quatro métodos, já criamos um para listar e outro para poder criar novas tasks e um que também realiza updates, que será usado mais a frente, o que iremos fazer agora é criar um método para poder remover uma task na nossa lista, para isso vamos alterar a nossa função de remover em nosso Home.vue e precisamos modificar a nossa service para deletar a task, vamos a nossa service:</p>
 
 <p>TaskService.js:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 export default class TaskService{
 
     constructor(resource){
@@ -73,11 +75,10 @@ export default class TaskService{
             })
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Abaixo do método de saveTask()</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>removeTask(taskItem){
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>removeTask(taskItem){
     this.service
         .deleteTask(taskItem._id)
         .then(() =&gt;{
@@ -88,21 +89,19 @@ export default class TaskService{
 
     
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>const taskRemove = this.tasks.indexOf(taskItem)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const taskRemove = this.tasks.indexOf(taskItem)
 this.tasks.splice(taskRemove,1 ),
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Pronto, remover já foi, se quiser faça o teste, crie um item e o remova.</p>
 
 <p>E assim ficará o nosso Home.vue:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
  
         &lt;div class="container"&gt;
             &lt;h3 class="page-header"&gt;&lt;/h3&gt;
@@ -239,8 +238,7 @@ export default {
       margin-left:1em;
   }
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Nota: Eu fiz uma pequena modificação em style, bem simples, para separar as tasks e para remover os bullets, e é isso.</p>
 
@@ -259,7 +257,7 @@ export default {
 
 <p>Em routes.js vamos fazer a seguinte alteração, adicionar mais um caminho de onde é a nossa outra view, Info.vue:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import Info from './components/info/Info.vue'
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import Info from './components/info/Info.vue'
 
 import Home from './components/home/Home.vue';
 
@@ -269,11 +267,10 @@ export const routes = [
     { path: '/info/:id', name:'info', component: Info, titulo: 'Info', menu: false },    
     { path: '*', component: Home, menu: false }
 ]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>├── App.vue
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── App.vue
 ├── components
 │   ├── home
 │   │   └── Home.vue
@@ -286,11 +283,10 @@ export const routes = [
 │       └── TaskService.js
 ├── main.js
 └── routes.js
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A nossa view de Info.vue ficara da seguinte forma:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
     &lt;div&gt;
         &lt;h3 class="page-header"&gt;&lt;/h3&gt;
         &lt;div class="col-md-4"&gt;
@@ -360,12 +356,11 @@ textarea{
    
 &lt;/style&gt;
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>export default class Task{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export default class Task{
 
     constructor(activity, done){
         this.activity = activity
@@ -374,26 +369,24 @@ textarea{
 
 
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;router-link :to="{ name: 'info', params: { id : task._id }}"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;router-link :to="{ name: 'info', params: { id : task._id }}"&gt;
     &lt;button class="btn"&gt;
     &lt;span class="glyphicon glyphicon-pencil" aria-hidden="true"&gt;&lt;/span&gt;
     Editar
     &lt;/button&gt;
         
 &lt;/router-link&gt; 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, <code class="highlighter-rouge">name:'info'</code>, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.</p>
 
 <p>Home.vue:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
  
         &lt;div class="container"&gt;
             &lt;h3 class="page-header"&gt;&lt;/h3&gt;
@@ -532,12 +525,11 @@ export default {
       margin-left:1em;
   }
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Agora vamos trabalhar o nosso serviço para que ele possa pegar o valor que foi passado como parâmetro, então vamos voltar ao TaskService.js:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 export default class TaskService{
 
     constructor(resource){
@@ -553,12 +545,11 @@ export default class TaskService{
           
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Depois vamos fazer uma alterações no nosso Info.vue, uma em nosso data, outro em nosso created, e em nossos método para ter mais uma função de update, primeiro o nosso created!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
 
 import Task from  '../../domain/task/Task'
 import TaskService from '../../domain/task/TaskService'
@@ -599,25 +590,23 @@ export default {
 }
 &lt;/script&gt;
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Okay, fizemos uma alteração dizendo que caso tenha uma id eu passo a mesma para o nosso método, e retorno o objeto para a minha task, só que tem um porém, como eu vou receber essa id?, então vamos a nossa alteração no data:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>data() {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data() {
     return {
         task: new Task(),
         id: this.$route.params.id, &lt;= Here!!
         title:'Info:'
     }
 },
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Como passamos no router uma id, eu recebo pelo nosso params, que contém o valor da id, e usamos isso no nosso created(), que ao receber um valor da id, faz a busca do nosso objeto, que uma task que vai ser passada a nossa model, e ai vem o conceito da data binding com o Vue,
 vamos a uma observação na nossa template de Info.vue:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
     &lt;div class="form-group"&gt;
         &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
         &lt;input type="text" class="form-control" v-model="task.activity"&gt;
@@ -628,8 +617,7 @@ vamos a uma observação na nossa template de Info.vue:</p>
     &lt;/div&gt;
     &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
 &lt;/form&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Como criamos uma class Task que tem um constructor que recebe dois valores, a activity e done,
 nós podemos trabalhar passando esses valores para a nossa model e receber as mesmas através do nosso método de busca, é algo bem legal, e se assemelha muito com o jeito Angular de realizar as coisas.</p>
@@ -638,7 +626,7 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
 
 <p>Se você observou bem, eu já tenho ali no meu form uma função, <code class="highlighter-rouge">updateTask()</code>, vamos criar essa mesma dentro do método, já que ela é bem semelhante ao nosso método de save, só vamos básicamente passar o id e receber o valor para atualizarmos a nossa view, e é isso:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>methods:{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>methods:{
     updateTask(){
             this.service
             .saveTask(this.task) 
@@ -648,13 +636,12 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
     }
 }
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!</p>
 
 <p>Veja o Info.vue completo:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
     &lt;div&gt;
         &lt;h3 class="page-header"&gt;&lt;/h3&gt;
         &lt;div class="col-md-4"&gt;
@@ -737,33 +724,32 @@ textarea{
    
 &lt;/style&gt;
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]</p>
 
 
 
-	<div id="disqus_thread"></div>
-	<script>
-	
-	
-	var disqus_config = function () {
-	this.page.url = 'http://localhost:4000 /perto-do-fim'; // Replace PAGE_URL with your page's canonical URL variable
-	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	};
-	
-	(function() { // DON'T EDIT BELOW THIS LINE
-	var d = document, s = d.createElement('script');
+<div id="disqus_thread"></div>
+<script>
 
-	s.src = '//igorprvieira.disqus.com/embed.js';
 
-	s.setAttribute('data-timestamp', +new Date());
-	(d.head || d.body).appendChild(s);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	</article>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000 /perto-do-fim'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+
+  s.src = '//igorprvieira.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
 
     <footer class="site-footer">
 
@@ -808,9 +794,6 @@ textarea{
 
   </div>
 
-    
- 
 </body>
 </html>
 
-   

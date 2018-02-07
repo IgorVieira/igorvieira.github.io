@@ -47,9 +47,11 @@
     font-size:0.6em;
     a{
       color:#000;
+      transition: .4s;
       &:hover{
         color:#ffffff;
         background-color:#E82C0C;
+        transition: .4s;
       }
     } 
       
@@ -98,6 +100,51 @@
 .projects-list {
   a {
     color: #333;
+  }
+}
+
+.grid {
+
+  &-link {
+    color: inherit;
+  }
+
+  &-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+
+    img {
+      box-shadow: 3px 6px;
+    }
+
+    
+  }
+
+  &-item {
+    overflow: hidden;
+    padding: 5px;
+    width: 350px;
+    height: 400px;
+    margin-top: 10px;
+    color: #a29797;
+    font-weight: bold;
+    text-align: justify;
+  }
+
+  &-item-description {
+    margin-top: -20px;
+    font-size: 14px;
+    text-align: left;
   }
 }
 

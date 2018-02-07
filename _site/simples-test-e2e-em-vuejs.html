@@ -30,6 +30,8 @@
     
       <a href="/css/main.css"> </a>
     
+      <a href="/portifolio/"> Portifolio</a>
+    
       <a href="/series/"> Series</a>
     
   </nav>
@@ -42,15 +44,15 @@
 
 
 <article class="content post">
-	<h3 class="post-title">
-	Simples teste e2e em VueJS - Part II 
-	</h3>
-	<div class="post-date">
-		<time>01 May 2017</time>
-	<span class="reading-time"> -  minutes to read</span>
-	</div>
+  <h3 class="post-title">
+  Simples teste e2e em VueJS - Part II 
+  </h3>
+<div class="post-date">
+  <time>01 May 2017</time>
+<span class="reading-time"> -  minutes to read</span>
+</div>
 
-	<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true" alt="night" />
+<p><img src="https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/nightwatch.png?raw=true" alt="night" />
 Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas em realizar testes unitários atráves do que o cli me traz, porém eu prometi trazer um teste com e2e, e depois eu realizarei de fato testes unitários junto aos nossos componentes, enfim, acontece, mas a aplicação tem que continuar.</p>
 
 <p>A ideia é seguinte, nesse passo, nós iremos fazer um roteiro para um teste e2e, uma expécie de baby step, o nosso cli já fornece uma boa ferramenta para esse tipo de test, o Nightwatch, porém o mesmo precisa da jvm do java para rodar o Selenium, ele cria uma simulação de um browser, porém, a ideia é, simular um browser e depois fazer tests apartir da url que for passada junto a ele e as demais sequências, e isso ajudo do Nightwatch, então nessa fase você vai precisar instalar java na sua maquina, acontece, o mundo não é perfeito!kkk brincadeira!</p>
@@ -59,7 +61,7 @@ Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas 
 
 <p>Vamos fazer umas pequenas alterações, atualmente o chrome tem um funcionalidade em seu browser que impede de realizar uma simulação do mesmo, entretanto podemos habilitar isso, para de fato realizarmos o nosso teste e vermos as ações segundo o nosso roteiro, então vamos ver o arquivo nightwatch.conf.js:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>require('babel-register')
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require('babel-register')
 var config = require('../../config')
 
 // http://nightwatchjs.org/gettingstarted#settings-file
@@ -109,12 +111,11 @@ module.exports = {
   }
 }
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Nesse arquivo vamos fazer uma pequena alteração no Google Chrome!
 Nossa configuração ficará da seguinte forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    chrome: {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -124,8 +125,7 @@ Nossa configuração ficará da seguinte forma:</p>
         }
       }
     },
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>O que adicionamos é o chromeOptions!
 passamos somente um argumento nos permitindo emular uma nova página do browser, para teste e isso junto ao chrome.</p>
 
@@ -133,7 +133,7 @@ passamos somente um argumento nos permitindo emular uma nova página do browser,
 
 <p>Para isso, vamos para outro folder, no nosso diretório test, vamos para spec, dentro dele tem um arquivo chamdo test.js, é nesse arquivo que iremos trabalhar o nosso roteiro, e vamos fazer em três partes, primeiro eu queror ir a página e quero contar quantos elementos da minha lista eu tenho, quandas li eu tenho, como eu farei isso? Eu irei em browser e apagarei tudo que tem a baixo dele, ficará assim:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
@@ -150,12 +150,11 @@ module.exports = {
 }
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Agora vamos fazer o seguinte, quero executar o que haviamos planejado, acessar a url, e contar quantas li eu tenho, no caso 3, e vou adicionar mais duas coisas a essa lista de tarefas, quero ver se ele pega o nosso h1 com o texto Hey e o title da nossa página, e será isso nosso test:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
@@ -173,14 +172,12 @@ module.exports = {
   }
 }
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>E vamos rodar nosso teste:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm run e2e
+</code></pre></div></div>
 
 <p>Se você vê, ele vai abrir uma instancia junto ao selenium, e vai emular ações junto ao chrome, ao final ele vai dar o resultado dos nossos testes, e como tal, ele passou:</p>
 
@@ -188,7 +185,7 @@ module.exports = {
 
 <p>O que faremos agora é, adicionar uma nova tarefa e contabilizar quantos elementos tem em nossa lista de tarefas:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>module.exports = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
@@ -210,8 +207,7 @@ module.exports = {
   }
 }
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>O que fizemos foi, setar um valor para o nosso imput text, adicionando um valor ao seu value, e atribuindo também um valor ao seu checkbox, dando ele o valor de true, e vamos aproveitar o nosso name do button, usá-lo para o click, muito importante!</p>
 
@@ -219,9 +215,8 @@ module.exports = {
 
 <p>Vamos rodar novamente o nosso teste:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm run e2e
+</code></pre></div></div>
 
 <p>E ele passou:</p>
 
@@ -229,7 +224,7 @@ module.exports = {
 
 <p>Por último, vamos excluir o último valor adicionado e contar os elementos da nossa lista, dessa forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>browser
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>browser
       .url(devServer)
       .assert.title('To do List!')
       .pause(1000)
@@ -244,14 +239,12 @@ module.exports = {
       .pause(2000)
       .assert.elementCount('li', 3)
       .end()
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Vamos rodar novamente o nosso teste:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run e2e
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm run e2e
+</code></pre></div></div>
 
 <p>E ele passou:</p>
 
@@ -260,26 +253,26 @@ module.exports = {
 <p>Bem, esse foi o nosso roteiro de teste com selenium e nightwatch, conseguimos realizar todas as funcionalidade e alguns elementos da nossa aplicação, garantindo o funcionamento do nosso software,e é isso, quinta-feira, provavelmente quinta, teremos mais um post, caso contrário, sexta, mas de sexta não passa, mais uma vez obrigado e até mais =]</p>
 
 
-	<div id="disqus_thread"></div>
-	<script>
-	
-	
-	var disqus_config = function () {
-	this.page.url = 'http://localhost:4000 /simples-test-e2e-em-vuejs'; // Replace PAGE_URL with your page's canonical URL variable
-	this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	};
-	
-	(function() { // DON'T EDIT BELOW THIS LINE
-	var d = document, s = d.createElement('script');
+<div id="disqus_thread"></div>
+<script>
 
-	s.src = '//igorprvieira.disqus.com/embed.js';
 
-	s.setAttribute('data-timestamp', +new Date());
-	(d.head || d.body).appendChild(s);
-	})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	</article>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000 /simples-test-e2e-em-vuejs'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+
+  s.src = '//igorprvieira.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
 
     <footer class="site-footer">
 
@@ -324,9 +317,6 @@ module.exports = {
 
   </div>
 
-    
- 
 </body>
 </html>
 
-   
