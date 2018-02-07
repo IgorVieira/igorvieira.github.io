@@ -6,33 +6,9 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Aug 2017 14:57:44 -0300</pubDate>
-    <lastBuildDate>Fri, 04 Aug 2017 14:57:44 -0300</lastBuildDate>
-    <generator>Jekyll v3.5.1</generator>
-    
-      <item>
-        <title>Um pequeno path para quem está começando </title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/ruby.jpg?raw=true&quot; alt=&quot;ruby&quot; /&gt;
-Se eu tivesse a oportunidade de poder falar para o Igor de 6 anos atrás, uma linguagem a qual aprender para iniciar no área de desenvolvimento, eu indicaria antes de tudo Inglês, sem Inglês você não vai muito longe nessa área, sério, não que eu seja o melhor também, mas eu escrevo, leio e falo bem, as vezes dou uma de mestre Yoda, mas no geral eu me saio bem, porém o foco desse post e outro, Ruby, e isso para você poder iniciar, admito que hoje eu mais trabalho com Javascript do que Ruby, uso bem frameworks como Vuejs, Angular2 ou React do que Ruby e Rails,tenho até mais projetos em Rails do que tenho com qualquer outro framework em JS, entretanto qual a razão de Ruby? Ao meu ver, a opinião de alguém que até aprendeu cedo programação, mas ficou sem utilizar por falta de interesse no que tinha (eu aprendi Pascal, VB e Java) então com tempo eu fiquei sem programar,sem criar nada por uns 3 anos, pois não achava interessante nenhuma das linguagens citadas, não é preconceito com as mesmas, depois de um tempo eu até dei aula em uma empresa de RH sobre JAVA, contudo a praticidade de Ruby é algo muito bom para problemas em que se faz necessário a abstração, é interessante para se entender problemas do mundo real e os resolvê-los de forma prática e rápida.&lt;/p&gt;
-
-&lt;p&gt;Conceitos a respeito de Ruby, tudo é objeto, então praticamente tudo é mutavel de alguma forma,polimorfismo, classes e funções são presentes na mesma, assim como programação funcional, que na real existe bem antes de 2015, meta programação e testes são coisas inerentes a Ruby, se bem que a parte de teste é algo muito mais cultural e forte dentro da comunidade, e é algo imprecidivel mesmo em outras linguagens, pois querendo ou não, aplicações grandes ou pequenas precisam ser minimamente testáveis, pois talvez você não vai estar para sempre em um projeto, você nem sempre vai ser único a trabalhar em um produto ou talvez você vai precisar ter multiplos recursos adjuntos a sua aplicação, porém testes são fundamentais, como eu disse, creio que isso foi algo cresceu devido a cultura, e se expandiu para outras comunidades, e fico feliz com isso, e é por esse motivo que gosto muito de Ruby, não é somente a linguagem, não é somente um framework, ou a sua forma de organização de pacotes que no caso de Ruby são as gems, mas é todo o ecossistema.&lt;/p&gt;
-
-&lt;p&gt;Atualmente você não precisa de muito para criar aplicações com Ruby on Rails, mas é bom que entenda bem os conceitos da linguagem, aquilo que pode te ajudar a escrever um bom código de forma clara,mas de fato você não precisa de muito para criar algo, e como eu disse no quesito comunidade tem muita coisa boa para poder aprender, em português e em inglês, maior parte em inglês e por isso a ressalva no início do post, porém continuando, se você não tem muito mas quer começar a aprender e a dar seus primeiros passos, eu recomendo fortemente  a apostila da &lt;a href=&quot;https://www.caelum.com.br/download/caelum-ruby-on-rails-rr71.pdf&quot;&gt;Caelum&lt;/a&gt;, ela tem uma escrita bem simples, para quem está começando, fora que a Caelum é uma empresa que já tem uma certa reputação na criação de conteúdo de qualidade e em treinamentos para companhias, outra dica é a comunidade no &lt;a href=&quot;https://www.facebook.com/groups/rubyonrailsbrasil/&quot;&gt;Facebook&lt;/a&gt;, que é muito boa, Rails tem uma comunidade forte, com várias pessoas dispostas a ajudar para que você dê seus primeiros passos dentro da área, você também encontra muito matérial bom a respeito de Rails no Youtube, entretanto, eu ainda recomendo fortemente a estudar Ruby antes de cair para os tutoriais de Rails, pelo seguinte motivo, entenda a linguagem, entenda o que ela pode fazer por você, entenda como você pode usar os melhores recursos que ela tem a disposição, teste, crie pequenas aplicações, coisas simples, e as teste,passado isso, vá para Rails, dentre os canais que eu mais recomendo estão o &lt;a href=&quot;https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww&quot;&gt;Go Rails&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/user/mackenziechild&quot;&gt;Machenzie Child&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ&quot;&gt;One Bit Code&lt;/a&gt; e &lt;a href=&quot;https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A&quot;&gt;RubyThursday&lt;/a&gt;, o básico que você vai precisar para dar seus 
-primeiros passos e criar seus primeiros produtos, e trabalhar nos seus primeiros projetos.&lt;/p&gt;
-
-&lt;p&gt;Para encerrar, Ruby e Rails não são balas de prata, são excelentes soluções para vários problemas porém, e isso ao meu ver, Rails é e te ajuda a tornar mais fácil a criação daquilo que você precisa para fato entregar algo de valor aos seus clientes, então, esse é um post rápido falando sobre uma das linguagens e de um dos frameworks que já estão a bastante tempo no mercado e que de fato atendem ao proposito para o qual eles foram criados e provavelmente estarão ai por mais um tempo fazendo o que eles fazem de melhor, serem úteis e agregando valor para alguém, mais uma vez obrigado e até mais.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 18 Jul 2017 00:00:00 -0300</pubDate>
-        <link>http://localhost:4000/um-pequeno-path-para-quem-esta-comecando</link>
-        <guid isPermaLink="true">http://localhost:4000/um-pequeno-path-para-quem-esta-comecando</guid>
-        
-        
-        <category>Ruby,</category>
-        
-        <category>Lifestyle</category>
-        
-      </item>
+    <pubDate>Wed, 07 Feb 2018 11:02:52 -0200</pubDate>
+    <lastBuildDate>Wed, 07 Feb 2018 11:02:52 -0200</lastBuildDate>
+    <generator>Jekyll v3.7.0</generator>
     
       <item>
         <title>Testes e2e para verificar a nossa aplicação - Part VII </title>
@@ -49,7 +25,7 @@ um para ver adicionar uma nova tarefa e outra para poder editar uma tarefa.&lt;/
 &lt;p&gt;E podemos excluir o que temos por default, nosso objetivo é criar um novo, e  mas tão simples quanto, esse será 
 o nome dele, firstTaskSpec.js&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
     'new task': function (browser) {
       const devServer = browser.globals.devServerURL;
       browser
@@ -65,8 +41,7 @@ o nome dele, firstTaskSpec.js&lt;/p&gt;
        .end();
      },
   };
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O que definimos aqui é, temos uma sequencia de atividades que vão sendo realizadas , é como se tivessemos um roteiro
 e ele vai seguindo o roteiro de cada uma das nossas ações, but … antes de continuarmos, temos que fazer mais três alterações
@@ -74,7 +49,7 @@ temos que alterar nosso form, observe o nosso  &lt;code class=&quot;highlighter-
 uma tag input no qual o seu name é acitivity_input, assim como nosso outro .setValue, tem um name tentando buscar o que é o
 seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que iremos fazer:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;row&quot;&amp;gt;
   &amp;lt;div class=&quot;col-md-5 col-md-offset-2 well&quot;&amp;gt;
       &amp;lt;form @submit.prevent=&quot;submitTask()&quot;&amp;gt;
         &amp;lt;div class=&quot;form-group&quot;&amp;gt;
@@ -90,12 +65,11 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
     &amp;lt;/form&amp;gt;
   &amp;lt;/div&amp;gt;
 &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Semelhantemente teremos que fazer alterações em info.vue, visto que vamos ter um spec para ele também.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
     &amp;lt;div class=&quot;form-group&quot;&amp;gt;
         &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
         &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;  name=&quot;activity_input&quot;&amp;gt;
@@ -106,20 +80,18 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
     &amp;lt;/div&amp;gt;
     &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
 &amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E são somente essas as alterações, para podermos testar as funcionalidade de update, feito você pode rodar um primeiro test:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run test
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Se o status para assetions foi completo, vamos para o nosso segundo teste:&lt;/p&gt;
 
 &lt;p&gt;secondTaskSpec.js&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
 	'update task': function (browser) {
 		const devServer = browser.globals.devServerURL;
 
@@ -139,8 +111,7 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
 	},
 };
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A ideia desse é clicar no primeiro edit_task  e alterar a view e alterar o input dessa task para &lt;code class=&quot;highlighter-rouge&quot;&gt;Make a omelete!&lt;/code&gt; e é isso, submeter e alterar, nada de mais, bem acho que por hoje é só, um post simples sobre algo bem tranquilo de se abordar, mais uma vez, obrigado =]&lt;/p&gt;
 </description>
@@ -161,26 +132,24 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
 
 &lt;p&gt;Hoje vamos falar sobre linters, confesso, eu nem sempre usava, na real como bom iniciante e tolo, achava desnecessário, but…a vida mostra que na real eles podem ser muito úteis na hora que você está desenvolvendo, não somente mostrando os espaços que você está deixando a mais, mas te mostram boas formas de você desenvolver a sua aplicação, gerar um padrão de fato para a sua stack de desenvolvimento, e coisas mais simples também, por exemplo quando você escreve uma promise, até então, eu, Igo Vieira, escrevia assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const umaFuncaoQualquer = () =&amp;gt; {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const umaFuncaoQualquer = () =&amp;gt; {
     return new Promise((resolve, reject) =&amp;gt; {
             UmaQuery.find()
                 .then(res =&amp;gt; resolve(res))
                 .catch(err =&amp;gt; reject(err))
     })
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Mas tem uma outra forma de tornar um pouco mais simples, lembrando de algo próprio de arrow functions, o retorno direto de uma Promise em seu escopo, ou seja, eu não preciso passar um return dentro de uma arrow function, posso escrever assm:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const umaFuncaoQualquer = () =&amp;gt; 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const umaFuncaoQualquer = () =&amp;gt; 
     new Promise((resolve, reject) =&amp;gt; {
         UmaQuery.find()
             .then(res =&amp;gt; resolve(res))
             .catch(err =&amp;gt; reject(err))
     })
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pode parecer uma coisa muito pequena, mas na real resumiu a forma como escrevemos, quanto menos você escrever, e quanto mais legivel e sintatico for seu código, melhor ele será, acredite, menos é mais, então a ideia é sempre fazer menos para poder fazer mais e melhor, enfim,e para começarmos, vamos usar em nosso projeto o pacote &lt;a href=&quot;https://www.npmjs.com/package/eslint-config-airbnb&quot;&gt;eslint-config-airbnb&lt;/a&gt;, mas calma, não vamos instalar da mesma forma que intalamos os demais pacotes via npm, vamos copiar um trecho de código, e ele vai instalar as demais dependencias que precisamos para a nossa aplicação, e depois vamos fazer umas pequenas configurações, roles que vão definir como será o padrão de código para a nossa aplicação, isso é ótimo para poder organizar toda a nossa aplicação e facilitar a manutenção do nosso produto!&lt;/p&gt;
 
@@ -196,7 +165,7 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
 
 &lt;p&gt;Depois precisamos, fazer algumas configurações, a primeira é em .eslintrc.js&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// http://eslint.org/docs/user-guide/configuring
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// http://eslint.org/docs/user-guide/configuring
 
 module.exports = {
   root: true,
@@ -251,12 +220,11 @@ module.exports = {
   }
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Se você seguiu desde o início, esse arquivo vem por default e o que define as regras, as formas e extensões que podemos utilizar e alguns plugins que temos a disposição, além desse arquivo temos um outro que é para o nosso editor, o .editorconfig&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root = true
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root = true
 
 [*]
 charset = utf-8
@@ -266,12 +234,11 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O importante é que aqui vamos fazer mais uma modificação, no package.json, vamos adicionar ele um lint para poder ajudar a facilitar a nossa forma de correção de erros!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &quot;scripts&quot;: {
     &quot;dev&quot;: &quot;node build/dev-server.js&quot;,
     &quot;start&quot;: &quot;node build/dev-server.js&quot;,
@@ -280,12 +247,11 @@ trim_trailing_whitespace = true
     &quot;lint&quot;: &quot;eslint '**/*.js', '**/*.vue'&quot;,  &amp;lt;==
 },
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Vamos fazer mais, vamos deixar com que ele faça isso em todos, então para isso, criaremos mais outro comando, bem simples.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &quot;scripts&quot;: {
     &quot;dev&quot;: &quot;node build/dev-server.js&quot;,
     &quot;start&quot;: &quot;node build/dev-server.js&quot;,
@@ -295,8 +261,7 @@ trim_trailing_whitespace = true
     &quot;lint:fix&quot;: &quot;eslint '**/*.js', '**/*.vue' --fix&quot;
 },
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O sufixo –fix, tentará arrumar aquilo que ele pode arrumar em nossa aplicação, não será tudo, mas boa parte ele pode melhorar em torno da nossa aplicação, e ai vamos rodar o seguinte comando:&lt;/p&gt;
 
@@ -310,7 +275,7 @@ trim_trailing_whitespace = true
 
 &lt;p&gt;São erros bem simples, o primeiro é tirar o comma &lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;, na real vamos usar um catch para poder tornar mais fácil escrever essa function, ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem) {
 			this.service
         .deleteTask(taskItem._id)
         .then(() =&amp;gt; {
@@ -319,12 +284,11 @@ trim_trailing_whitespace = true
         }, err =&amp;gt; console.log(`${err}`));
 		},
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Para created vamos fazer algumas mudanças, no map vamos alterar o nome da váriavel de retorno, pois ele disse que o valor do parametro é mesmo do escopo acima, então mudamos para &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
 		this.service = new TaskService(this.$resource);
 
 		this.service
@@ -334,12 +298,11 @@ trim_trailing_whitespace = true
       this.tasks = item;
     }, err =&amp;gt; console.log(`Erro na listagem da nossa aplicação ${err}`));
 	},
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E Info.vue, é bem mais de boa, só vamos tirar o return da função, ela em si já devolve os valores já alterados através da função:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
 		this.service = new TaskService(this.$resource);
 
 		if (this.id) {
@@ -352,8 +315,7 @@ trim_trailing_whitespace = true
       });
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Guys, é isso, algo bem simples a respeito de uso linter, airbnb cresceu muito e vem ajudando absurdamente o cenário voltado a desenvolvimento de aplicações web, principalmente no que se refere a react, js e ruby, então tem muito ai para poder estudar e trabalhar,&lt;/p&gt;
 
@@ -390,7 +352,7 @@ trim_trailing_whitespace = true
 &lt;p&gt;Aqui são postas as diferentes aplicações para a qual o seu projeto pode ser utilizado, a ideia é o seguinte, o Firebase te dá multiplas possibilidades de poder trabalhar seu projeto tanto com aplicações mobile para iOS e android, quanto para web, o nosso caso aqui vai ser web, vamos clicar no icone de para adicionar a firebase a nossa aplicação.&lt;/p&gt;
 
 &lt;p&gt;Ele vai nos dar o seguinte código:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://www.gstatic.com/firebasejs/4.1.3/firebase.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script src=&quot;https://www.gstatic.com/firebasejs/4.1.3/firebase.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   // Initialize Firebase
   var config = {
@@ -403,33 +365,30 @@ trim_trailing_whitespace = true
   };
   firebase.initializeApp(config);
 &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Precisamos, agora desabilitar para que possamos fazer acesso em nossa aplicação de forma completa, liberando todas as roles, é só ir em Database, depois seguir para Regras e alterar os objeto rules e suas keys para true! =]&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/firebase-5.png?raw=true&quot; alt=&quot;firebase&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;.read&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;.write&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+    &quot;rules&quot;:{
+        &quot;.read&quot;:true,
+        &quot;.write&quot;:true
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;PS: Isso é somente demonstrativo para fins didáticos!&lt;/p&gt;
 
 &lt;p&gt;Vamos fazer algumas modificações mais a frente, mas enfim, é o básico que precisamos, a ideia é o seguinte, vamos criar um serviço que será utilizado na nossa aplicação para poder adicionar comentários sobre as tasks e poder removê-los, vai ser interessante, essa parte é só um plus, o que precisamos agora é adicionar o firebase e o vue-fire, um módulo vue para fazer comunicação com o firebase.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm i vuefire firebase --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm i vuefire firebase --save
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A primeria alteração será em main.js:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
 /* import de Vuefire */
 import VueFire from 'vuefire'
 import VueResource from 'vue-resource'
@@ -441,14 +400,13 @@ Vue.config.productionTip = false
 Vue.use(VueFire)
 /* Código anterior */
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Depois precisamos criar a nossa service, ela vai nos ajudar a deixar a comunicação com o firebase separada das nossas funções e poder chamar nossas funções na nossa template Vue, e para isso é necessário criar em domain, mais outro diretório, firebase:&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./src/domain/firebase/FirebaseService.js&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 import Firebase from 'firebase'
 
 
@@ -468,14 +426,13 @@ const commentsRef  = app.database()
 
 
 export default commentsRef
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Vou comentar a respeito do que fizemos, aqui nós básicamente  importamos o Firebase, precisamos dele para a parte de configuração junto a nossa aplicação, o que precisamos é criar uma forma de referenciar a onde e como acessar a nossa aplicação, fazemos o import do módulo(Firebase), passamos a config de acesso, referenciando a key de acesso, domínio, a url, o id do projeto, storage , tudo isso através do initializeApp(), que depois nos dá acesso a função database(), que atráves dela passada ao nosso commentsRef nos permite realizar a criação dos nossos objetos ou deletar nossos objetos da nossa base de dados.&lt;/p&gt;
 
 &lt;p&gt;Vamos a nossa Info.vue, nela vamos fazer algumas modificações:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 
 /* imports anteriores */
 import Comment from '../../domain/comment/Comment'
@@ -524,14 +481,13 @@ export default {
     
 }
 &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O que fizemos foi o seguinte, importamos a nossa service, chamando o nosso commentsRef, e vamos fazer o seguinte, para cada comentário, ele vai criar no nosso database a partir de comments um novo comentário a apartir do id da nossa task, ou seja ele só vai adicionar por id! E depois é a mesma coisa de adicionar valores a um array, é pegar o valor recebido e passar ele para o nosso array através de um push, em Firebase, &lt;code class=&quot;highlighter-rouge&quot;&gt;não no data!&lt;/code&gt;, e fazer a leitura dos objetos de cada um, pronto, no remove, só precisamos indicar o id e removemos o elemento filho ao qual ele foi referenciado, e é isso.&lt;/p&gt;
 
 &lt;p&gt;Se você notou temos dois imports a mais, o que é esse segundo import? É uma classe, vamos só adicionar ela ao nosso domain/comments/Comment:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Comment {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Comment {
 
     constructor(comment, owner) {
         this.comment = comment
@@ -540,13 +496,12 @@ export default {
 
 
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Isso é somente para poder definir o que iremos receber nos nossos comentários e o que vai ser passado em nosso contrutor e que pode ser definido a cada novo comentário, é bem básico, nada de mais, uma coisinha para melhorar nossa aplicação.&lt;/p&gt;
 
 &lt;p&gt;No nosso template, vamos fazer pequenas moficações:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
     &amp;lt;div class=&quot;panel panel-info&quot;&amp;gt;
         &amp;lt;div class=&quot;panel-heading&quot;&amp;gt;
         &amp;lt;h3 class=&quot;panel-title&quot;&amp;gt;Comentários&amp;lt;/h3&amp;gt;
@@ -569,8 +524,7 @@ export default {
         &amp;lt;/button&amp;gt;
     &amp;lt;/form&amp;gt;
 &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;No nosso template, nós iremos pegar os comentários recebidos no nosso comments, vindos do Firebase, e passar em nosso vue-for que vai dar render nos objetos a serem referenciandos comment e owner, e nossos &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;i/&amp;gt;&lt;/code&gt; vamos passar a nossa função de removeComment(comment), que recebe o comment e remove aquele em específico pela a sua id, a nossa outra função é somente um @submit.prevent, importante colocar o prevent para evitar dar refresh na página, e ai ele recebe os valores pela nossa model e atráves da nossa model enviamos os dados para a nossa função vinda da nossa service do Firebase, que no final atualiza os dados no nosso firebase!&lt;/p&gt;
 
@@ -595,7 +549,7 @@ export default {
 
 &lt;p&gt;TaskService.js:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 export default class TaskService{
 
     constructor(resource){
@@ -612,11 +566,10 @@ export default class TaskService{
             })
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Abaixo do método de saveTask()&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem){
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeTask(taskItem){
     this.service
         .deleteTask(taskItem._id)
         .then(() =&amp;gt;{
@@ -627,21 +580,19 @@ export default class TaskService{
 
     
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Bem, o removeTask, recebe o nosso objeto, depois fazemos a chamada da nossa service através do this, a nossa service chama o método deleteTask(id), na qual passamos o nosso objeto com a chave da nossa id,como isso retorna uma promise, a nossa task vai ser removida, porém existe um problema, a nossa lista não vai ser atualizada no nosso front, pois só retornamos a promise vazia, o que fazemos é usar do bom e velho javascript, primeiro pegamos o valor da posição do nosso item junto ao array, depois pegamos o nosso array, e passamos junto ao splice removendo o item referente naquela posição, e é isso que essas duas linhas presentes na função fazem:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const taskRemove = this.tasks.indexOf(taskItem)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const taskRemove = this.tasks.indexOf(taskItem)
 this.tasks.splice(taskRemove,1 ),
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pronto, remover já foi, se quiser faça o teste, crie um item e o remova.&lt;/p&gt;
 
 &lt;p&gt;E assim ficará o nosso Home.vue:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div class=&quot;container&quot;&amp;gt;
             &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
@@ -778,8 +729,7 @@ export default {
       margin-left:1em;
   }
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Nota: Eu fiz uma pequena modificação em style, bem simples, para separar as tasks e para remover os bullets, e é isso.&lt;/p&gt;
 
@@ -798,7 +748,7 @@ export default {
 
 &lt;p&gt;Em routes.js vamos fazer a seguinte alteração, adicionar mais um caminho de onde é a nossa outra view, Info.vue:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Info from './components/info/Info.vue'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Info from './components/info/Info.vue'
 
 import Home from './components/home/Home.vue';
 
@@ -808,11 +758,10 @@ export const routes = [
     { path: '/info/:id', name:'info', component: Info, titulo: 'Info', menu: false },    
     { path: '*', component: Home, menu: false }
 ]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Vamos fazer mais uma alteração, criar o nosso novo componente, Info.vue:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ├── components
 │   ├── home
 │   │   └── Home.vue
@@ -825,11 +774,10 @@ export const routes = [
 │       └── TaskService.js
 ├── main.js
 └── routes.js
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A nossa view de Info.vue ficara da seguinte forma:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     &amp;lt;div&amp;gt;
         &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
         &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
@@ -899,12 +847,11 @@ textarea{
    
 &amp;lt;/style&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Eu tomei a liberdade e criei mais uma class dentro do domain task, que se chama Task.js, o que ela estabelece para mim? Ela só cria um constructor que recebe e volta os valores que pela mesma são passados, somente isso:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Task{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class Task{
 
     constructor(activity, done){
         this.activity = activity
@@ -913,26 +860,24 @@ textarea{
 
 
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Vamos fazer uma pequena alteração na nossa Home.vue, no botão de editar, para que ele nos passe o valor da id para nossa próxima rota.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;router-link :to=&quot;{ name: 'info', params: { id : task._id }}&quot;&amp;gt;
     &amp;lt;button class=&quot;btn&quot;&amp;gt;
     &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
     Editar
     &amp;lt;/button&amp;gt;
         
 &amp;lt;/router-link&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Se você reparou, no nosso router.js, nós indicamos a qual componente aquele router vai renderizar na view, e podemos passar um nome que é atribuido a nossa view que será renderizada, e o melhor podemos indicar isso no name, igual tem no Home, &lt;code class=&quot;highlighter-rouge&quot;&gt;name:'info'&lt;/code&gt;, outra coisa é que como indicamos que o path poderia receber uma id, no nosso params, também podemos indicar que ele recebe um id como parâmetro, e é o que podemos utilizar para realizarmos o nosso trabalho através do id da task, e assim passar o valor da mesma para a outra view e para podermos realizar update da mesma já renderizada.&lt;/p&gt;
 
 &lt;p&gt;Home.vue:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div class=&quot;container&quot;&amp;gt;
             &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
@@ -1071,12 +1016,11 @@ export default {
       margin-left:1em;
   }
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Agora vamos trabalhar o nosso serviço para que ele possa pegar o valor que foi passado como parâmetro, então vamos voltar ao TaskService.js:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 export default class TaskService{
 
     constructor(resource){
@@ -1092,12 +1036,11 @@ export default class TaskService{
           
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Depois vamos fazer uma alterações no nosso Info.vue, uma em nosso data, outro em nosso created, e em nossos método para ter mais uma função de update, primeiro o nosso created!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 
 import Task from  '../../domain/task/Task'
 import TaskService from '../../domain/task/TaskService'
@@ -1138,25 +1081,23 @@ export default {
 }
 &amp;lt;/script&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Okay, fizemos uma alteração dizendo que caso tenha uma id eu passo a mesma para o nosso método, e retorno o objeto para a minha task, só que tem um porém, como eu vou receber essa id?, então vamos a nossa alteração no data:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;data() {
     return {
         task: new Task(),
         id: this.$route.params.id, &amp;lt;= Here!!
         title:'Info:'
     }
 },
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Como passamos no router uma id, eu recebo pelo nosso params, que contém o valor da id, e usamos isso no nosso created(), que ao receber um valor da id, faz a busca do nosso objeto, que uma task que vai ser passada a nossa model, e ai vem o conceito da data binding com o Vue,
 vamos a uma observação na nossa template de Info.vue:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form class=&quot;form-horizontal well&quot; @submit.prevent=&quot;updateTask()&quot; &amp;gt;
     &amp;lt;div class=&quot;form-group&quot;&amp;gt;
         &amp;lt;label for=&quot;&quot; &amp;gt;Nome da Atividade:&amp;lt;/label&amp;gt;
         &amp;lt;input type=&quot;text&quot; class=&quot;form-control&quot; v-model=&quot;task.activity&quot;&amp;gt;
@@ -1167,8 +1108,7 @@ vamos a uma observação na nossa template de Info.vue:&lt;/p&gt;
     &amp;lt;/div&amp;gt;
     &amp;lt;input type=&quot;submit&quot; value=&quot;Salvar&quot; class=&quot;btn btn-success&quot;&amp;gt;
 &amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Como criamos uma class Task que tem um constructor que recebe dois valores, a activity e done,
 nós podemos trabalhar passando esses valores para a nossa model e receber as mesmas através do nosso método de busca, é algo bem legal, e se assemelha muito com o jeito Angular de realizar as coisas.&lt;/p&gt;
@@ -1177,7 +1117,7 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
 
 &lt;p&gt;Se você observou bem, eu já tenho ali no meu form uma função, &lt;code class=&quot;highlighter-rouge&quot;&gt;updateTask()&lt;/code&gt;, vamos criar essa mesma dentro do método, já que ela é bem semelhante ao nosso método de save, só vamos básicamente passar o id e receber o valor para atualizarmos a nossa view, e é isso:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;methods:{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;methods:{
     updateTask(){
             this.service
             .saveTask(this.task) 
@@ -1187,13 +1127,12 @@ nós podemos trabalhar passando esses valores para a nossa model e receber as me
     }
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E agora, vamos testar, se tudo foi seguido, a gente já conseguiu atualizar a nossa tarefa, e é isso!&lt;/p&gt;
 
 &lt;p&gt;Veja o Info.vue completo:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     &amp;lt;div&amp;gt;
         &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
         &amp;lt;div class=&quot;col-md-4&quot;&amp;gt;
@@ -1276,8 +1215,7 @@ textarea{
    
 &amp;lt;/style&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Bem, acho que por hoje é só, ainda vamos fazer algumas pequenas alterações, mas o básico já fizemos, e nos próximos passos, vamos trabalhar nossa aplicação com Firebase, algo bem simples, mas legal, e vamos por último escrever a nossa sequência para o nosso teste e2e, e é isso, mais dois posts, e acho que concluímos, mais uma vez obrigado, e até mais =]&lt;/p&gt;
 
@@ -1305,23 +1243,21 @@ textarea{
 
 &lt;p&gt;Step 1, vamos adicionar o &lt;code class=&quot;highlighter-rouge&quot;&gt;vue-resource&lt;/code&gt; e &lt;code class=&quot;highlighter-rouge&quot;&gt;vue-router&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm install vue-resource  vue-router
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm install vue-resource  vue-router
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Step 2, temos que modificar a nossa aplicação em algumas partes, vamos ao nosso app, e agora temos que criar um novo arquivo na raiz do nosso src.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ...
 │   
 ├── main.js
 └── routes.js &amp;lt;= 'Here!'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Esse arquivo vai fazer o gerenciamento das rotas da nossa aplicação e criaremos da seguinte forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 import Home from './components/home/Home.vue';
 
 
@@ -1329,16 +1265,15 @@ export const routes = [
     { path: '', name: 'home', component: Home, titulo: 'Home', menu: true },
     { path: '*', component: Home, menu: false }
 ]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Esse path abaixo fala que qualquer rota fora do descrito, deve voltar para a rota principal, e renderizar o componente Home&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;path:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'*',&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;component:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Home,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;menu:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{ path: '*', component: Home, menu: false }&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Step 3, vamos ao nosso App.vue, lá faremos a seguinte alteração!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
   &amp;lt;div&amp;gt;
         &amp;lt;a href=&quot;#&quot;&amp;gt; &amp;lt;router-link :to=&quot;{ name: 'home'}&quot;&amp;gt;
           &amp;lt;i class=&quot;fa fa-home&quot;&amp;gt;&amp;lt;/i&amp;gt;
@@ -1368,11 +1303,10 @@ export default {
 ...
 &amp;lt;/style&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Nesse passo, vamos importar aqui a nossa route, ela fara todo o trabalho de filtrar as views que devem ser instanciadas, e deixar como default a nossa home, a baixo, vamos fazer uma pequena forma de transição!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;style&amp;gt;
 .page-view-enter, .page-view-leave-active{
     opacity:0;
 }
@@ -1381,8 +1315,7 @@ export default {
     transition: 0.4s
 }
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Como temos uma tag chamada &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;transition&amp;gt;&amp;lt;/transition&amp;gt;&lt;/code&gt;, vamos adicionar somente um efeito a mesma que e ai quando mudarmos de view ela dará um efeito de opacidade entre uma view e outra com um certo delay, e é isso, segue o passeio.&lt;/p&gt;
 
@@ -1390,7 +1323,7 @@ export default {
 
 &lt;p&gt;Step 4, precisamos fazer alterações em nosso main.js, vamos adicionar alguns dos nossos novos módulos:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App.vue'
@@ -1417,8 +1350,7 @@ new Vue({
   render: h =&amp;gt; h(App)
 })
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Eu vou explicar as alterações que fizemos, primeiro, eu adicionei os módulos vue-router e vue-resource, e a cada um deles eu tive que adicionar junto ao nosso Vue,
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Vue.use(VueRouter)&lt;/code&gt; +  &lt;code class=&quot;highlighter-rouge&quot;&gt;Vue.use(VueResource)&lt;/code&gt; para ele entender que temos novos módulos que estão sendo injetados e que podem ser usados em nossa aplicação, e abaixo temos router, que ali instanciamos para uso na nossa aplicação, e depois dizemos ao vue a onde ele deve criar as views, e que ele tem um processo de router para cada view que vai ser criada.&lt;/p&gt;
@@ -1427,7 +1359,7 @@ new Vue({
 
 &lt;p&gt;Agora que já temos o nosso outro componente, Home.vue, criado em nosso folder de componentes, vamos ajudar algumas coisas no template dele!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div&amp;gt;
             &amp;lt;h3&amp;gt;&amp;lt;/h3&amp;gt;
@@ -1471,14 +1403,13 @@ export default {
   
  
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Acho que isso está mais simples, mesmo para quem for começar daqui, já começa bem pois está mais simples que os últimos exemplos, entretanto, antes de continuarmos, quero adicionar um pouco mais de estilo a nossa aplicação, vamos fazer uma alteração bem simples, é só adicionar os CDN’s do bootstrap com algumas coisas do bootswatch a nossa aplicação, isso no nosso index.html, que está na raiz do nosso projeto!&lt;/p&gt;
 
 &lt;p&gt;E ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Required meta tags --&amp;gt;&lt;/span&gt;
@@ -1501,14 +1432,13 @@ export default {
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E vamos modificar tudo o que fizemos em temos de template, são só duas por enquanto, App.vue e Home.vue =]&lt;/p&gt;
 
 &lt;p&gt;App.vue ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;template&amp;gt;
     &amp;lt;div&amp;gt;
         &amp;lt;nav class=&quot;navbar navbar-default&quot;&amp;gt;
             &amp;lt;div class=&quot;container-fluid&quot;&amp;gt;
@@ -1569,12 +1499,11 @@ export default {
 
 &amp;lt;/style&amp;gt;
   
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E Home.vue será finalizado assim, adicionando até um botão a mais, o de editar:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div class=&quot;container&quot;&amp;gt;
             &amp;lt;h3 class=&quot;page-header&quot;&amp;gt;&amp;lt;/h3&amp;gt;
@@ -1681,8 +1610,7 @@ export default {
   }
 &amp;lt;/style&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Step 5&lt;/p&gt;
 
@@ -1690,7 +1618,7 @@ export default {
 
 &lt;p&gt;O próximo passo é montar um serviço que vai nos ajudar a conectar ao nosso servidor, para isso vamos criar um outro folder, ele se chama domain onde teremos vários outros serviços mais a frente, porém por enquanto vamos criar só mais um outro folder em domain, se chama task e vai ficar assim nossa árvore de diretórios:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ├── components
 │   └── home
 │      └── Home.vue
@@ -1700,12 +1628,11 @@ export default {
 │       └── TaskService.js
 ├── main.js
 └── routes.js
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Agora, vamos ao nosso arquivo TaskService.js, quero criar somente duas funções por hora, uma para listar e outra para criar itens para a nossa lista!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
 
     constructor(resource){
         this._resource =  resource('api/tasks{/id}')
@@ -1713,12 +1640,11 @@ export default {
 
 
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O que fizemos aqui? Nós criamos uma classe, exportamos ela com um construtor que recebe a parte referente a nossa api, observe isso &lt;code class=&quot;highlighter-rouge&quot;&gt;api/tasks{/id}&lt;/code&gt;, ele recebe a url de forma que facilite o nosso trabalho de tratar o path, enfim, primeiro vamos criar o nosso método para poder listar as nossas tasks:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export default class TaskService{
 
     constructor(resource){
         this._resource =  resource('api/tasks{/id}')
@@ -1733,12 +1659,11 @@ export default {
 
 
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E vamos fazer mais outra alteração bem simples no nosso Home.vue, no nosso created():&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 import _ from 'lodash';
 import TaskService from '../../domain/task/TaskService'
 
@@ -1777,8 +1702,7 @@ export default {
 }
 
 &amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Primeiro, vamos instalar mais um módulo, &lt;code class=&quot;highlighter-rouge&quot;&gt;lodash&lt;/code&gt;, e indicar o caminho relativo da nossa service!&lt;/p&gt;
 
@@ -1786,16 +1710,15 @@ export default {
 
 &lt;p&gt;Olhe bem as chamdas do módulo e do nosso serviço!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
 
 import _ from 'lodash';
 import TaskService from '../../domain/task/TaskService'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E no método created(), vamos chamar a nossa service e renderizar os valores vindos a partir do nosso objeto json que vem da nossa API e ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;created() {
     this.service = new TaskService(this.$resource)
     
     this.service
@@ -1807,8 +1730,7 @@ import TaskService from '../../domain/task/TaskService'
 
     
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O que fizemos foi instanciar a nossa service, chamando o nosso método listTask() que nos retorna uma promise, nessa promise tratamos o valor e passamos o mesmo para a nossa list que é um array &lt;code class=&quot;highlighter-rouge&quot;&gt;this.tasks = [];&lt;/code&gt;, se quiser testar e tiver um conhecimento básico de MongoDB é bem simples simular um valor:&lt;/p&gt;
 
@@ -1836,15 +1758,14 @@ import TaskService from '../../domain/task/TaskService'
 
 &lt;p&gt;É só adicionar isso em frente a status, se task.done == true, ele mostra o icone de ok, e caso contrário, se for falso, ele mostra um item de remove, um x, e é isso&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Status: &amp;lt;div v-if=&quot;task.done == true&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Status: &amp;lt;div v-if=&quot;task.done == true&quot;&amp;gt;
              &amp;lt;span class=&quot;glyphicon glyphicon-ok&quot;                    aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
             &amp;lt;/div&amp;gt;
             &amp;lt;div v-else-if=&quot;task.done == false&quot;&amp;gt;
                 &amp;lt;span class=&quot;glyphicon glyphicon-remove&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/span&amp;gt;
             &amp;lt;/div&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Agora ficou mais da hora:&lt;/p&gt;
 
@@ -1852,7 +1773,7 @@ import TaskService from '../../domain/task/TaskService'
 
 &lt;p&gt;E vamos para a última função desse post, vamos voltar para o nosso service TaskService.js&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* Class TaskService */
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* Class TaskService */
 
 
  saveTask(task){
@@ -1864,12 +1785,11 @@ import TaskService from '../../domain/task/TaskService'
     }
 
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Bem simples, nós chamaos o resource para lidar com isso, vamos fazer só uma pequena alteração, para quando fomos fazer update, e utilizarmos o id da task para poder atualizar a task em si e voltamos a nossa view para o nosso método:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    /* Parte acima da aplicação */
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    /* Parte acima da aplicação */
 
     methods:{
 
@@ -1887,8 +1807,7 @@ import TaskService from '../../domain/task/TaskService'
 
     /* Created abaixo */
     
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Como a nossa serivce já foi instanciada, podemos só chamar a service e seus métodos para poder realizar a função, e é isso, bem simples! =]&lt;/p&gt;
 
@@ -1916,7 +1835,7 @@ Vamos começar a criar nossos primeiros testes, confesso, tive alguns problemas 
 
 &lt;p&gt;Vamos fazer umas pequenas alterações, atualmente o chrome tem um funcionalidade em seu browser que impede de realizar uma simulação do mesmo, entretanto podemos habilitar isso, para de fato realizarmos o nosso teste e vermos as ações segundo o nosso roteiro, então vamos ver o arquivo nightwatch.conf.js:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require('babel-register')
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;require('babel-register')
 var config = require('../../config')
 
 // http://nightwatchjs.org/gettingstarted#settings-file
@@ -1966,12 +1885,11 @@ module.exports = {
   }
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Nesse arquivo vamos fazer uma pequena alteração no Google Chrome!
 Nossa configuração ficará da seguinte forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    chrome: {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -1981,8 +1899,7 @@ Nossa configuração ficará da seguinte forma:&lt;/p&gt;
         }
       }
     },
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;O que adicionamos é o chromeOptions!
 passamos somente um argumento nos permitindo emular uma nova página do browser, para teste e isso junto ao chrome.&lt;/p&gt;
 
@@ -1990,7 +1907,7 @@ passamos somente um argumento nos permitindo emular uma nova página do browser,
 
 &lt;p&gt;Para isso, vamos para outro folder, no nosso diretório test, vamos para spec, dentro dele tem um arquivo chamdo test.js, é nesse arquivo que iremos trabalhar o nosso roteiro, e vamos fazer em três partes, primeiro eu queror ir a página e quero contar quantos elementos da minha lista eu tenho, quandas li eu tenho, como eu farei isso? Eu irei em browser e apagarei tudo que tem a baixo dele, ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
@@ -2007,12 +1924,11 @@ module.exports = {
 }
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Agora vamos fazer o seguinte, quero executar o que haviamos planejado, acessar a url, e contar quantas li eu tenho, no caso 3, e vou adicionar mais duas coisas a essa lista de tarefas, quero ver se ele pega o nosso h1 com o texto Hey e o title da nossa página, e será isso nosso test:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
@@ -2030,14 +1946,12 @@ module.exports = {
   }
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E vamos rodar nosso teste:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Se você vê, ele vai abrir uma instancia junto ao selenium, e vai emular ações junto ao chrome, ao final ele vai dar o resultado dos nossos testes, e como tal, ele passou:&lt;/p&gt;
 
@@ -2045,7 +1959,7 @@ module.exports = {
 
 &lt;p&gt;O que faremos agora é, adicionar uma nova tarefa e contabilizar quantos elementos tem em nossa lista de tarefas:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
@@ -2067,8 +1981,7 @@ module.exports = {
   }
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O que fizemos foi, setar um valor para o nosso imput text, adicionando um valor ao seu value, e atribuindo também um valor ao seu checkbox, dando ele o valor de true, e vamos aproveitar o nosso name do button, usá-lo para o click, muito importante!&lt;/p&gt;
 
@@ -2076,9 +1989,8 @@ module.exports = {
 
 &lt;p&gt;Vamos rodar novamente o nosso teste:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E ele passou:&lt;/p&gt;
 
@@ -2086,7 +1998,7 @@ module.exports = {
 
 &lt;p&gt;Por último, vamos excluir o último valor adicionado e contar os elementos da nossa lista, dessa forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;browser
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;browser
       .url(devServer)
       .assert.title('To do List!')
       .pause(1000)
@@ -2101,14 +2013,12 @@ module.exports = {
       .pause(2000)
       .assert.elementCount('li', 3)
       .end()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Vamos rodar novamente o nosso teste:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo npm run e2e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E ele passou:&lt;/p&gt;
 
@@ -2145,19 +2055,17 @@ module.exports = {
 
 &lt;p&gt;Primeiro vamos instalar o vue-cli:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    sudo npm install vue-cli -g
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    sudo npm install vue-cli -g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Depois que instalamos ele globalmente, vamos utilizar a versão dele com webpack, você pode escolher browserify, não recomendo, poucos usam, e o meu post eu devo seguir mesmo com webpack, de toda forma vamos inicializar aplicação assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    vue init webpack to-do-list
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    vue init webpack to-do-list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pronto, ele vai criar começar a inicializar a nossa aplicação, o que queremos é a seguinte stack para o nosso front:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 ? Project name to-do-list
 ? Project description A Vue.js project
 ? Author Igor Vieira &amp;lt;igor.p.r.vieira@gmail.com&amp;gt;
@@ -2178,8 +2086,7 @@ vue-cli · Generated &quot;to-do-list&quot;.
    
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;E vamos começar a partir disso, entramos ai no to-do-list, damos um npm install e vamos ver mesmo como está a nossa aplicação com npm run dev, e sejamos felizes.&lt;/p&gt;
 
@@ -2188,18 +2095,17 @@ vue-cli · Generated &quot;to-do-list&quot;.
 &lt;p&gt;Vamos entrar na pasta e alterar algumas coisas, primeiro, vamos entrar no folder e em src
 &lt;code class=&quot;highlighter-rouge&quot;&gt;./src&lt;/code&gt;, esse vai ser por hora o único folder que iremos trabalhar , existe outro folder dentro chamado componentes, vamos deletar esse arquivo, Hello.vue,pronto,  repare que Vuejs tem um template próprio, então tudo o que vamos criar tem uma certa extensão .vue, vamos deletar esse arquivo e criar um outro folder, home/Home.vue e ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── App.vue
 ├── components
 │   └── home
 │       └── Home.vue
 └── main.js    
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pronto, é assim que queremos os nossos arquivos, indo em App.vue, vamos fazer algumas pequenas alterações, mas eu vou preferir apagar tudo e criar passo a passo, então apague tudo em App.vue e deixe da seguinte forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 &amp;lt;/template&amp;gt;
 
 &amp;lt;script&amp;gt;
@@ -2221,14 +2127,13 @@ vue-cli · Generated &quot;to-do-list&quot;.
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Essa é a estrutura básica de qualquer componente que viemos a criar com Vue, template é onde teremos a nossa view e alguns atributos como binds por exemplo no qual os dados vem da view ao nosso data e do data pode ser passado a nossa view, data nesse caso se emplica a uma função onde podemos trabalhar a nossa aplicação, criar objetos, passar objetos e poder chamá-los em outras partes da nossa aplicação, podemos trabalhar inúmeras possiblidades, é bem interessante, e por fim temos o nosso style, que implica na estilização da nossa aplicação.&lt;/p&gt;
 
 &lt;p&gt;Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente único da nossa View,&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 &amp;lt;/template&amp;gt;
 
 
@@ -2246,14 +2151,13 @@ export default {
 &amp;lt;style&amp;gt;
 
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Depois vamos criar o nosso template, repare que colocamos uma nova tag &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;home&amp;gt;&amp;lt;/home&amp;gt;&lt;/code&gt; e ela está dentro de uma div, ela é importante pelo seguinte, tudo o que fizermos temos que passar em nosso template em um único bloco, sempre dentro de uma div, caso contrário ele não entenderá o nosso componente ou os diversos componentes que precisarmos.&lt;/p&gt;
 
 &lt;p&gt;PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mais para frente trataremos a respeito dele!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
   &amp;lt;div id=&quot;app&quot;&amp;gt;
     &amp;lt;home&amp;gt;&amp;lt;/home&amp;gt;
   &amp;lt;/div&amp;gt;
@@ -2282,12 +2186,11 @@ export default {
 &amp;lt;/style&amp;gt;
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em &lt;code class=&quot;highlighter-rouge&quot;&gt;./src/components/home/Home.vue&lt;/code&gt;, vamos fazer a mesma coisa, trabalhar ele do zero.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 &amp;lt;/template&amp;gt;
 
 &amp;lt;script&amp;gt;
@@ -2309,12 +2212,11 @@ export default {
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Primeiro vamos ver se tudo funciona bem!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
     &amp;lt;h1&amp;gt;Hey&amp;lt;h1&amp;gt;
 
@@ -2339,8 +2241,7 @@ export default {
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Ai você me pergunta:
  “Igor mas dentro de template não teria que ter uma div? “
@@ -2350,7 +2251,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;p&gt;Para isso vamos trabalhar em nosso script, Vue é tão intuitivo, que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
     &amp;lt;h1&amp;gt;&amp;lt;h1&amp;gt;
 
@@ -2376,12 +2277,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: ‘Hey’ e o mesmo eu posso chamar na view algo semelhante ao ng-expression do Angular , agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
     &amp;lt;h1&amp;gt;&amp;lt;h1&amp;gt;
 
@@ -2421,12 +2321,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pois bem, temos o nossa lista de tarefas definidas em nosso data, e precisamos passar isso em nosso template, como fazer isso? vamos usar de uma diretiva chamada v-for, para quem vem de Angular, lembra muito o ng-for, é bem semelhante mesmo e a implementação ficara dessa forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
     &amp;lt;h1&amp;gt;&amp;lt;h1&amp;gt;
      &amp;lt;ul &amp;gt;
@@ -2449,14 +2348,13 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Entretanto isso não funcionará, como remediar isso, colocamos as nossas duas tags h1 e ul li dentro de uma única div, agora sim funcionará perfeitamente. =]&lt;/p&gt;
 
 &lt;p&gt;Próximo passo será a implementação é criar um input, para podermos adicionar novas tarefas, vamos criar um form onde teremos apenas um input do tipo text e outro do tipo checkbox e mais um button, e é isso:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
 
     &amp;lt;h1&amp;gt;&amp;lt;h1&amp;gt;
      &amp;lt;ul &amp;gt;
@@ -2505,12 +2403,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;O VueJS tem um evento chamdo de &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit&lt;/code&gt;, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     // código anterior
 
     &amp;lt;form @submit=&quot;submitTask()&quot;&amp;gt;
@@ -2562,12 +2459,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar junto ao evento, um prevent, igual ao &lt;code class=&quot;highlighter-rouge&quot;&gt;e.preventDefault()&lt;/code&gt;, mas da seguinte forma &lt;code class=&quot;highlighter-rouge&quot;&gt;@submit.prevent=&quot;submitTask()&quot;&lt;/code&gt;, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um reload na página, bem, passado isso, vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, e qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
     // código anterior
 
 &amp;lt;/template&amp;gt;
@@ -2615,12 +2511,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pronto, criamos o nosso objeto, task recebe nome e como done, false, pois o nosso atributo checkbox quando marcado receberá true e no seu estado atual do elemento ele já tem por si só o valor como false, agora vamos para a nossa função:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  methods:{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  methods:{
 
             submitTask(){
                 this.tasks.push(this.task)
@@ -2639,11 +2534,10 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;O que dizemos aqui foi o seguinte, recebemos um objeto que será preenchido pela nossa view e passamos atráves do nosso push um novo objeto, é legal notar que conseguimos acessar tasks atráves do &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; e assim podemos ir adicionando mais uma posição em nosso array, mas como vamos pegar essas informações? como vamos adicionar ao nosso array? Vamos fazer o seguinte, o próprio Vuejs tem uma diretiva chamada v-model que consegue trazer os elementos renderizados da view para o data e do data para view, e dessa forma conseguiremos atribuir o valor que foi passado da nossa view para o nosso data e adicioná-lo em nosso array de tarefas, em nossa lista de tarefas, dessa forma:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 
 &amp;lt;template&amp;gt;
  
@@ -2663,25 +2557,23 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         &amp;lt;/div&amp;gt;
 
 &amp;lt;/template&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Observe que nos inputs tem um v-model, em que cada um deles eu tenho o meu objeto task com seus atributos, tudo é uma questão de chave e valor, eu recebo o valor em cada um dos inputs, eles são passados para o meu objeto, meu objeto é inserido atraves do método push ao meu array tasks, que é um array de objetos, e assim meu array ganha uma nova posição, simples e fácil, agora para encerrar o post de hoje, vamos implementar como deletar uma tarefa!&lt;/p&gt;
 
 &lt;p&gt;Esse é bem simples, como vemos uma posição de um array? Atráves do indexOf() do mesmo array, então no fim só precisamos saber a posição, e retirar o objeto presente naquele array com splice, vejamos como é isso, primeriamente, vamos modifcar nosso template:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;ul &amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;ul &amp;gt;
     &amp;lt;li v-for=&quot;task in tasks&quot;&amp;gt;
         &amp;lt;span&amp;gt; -  | &amp;lt;/span&amp;gt;
         &amp;lt;i @click=&quot;removeTask(task)&quot; class=&quot;fa fa-trash&quot;&amp;gt;&amp;lt;/i&amp;gt;
     &amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Veja que agora na nossa lista eu adicionei um icon, esse icon é do font awesome, já já vamos poder usá-lo, mas antes vamos focar no que importa, temos um evento de &lt;code class=&quot;highlighter-rouge&quot;&gt;@click&lt;/code&gt; que recebe uma função na qual a mesma tem um parametro  chamdo task, o que faremos agora é o seguinte, vamos ao nossos methods:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  methods:{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  methods:{
 
             submitTask(){
                 this.tasks.push(this.task)
@@ -2706,12 +2598,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &amp;lt;style&amp;gt;
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A função removeTask(taskItem), receberá um item da nossa lista, o que queremos é a posição dele, então pegamos o nosso item, vemos a posição referente ao array, depois pegamos nosso mesmo array e retiramos o objeto presente na posição ao qual indicamos antes, e usamos o splice pare retirar o objeto referente aquela posição, e é isso, no fim nosso Home ficará assim:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div&amp;gt;
             &amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;
@@ -2789,12 +2680,11 @@ export default {
  
 &amp;lt;/style&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Só vamos aproveitar que temos uma class em button do nosso form e vamos deixar ele assim, ficará mais bonito:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
  
         &amp;lt;div&amp;gt;
             &amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;
@@ -2880,11 +2770,10 @@ export default {
   }
 
 &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;E adicionar a tag script do font-awesome no index.html da raiz do  projeto&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -2896,8 +2785,7 @@ export default {
         &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- built files will be auto injected --&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pronto, first step concluído, próximo passo, vamos fazer dois pequenos testes com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]&lt;/p&gt;
 
@@ -2917,7 +2805,7 @@ export default {
         <title>Talk about arrow functions again! </title>
         <description>&lt;p&gt;Why will you talk about arrow function? Everybody knows about this, everbody knows in this way is more simple to write a function, but somepeople don’t know how powerfull write and use arrow functions, we go to first example&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// we have a normaly function
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// we have a normaly function
 
 
 function iDOSomething (name) {
@@ -2928,18 +2816,16 @@ function iDOSomething (name) {
 
 console.log (iDoSomething ('Igor'))
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now we go to rewrite this same function&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 IDoSomething = (name) =&amp;gt; `My name is $ {name}`;
 Console.log (iDoSomething ('Igor'))
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If your note, arrow functions is a sintaxe sugar, whats this? Is more easy to write a function less verbose and more simple for you or other people understand what I you do, for exemplo a good way to read a code
 is a code in your read is easy, just like baby steps, go back to code, step by step&lt;/p&gt;
@@ -2954,22 +2840,20 @@ is a code in your read is easy, just like baby steps, go back to code, step by s
 
 &lt;p&gt;But you need to pay attention, look over this way to write, you see another detail, I write a function and do not pass to return, note, I wrote in one line, but if you have a block in the arrow function, you need to pass this return, the otherwise you receive the undefine because you pass and this function receive the params but not return the same value in this function try to return something and this something is undefine.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iDoSomething = (name) =&amp;gt; {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iDoSomething = (name) =&amp;gt; {
 `My name is $ {name}`
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log (iDoSomething ('Igor'))
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log (iDoSomething ('Igor'))
 
 // undefine
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In real is possible write the diferents way:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const iDoSomething =(name)=&amp;gt; { ...}
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const iDoSomething =(name)=&amp;gt; { ...}
 iDoSomething =(name)=&amp;gt; {...}
 
 const calc = {
@@ -2981,8 +2865,7 @@ console.log(`Possible multiply: ${calc.mult(5,10)}`)
 
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In the end this arrow function, is the syntax sugar, is the way more easy to read and write, perfect to use with promises and the little way to distinct, organize and standardize your code for the other programers, and is possible to write just like a describe function, is possible to build a stack for resolve functions, especially if you have a stack of asynchronous functions,but the big power about this way to write is organization and the simplicity of writing code, probably you work in team and other people read you do, so… in the end you do not write for you, you Write for the others, so write a good code just like baby steps, thank you for your time and see you soon!&lt;/p&gt;
 </description>
@@ -3008,7 +2891,7 @@ but is possible use you have for other stuff’s&lt;/p&gt;
 
 &lt;p&gt;So let in go for a example&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var name = &quot;Igor&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var name = &quot;Igor&quot;
 
 
 const saySomething = (name) =&amp;gt; {
@@ -3023,8 +2906,7 @@ console.log(saySomething(name))
 
 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This is a function and I call this function “saySomething” this function have one paramter and for const is a perfect use, no have changes because this function receive one paramter and return one value, one value in and one value out, but inside in this function has a let variable
 and this variable receive a string, this string return on template string in your value and the value pass in paramter but
@@ -3035,15 +2917,14 @@ this is beautifull!&lt;/p&gt;
 
 &lt;p&gt;This variable return a error, because this variable belongs to a one scope, saySomething()&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//code
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//code
 ...
 
 console.log(hey)
 
 //Error: &quot;ReferenceError: hey is not defined&quot;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;So Let belongs to a scope, var is now global and const is for a specific variable where i receive a value and i no have possibilities to change this value but is possible work in this value, var is terrible variable if you stop for think, is possible manipulated in all part in script and change your value, horever let your have warranty about value inside in your variable is possible work inside a function and return in a const function for exemplo.&lt;/p&gt;
 
@@ -3055,7 +2936,7 @@ console.log(hey)
   &lt;li&gt;Now var depends a lot, since var is now synonymous with something volatile, for example, const declared as an array, receives values, is still an array even if its values ​​inside the array change, it still continues an array so i can replace var by const and ensure that it remains an array&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Just Const
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Just Const
 
 
 const foo = []
@@ -3079,10 +2960,9 @@ foo.splice(1,1)
 console.log(foo)
 //[&quot;Hey&quot;]
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Const if I try change your type
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Const if I try change your type
 
 const foo = []
 console.log(typeof foo)
@@ -3092,10 +2972,9 @@ foo = &quot;&quot;
 console.log(typeof foo)
 
 //&quot;TypeError: Assignment to constant variable.&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Var be a var :p
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Var be a var :p
 
 var foo = []
 console.log(typeof foo)
@@ -3105,8 +2984,7 @@ console.log(typeof foo)
 foo = &quot;&quot;
 console.log(typeof foo)
 // string
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;For now I belive is a good first baby step and in this week I promise  write another post about new features, next step we will talk more about arrow functions!&lt;/p&gt;
 
@@ -3118,6 +2996,109 @@ console.log(typeof foo)
         
         
         <category>Javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>EM 2 MESES... </title>
+        <description>&lt;p&gt;Nesses meses, eu tenho gasto boa parte do meu tempo lendo, assistindo ou somente ouvindo sobre diversos assuntos sobre tecnologia, front-end, back, UX/UI, startupismo, Design, padrões de projetos, ferramentas, frameworks, testes, SEO  e tudo isso em diversos meios, entre eles o Medium, Youtube, Podcasts e claro, Blogs !&lt;/p&gt;
+
+&lt;p&gt;A maioria são coisas que você pode fazer nos seus fins de semana,  podcasts que você pode ouvir indo para o trabalho e  artigos que você pode ler durante o seu almoço, ou em qualquer intervalo que tiver, bem, é informação pra caramba, em português e em inglês, e eu sei, nem todos falam em Inglês, mesmo concordando, que, se você está em algum meio voltado a tecnologia, o minimo que você deveria saber é inglês… mesmo que pouco, te garanto, esse pouco já faz uma bruta diferença quando você começa a compreender e a criar projetos baseados naquilo que você obteve de informação, o que na sua maioria está em inglês, enfim, tem muito conteúdo e muito conteúdo útil, que pode te ajudar, à aprender a sua primeira linguagem, a usar o seu primeiro framework, a criar a sua primeira aplicação, a ter seu primeiro negócio, ou a quem sabe a ter o seu primeiro milhão kkk, quem sabe não é mesmo?!&lt;/p&gt;
+
+&lt;p&gt;#Videos!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/youtube.jpg?raw=true&quot; alt=&quot;youtube&quot; /&gt;
+De videos, tem um monte, eu vou dar foco aos nascionais, os que eu costumo assistir e quando possível compartilho e mostro para os meus amigos ou jogo nas comunidades, e realmente tem muito material bom, de qualidade que vale a pena você disponibilizar um tempo para acompanhar, se organizar bem dá para montar um roteiro bem de boas para acompanhar a esses canais, alguns até soltam tudo de uma vez, igual ao Waldemar Neto, com ele a parada é igual Netflix, tu assiste tudo de uma vez, e como todos os outros, tem um conteúdo incrível, assinem e apoiem esses canais, realmente vale a pena!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw&quot;&gt;Filipe Deschamps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCnLdHOuue5i1O7TsH6oh07w&quot;&gt;BrazilJS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/rodrigobranas&quot;&gt;Rodrigo Branas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/Loianeg&quot;&gt;Loiane Groner&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCqmJGTdcMIRXOZuukHZ8TqA&quot;&gt;Waldemar Neto&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UC44Mzz2-5TpyfklUCQ5NuxQ&quot;&gt;One Bit Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/aluracursosonline&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Além do pessoal Brazuca, temos vários outros devs de fora do país, pessoal que trabalha em diversos projetos bem da hora, então para quem não conhece, esses são alguns dos canais que eu sigo, são muito bons, postam constantemente e vem sempre com umas soluções ou discussões que realmente valem a pena parar para prestar atenção e analisar bem sobre as mesmas.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q&quot;&gt;MPJ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCfWZwsP8trUy5uHJg8gcGIQ&quot;&gt;Mackenzie Child&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/wesbos&quot;&gt;Wes Bos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/kylerobinsonyoung&quot;&gt;Kyle Robinson&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/LevelUpTuts&quot;&gt;LevelUpTuts&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/MrRemchi&quot;&gt;MrRemchi&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/user/whobeatpinkled/videos&quot;&gt;Kurt Weiberth&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCIQmhQxCvLHRr3Beku77tww&quot;&gt;Go Rails&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCgbzly83EZoSVjBIf9sNw5A&quot;&gt;RubyThursday&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#Leitura!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/medium.jpg?raw=true&quot; alt=&quot;medium&quot; /&gt;
+De leitura, eu divido em dois grupos, eu gosto de blogs, gosto muito mesmo, mas boa parte dos autores que conheço tem migrado para o Medium, ou mantiveram o seus blogs e volta e meia postam em suas páginas no Medium, aqui sim é muito conteúdo, fora que ler é um hábito muito bom, e por mais que tenhamos tantas facilidades visuais, leitura refina a nossa habilidade de compreensão, e isso é algo bom…mentira é bom pra caramba!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thedesignteam.io/&quot;&gt;The Design Team&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@marcobrunobr&quot;&gt;Marco Bruno&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@oieduardorabelo&quot;&gt;Eduardo Rabelo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@diegoeis&quot;&gt;Diego Eis&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@zenorocha&quot;&gt;Zeno Rocha&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@fdaciuk&quot;&gt;Fernando Daciuk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://willianjusten.com.br&quot;&gt;Willian Justen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.akitaonrails.com&quot;&gt;Fábio Akita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nipher.io&quot;&gt;Jonas Mendes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.felipefialho.com&quot;&gt;Felipe Fialho&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.alura.com.br&quot;&gt;Alura&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;podcast&quot;&gt;Podcast!&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/IgorVieira/igorprvieira/blob/master/app/assets/images/hipster.png?raw=true&quot; alt=&quot;podcast&quot; /&gt;
+Tem três que eu ouço e são muito bons, na verdade foi difícil colocar aqui podcast, alguns dos quais eu ouvia, pararam de realizar os programas, então eu resolvi postar esses que acompanho/voltei a acompanhar com mais frequência , se tiverem mais que vocês conheçam, por favor, coloquem nos comentários!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thewebplatform.libsyn.com&quot;&gt;The web platform podcast&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;hipsters.tech&quot;&gt;Hipsters Ponto Tech&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://devnaestrada.com.br/&quot;&gt;Dev na Estrada&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Esses foram alguns dos materiais que tenho criado uma certa rotina em torno deles, e acompanhado, quando posso kkkk, no mais, eu espero sinceramente  que isso possa lhe ajudar, e até a próxima!&lt;/p&gt;
+
+&lt;p&gt;PS: Esse post era do blog antigo, mas é valido, então resolvi colocar ele de volta! =]&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Mar 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/em-2-meses</link>
+        <guid isPermaLink="true">http://localhost:4000/em-2-meses</guid>
+        
+        
+        <category>Lifestyle</category>
         
       </item>
     

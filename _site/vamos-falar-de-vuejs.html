@@ -66,19 +66,17 @@
 
 <p>Primeiro vamos instalar o vue-cli:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    sudo npm install vue-cli -g
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    sudo npm install vue-cli -g
+</code></pre></div></div>
 
 <p>Depois que instalamos ele globalmente, vamos utilizar a versão dele com webpack, você pode escolher browserify, não recomendo, poucos usam, e o meu post eu devo seguir mesmo com webpack, de toda forma vamos inicializar aplicação assim:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    vue init webpack to-do-list
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    vue init webpack to-do-list
+</code></pre></div></div>
 
 <p>Pronto, ele vai criar começar a inicializar a nossa aplicação, o que queremos é a seguinte stack para o nosso front:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 ? Project name to-do-list
 ? Project description A Vue.js project
 ? Author Igor Vieira &lt;igor.p.r.vieira@gmail.com&gt;
@@ -99,8 +97,7 @@ vue-cli · Generated "to-do-list".
    
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>E vamos começar a partir disso, entramos ai no to-do-list, damos um npm install e vamos ver mesmo como está a nossa aplicação com npm run dev, e sejamos felizes.</p>
 
@@ -109,18 +106,17 @@ vue-cli · Generated "to-do-list".
 <p>Vamos entrar na pasta e alterar algumas coisas, primeiro, vamos entrar no folder e em src
 <code class="highlighter-rouge">./src</code>, esse vai ser por hora o único folder que iremos trabalhar , existe outro folder dentro chamado componentes, vamos deletar esse arquivo, Hello.vue,pronto,  repare que Vuejs tem um template próprio, então tudo o que vamos criar tem uma certa extensão .vue, vamos deletar esse arquivo e criar um outro folder, home/Home.vue e ficará assim:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>├── App.vue
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── App.vue
 ├── components
 │   └── home
 │       └── Home.vue
 └── main.js    
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Pronto, é assim que queremos os nossos arquivos, indo em App.vue, vamos fazer algumas pequenas alterações, mas eu vou preferir apagar tudo e criar passo a passo, então apague tudo em App.vue e deixe da seguinte forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -142,14 +138,13 @@ vue-cli · Generated "to-do-list".
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Essa é a estrutura básica de qualquer componente que viemos a criar com Vue, template é onde teremos a nossa view e alguns atributos como binds por exemplo no qual os dados vem da view ao nosso data e do data pode ser passado a nossa view, data nesse caso se emplica a uma função onde podemos trabalhar a nossa aplicação, criar objetos, passar objetos e poder chamá-los em outras partes da nossa aplicação, podemos trabalhar inúmeras possiblidades, é bem interessante, e por fim temos o nosso style, que implica na estilização da nossa aplicação.</p>
 
 <p>Para inicio, temos que organizar essa estrura melhor, vamos somente chamar Home e tornar ele como um componente único da nossa View,</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 &lt;/template&gt;
 
 
@@ -167,14 +162,13 @@ export default {
 &lt;style&gt;
 
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Depois vamos criar o nosso template, repare que colocamos uma nova tag <code class="highlighter-rouge">&lt;home&gt;&lt;/home&gt;</code> e ela está dentro de uma div, ela é importante pelo seguinte, tudo o que fizermos temos que passar em nosso template em um único bloco, sempre dentro de uma div, caso contrário ele não entenderá o nosso componente ou os diversos componentes que precisarmos.</p>
 
 <p>PS:Eu adicionei já o estilo para a aplicação, no fim style é aparte onde trataremos o CSS da nossa aplicação, não que CSS não seja importante, mais para frente trataremos a respeito dele!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
   &lt;div id="app"&gt;
     &lt;home&gt;&lt;/home&gt;
   &lt;/div&gt;
@@ -203,12 +197,11 @@ export default {
 &lt;/style&gt;
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Saindo de App.vue, vamos trabalhar com o nosso primeiro componente, Home, em <code class="highlighter-rouge">./src/components/home/Home.vue</code>, vamos fazer a mesma coisa, trabalhar ele do zero.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -230,12 +223,11 @@ export default {
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Primeiro vamos ver se tudo funciona bem!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 
     &lt;h1&gt;Hey&lt;h1&gt;
 
@@ -260,8 +252,7 @@ export default {
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ai você me pergunta:
  “Igor mas dentro de template não teria que ter uma div? “
@@ -271,7 +262,7 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 <p>Para isso vamos trabalhar em nosso script, Vue é tão intuitivo, que você pode entender ele da seguinte forma, nosso data, retorna algo para algum lugar, e esse lugar é a nossa view, que no caso é nosso template, então o que fizermos em nosso data, podemos passar para nossa view ou até mesmo útilizar em nosso script dentro de um metódo, vamos começar pelo seguinte, vamos mostrar o titulo ~ Hey ~ pelo nosso data, e assim faremos:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 
     &lt;h1&gt;&lt;h1&gt;
 
@@ -297,12 +288,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note, eu criei um atributo que recebe uma string com o nome title, e  já definida com seguinte texto: ‘Hey’ e o mesmo eu posso chamar na view algo semelhante ao ng-expression do Angular , agora vamos criar mais, quero criar uma lista com as minhas atividades, ou seja, isso será um array, as unicas informações que quero passar são as seguintes, o texto descrevendo a minha atividade e um outro atributo dizendo se foi feita ou não, que é um boolean, enfim, tomei a liberdade e o nosso data ficará assim:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 
     &lt;h1&gt;&lt;h1&gt;
 
@@ -342,12 +332,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Pois bem, temos o nossa lista de tarefas definidas em nosso data, e precisamos passar isso em nosso template, como fazer isso? vamos usar de uma diretiva chamada v-for, para quem vem de Angular, lembra muito o ng-for, é bem semelhante mesmo e a implementação ficara dessa forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 
     &lt;h1&gt;&lt;h1&gt;
      &lt;ul &gt;
@@ -370,14 +359,13 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Entretanto isso não funcionará, como remediar isso, colocamos as nossas duas tags h1 e ul li dentro de uma única div, agora sim funcionará perfeitamente. =]</p>
 
 <p>Próximo passo será a implementação é criar um input, para podermos adicionar novas tarefas, vamos criar um form onde teremos apenas um input do tipo text e outro do tipo checkbox e mais um button, e é isso:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
 
     &lt;h1&gt;&lt;h1&gt;
      &lt;ul &gt;
@@ -426,12 +414,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>O VueJS tem um evento chamdo de <code class="highlighter-rouge">@submit</code>, no qual vamos inserir no nosso form, assim qualquer ação efetuada dentro dele atraves de um submit, será efetuada pela função que foi passada por dentro dele, vamos criar a nossa função, dentro de nosso export default, além de data, podemos criar outros métodos, da seguinte forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
     // código anterior
 
     &lt;form @submit="submitTask()"&gt;
@@ -483,12 +470,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Só que tem um problema, quando clicamos no button do nosso form, ele gera um reload na página, e não queremos isso, então para podermos solucionar isso, só precisamos adicionar junto ao evento, um prevent, igual ao <code class="highlighter-rouge">e.preventDefault()</code>, mas da seguinte forma <code class="highlighter-rouge">@submit.prevent="submitTask()"</code>, assim nós garantimos que quando for adicionado uma nova informação, a mesma não irá gerar um reload na página, bem, passado isso, vamos implementar de fato o input, para isso precisaremos criar um novo atributo em data, uma task que será um objeto, e qual quando formos passar para o nossa lista, só precisaremos dar um push junto a lista e ela será adicionada junto ao array de objetos, então vamos com calma, primeiro o objeto em nosso data:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
     // código anterior
 
 &lt;/template&gt;
@@ -536,12 +522,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Pronto, criamos o nosso objeto, task recebe nome e como done, false, pois o nosso atributo checkbox quando marcado receberá true e no seu estado atual do elemento ele já tem por si só o valor como false, agora vamos para a nossa função:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  methods:{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  methods:{
 
             submitTask(){
                 this.tasks.push(this.task)
@@ -560,11 +545,10 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>O que dizemos aqui foi o seguinte, recebemos um objeto que será preenchido pela nossa view e passamos atráves do nosso push um novo objeto, é legal notar que conseguimos acessar tasks atráves do <code class="highlighter-rouge">this</code> e assim podemos ir adicionando mais uma posição em nosso array, mas como vamos pegar essas informações? como vamos adicionar ao nosso array? Vamos fazer o seguinte, o próprio Vuejs tem uma diretiva chamada v-model que consegue trazer os elementos renderizados da view para o data e do data para view, e dessa forma conseguiremos atribuir o valor que foi passado da nossa view para o nosso data e adicioná-lo em nosso array de tarefas, em nossa lista de tarefas, dessa forma:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
 &lt;template&gt;
  
@@ -584,25 +568,23 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
         &lt;/div&gt;
 
 &lt;/template&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Observe que nos inputs tem um v-model, em que cada um deles eu tenho o meu objeto task com seus atributos, tudo é uma questão de chave e valor, eu recebo o valor em cada um dos inputs, eles são passados para o meu objeto, meu objeto é inserido atraves do método push ao meu array tasks, que é um array de objetos, e assim meu array ganha uma nova posição, simples e fácil, agora para encerrar o post de hoje, vamos implementar como deletar uma tarefa!</p>
 
 <p>Esse é bem simples, como vemos uma posição de um array? Atráves do indexOf() do mesmo array, então no fim só precisamos saber a posição, e retirar o objeto presente naquele array com splice, vejamos como é isso, primeriamente, vamos modifcar nosso template:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;ul &gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;ul &gt;
     &lt;li v-for="task in tasks"&gt;
         &lt;span&gt; -  | &lt;/span&gt;
         &lt;i @click="removeTask(task)" class="fa fa-trash"&gt;&lt;/i&gt;
     &lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Veja que agora na nossa lista eu adicionei um icon, esse icon é do font awesome, já já vamos poder usá-lo, mas antes vamos focar no que importa, temos um evento de <code class="highlighter-rouge">@click</code> que recebe uma função na qual a mesma tem um parametro  chamdo task, o que faremos agora é o seguinte, vamos ao nossos methods:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  methods:{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  methods:{
 
             submitTask(){
                 this.tasks.push(this.task)
@@ -627,12 +609,11 @@ Não necessiariamente, se eu tiver apenas uma tag dentro de template, eu posso p
 
 &lt;style&gt;
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A função removeTask(taskItem), receberá um item da nossa lista, o que queremos é a posição dele, então pegamos o nosso item, vemos a posição referente ao array, depois pegamos nosso mesmo array e retiramos o objeto presente na posição ao qual indicamos antes, e usamos o splice pare retirar o objeto referente aquela posição, e é isso, no fim nosso Home ficará assim:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
  
         &lt;div&gt;
             &lt;h1&gt;&lt;/h1&gt;
@@ -710,12 +691,11 @@ export default {
  
 &lt;/style&gt;
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Só vamos aproveitar que temos uma class em button do nosso form e vamos deixar ele assim, ficará mais bonito:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
  
         &lt;div&gt;
             &lt;h1&gt;&lt;/h1&gt;
@@ -801,11 +781,10 @@ export default {
   }
 
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>E adicionar a tag script do font-awesome no index.html da raiz do  projeto</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
@@ -817,8 +796,7 @@ export default {
         <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
     <span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Pronto, first step concluído, próximo passo, vamos fazer dois pequenos testes com a nossa aplicação, um teste e2e e um teste unitário, mas isso será um próximo post, por enquanto é só, obrigado e até mais =]</p>
 

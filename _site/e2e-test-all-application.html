@@ -63,7 +63,7 @@ um para ver adicionar uma nova tarefa e outra para poder editar uma tarefa.</p>
 <p>E podemos excluir o que temos por default, nosso objetivo é criar um novo, e  mas tão simples quanto, esse será 
 o nome dele, firstTaskSpec.js</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>module.exports = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
     'new task': function (browser) {
       const devServer = browser.globals.devServerURL;
       browser
@@ -79,8 +79,7 @@ o nome dele, firstTaskSpec.js</p>
        .end();
      },
   };
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>O que definimos aqui é, temos uma sequencia de atividades que vão sendo realizadas , é como se tivessemos um roteiro
 e ele vai seguindo o roteiro de cada uma das nossas ações, but … antes de continuarmos, temos que fazer mais três alterações
@@ -88,7 +87,7 @@ temos que alterar nosso form, observe o nosso  <code class="highlighter-rouge">.
 uma tag input no qual o seu name é acitivity_input, assim como nosso outro .setValue, tem um name tentando buscar o que é o
 seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que iremos fazer:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="row"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="row"&gt;
   &lt;div class="col-md-5 col-md-offset-2 well"&gt;
       &lt;form @submit.prevent="submitTask()"&gt;
         &lt;div class="form-group"&gt;
@@ -104,12 +103,11 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
     &lt;/form&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Semelhantemente teremos que fazer alterações em info.vue, visto que vamos ter um spec para ele também.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form class="form-horizontal well" @submit.prevent="updateTask()" &gt;
     &lt;div class="form-group"&gt;
         &lt;label for="" &gt;Nome da Atividade:&lt;/label&gt;
         &lt;input type="text" class="form-control" v-model="task.activity"  name="activity_input"&gt;
@@ -120,20 +118,18 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
     &lt;/div&gt;
     &lt;input type="submit" value="Salvar" class="btn btn-success"&gt;
 &lt;/form&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>E são somente essas as alterações, para podermos testar as funcionalidade de update, feito você pode rodar um primeiro test:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm run test
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm run test
+</code></pre></div></div>
 
 <p>Se o status para assetions foi completo, vamos para o nosso segundo teste:</p>
 
 <p>secondTaskSpec.js</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>module.exports = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = {
 	'update task': function (browser) {
 		const devServer = browser.globals.devServerURL;
 
@@ -153,8 +149,7 @@ seu checkbox_input, ambos precisam ser alterados em nossa home, é isso que irem
 	},
 };
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A ideia desse é clicar no primeiro edit_task  e alterar a view e alterar o input dessa task para <code class="highlighter-rouge">Make a omelete!</code> e é isso, submeter e alterar, nada de mais, bem acho que por hoje é só, um post simples sobre algo bem tranquilo de se abordar, mais uma vez, obrigado =]</p>
 

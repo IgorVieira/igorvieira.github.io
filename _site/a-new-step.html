@@ -61,7 +61,7 @@ but is possible use you have for other stuff’s</p>
 
 <p>So let in go for a example</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var name = "Igor"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var name = "Igor"
 
 
 const saySomething = (name) =&gt; {
@@ -76,8 +76,7 @@ console.log(saySomething(name))
 
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This is a function and I call this function “saySomething” this function have one paramter and for const is a perfect use, no have changes because this function receive one paramter and return one value, one value in and one value out, but inside in this function has a let variable
 and this variable receive a string, this string return on template string in your value and the value pass in paramter but
@@ -88,15 +87,14 @@ this is beautifull!</p>
 
 <p>This variable return a error, because this variable belongs to a one scope, saySomething()</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//code
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//code
 ...
 
 console.log(hey)
 
 //Error: "ReferenceError: hey is not defined"
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>So Let belongs to a scope, var is now global and const is for a specific variable where i receive a value and i no have possibilities to change this value but is possible work in this value, var is terrible variable if you stop for think, is possible manipulated in all part in script and change your value, horever let your have warranty about value inside in your variable is possible work inside a function and return in a const function for exemplo.</p>
 
@@ -108,7 +106,7 @@ console.log(hey)
   <li>Now var depends a lot, since var is now synonymous with something volatile, for example, const declared as an array, receives values, is still an array even if its values ​​inside the array change, it still continues an array so i can replace var by const and ensure that it remains an array</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Just Const
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Just Const
 
 
 const foo = []
@@ -132,10 +130,9 @@ foo.splice(1,1)
 console.log(foo)
 //["Hey"]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Const if I try change your type
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Const if I try change your type
 
 const foo = []
 console.log(typeof foo)
@@ -145,10 +142,9 @@ foo = ""
 console.log(typeof foo)
 
 //"TypeError: Assignment to constant variable."
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Var be a var :p
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Var be a var :p
 
 var foo = []
 console.log(typeof foo)
@@ -158,8 +154,7 @@ console.log(typeof foo)
 foo = ""
 console.log(typeof foo)
 // string
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For now I belive is a good first baby step and in this week I promise  write another post about new features, next step we will talk more about arrow functions!</p>
 
