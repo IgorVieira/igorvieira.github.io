@@ -1,10 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Serie
+permalink: /serie/
 ---
 
-Hey!My name is Igor Vieira I am from Brazil and I am Developer guy and I work with programing and programing with  nodejs and javascript, sometimes I work with ruby or php but in more part of the time I 'm program in js or node but in this blog I don't wrote just about programing I really expect talk more for the another things, for exemplo
-I like video games, series, places of is possible you have a good coversation, books, I love books and coffee I like a good coffee but program is a reality in my life and in this blog, I hope talk about all things no just programing but I really expect share I little bit about me and my I ideas and have a good day, afternoon or nitght!
+Meu nome é Igor Vieira, sou um desenvolvedor de software desde os meus 19 anos +-, boa parte do tempo trabalhando com Javascript(front e back) e boa parte do tempo remoto, além de volta e meia brinco com algumas outras linguagens(ruby, php e elixir), é saúdavel sair da sua zona de conforto.
 
-See soon guys! =]
+Bem, no mais, gosto de falar sobre outros assuntos relacionados a bem estar e saúde, que a vida é muito mais que programar, é mais que ficar na frente do computador, de toda forma eu agradeço a sua atenção e sejam muito bem vindos.
+
+Igor Vieira
