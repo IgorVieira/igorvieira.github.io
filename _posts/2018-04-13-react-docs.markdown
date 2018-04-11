@@ -5,6 +5,8 @@ date:   2018-04-13
 categories: Javascript
 ---
 
+![dogsanddocs](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/dogsanddocs.png?raw=true)
+
 Bem, a um tempo estava pensando em escrever a respeito sobre React e a forma que adotei para não somente aprender React, como a tudo que se refere a tecnlogias que me interessam, mas nunca tive tempo de qualidade, ou não conseguia conciliar de forma organizada um momento para poder falar sobre o assunto, e outra, boa parte dos meus projetos rodeavam outros frameworks como `Vuejs` e `Angularjs`, entretanto esses dias em uma roda de amigos, estavamos discutindo a respeito da melhor forma de como aprender sobre um novo framework, uma nova linguagem ou uma tecnologia.
 
 No meio dessa conversa, boa parte dos que estavam ali presentes, falaram das suas formas de aprender, ou como começaram, pessoas que eram as suas referências em tais frameworks ou frameworks que compunham as suas stack's, na época eu meio que fazia o uso de video aulas ou artigos do Medium, porém depois de um tempo e sobre alguns pontos, essa ideia foi modificando, isso graças a um grande amigo [@LeonardoF__](https://twitter.com/LeonardoF__) ele é um dos desenvolvedores que eu mais admiro, e durante a conversa ele resaltou a respeito de como boas documentações fazem diferença, e como a própria documentação da React por exemplo, era bem estruturada e te dava base para poder utilizar tal biblioteca, fora que era muito mais rápido você tentar ler a documentação, entender os baby steps de como usar o framework, do que encarar horas assistindo a video aulas (que atualmente eu tenho dificuldades para terminar de assistir).
