@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "As vezes a documentação é tudo o que você precisa"
+date:   2018-04-13
+categories: Javascript
+---
+
+![dogsanddocs](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/dogsanddocs.png?raw=true)
+
+Bem, a um tempo estava pensando em escrever a respeito sobre React e a forma que adotei para não somente aprender React, como a tudo que se refere a tecnlogias que me interessam, mas nunca tive tempo de qualidade, ou não conseguia conciliar de forma organizada um momento para poder falar sobre o assunto, e outra, boa parte dos meus projetos rodeavam outros frameworks como `Vuejs` e `Angularjs`, entretanto esses dias em uma roda de amigos, estavamos discutindo a respeito da melhor forma de como aprender sobre um novo framework, uma nova linguagem ou uma tecnologia.
+
+No meio dessa conversa, boa parte dos que estavam ali presentes, falaram das suas formas de aprender, ou como começaram, pessoas que eram as suas referências em tais frameworks ou frameworks que compunham as suas stack's, na época eu meio que fazia o uso de video aulas ou artigos do Medium, porém depois de um tempo e sobre alguns pontos, essa ideia foi modificando, isso graças a um grande amigo [@LeonardoF__](https://twitter.com/LeonardoF__) ele é um dos desenvolvedores que eu mais admiro, e durante a conversa ele resaltou a respeito de como boas documentações fazem diferença, e como a própria documentação da React por exemplo, era bem estruturada e te dava base para poder utilizar tal biblioteca, fora que era muito mais rápido você tentar ler a documentação, entender os baby steps de como usar o framework, do que encarar horas assistindo a video aulas (que atualmente eu tenho dificuldades para terminar de assistir).
+
+Nesse momento, comecei a questionar meus metódos de estudo, antes de prosseguir, isso não é um texto contra videos como matérial de ensino, pelo contrário, acho que eles são válidos, e quando vejo a sua necessidade, faço uso deles e recomendo que busquem todo o tipo de material, github, medium, twitter, canais no slack, blogs, livros, stackoverflow, o que tiver a sua disposição e for licito, use, entretanto, eu, Igor Vieira, atualmente, tenho mudado a forma como busco concretizar o conhecimento sobre determinado tipo de assunto, e no que diz respeito a novos frameworks relaciondos a front-end.
+
+Um dos primeiros passos para entender, como por exemplo, uma biblioteca em si funciona, é através da documentação, os aspectos que tento observar são: aonde de fato tal framework pode me ajudar, analisar o custo relacionado a tempo(pessoal e em relação ao meu time), como eu posso criar algo simples(um mero componente), se há ferramentas para testar o que eu estou fazendo, e por fim, fora da documentação, se em relação a essa ferramenta, existe de fato um ecossistema que pode me ajudar na resolução de problemas reais, como por exemplo: como tal framework front-end procede para resolver problemas relacionados a sua visbilidade em meio aos motores de busca junto ao Google? O produto final tem que ser achado.
+
+Dado esses requisitos, busco tentar criar algo simples, alguns reclamam de ```TODO`s``` kkkk, mas acho legal que eles abstraem o básico, o necessário para poder se criar uma simples aplicação. E o suficiente para entender o seu comportamento e suas aplicabilidade.
+
+Depois de todo esse contexto, venho com a seguinte proposta, criar um TODO, do básico ao mais elaborado usando React, uma aplicação somente com React e Testes, devem ser rotina na sua vida, entretanto, não tenho a intensão de ir tão longe, React as vezes já é o bastante para poder fazer o que precisa ser feito, e compreendendo bem o que é a React e como usar, isso será o suficiente para se aventurar em qualquer outra forma de arquitetura, fazendo o básico, o básico bem feito, enfim, conto com atenção de todos e feedbacks são muito bem vindos, muito obriagado e até a próxima =]
