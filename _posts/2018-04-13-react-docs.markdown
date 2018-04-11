@@ -5,7 +5,7 @@ date:   2018-04-13
 categories: Javascript
 ---
 
-![dogsanddocs](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/dogsanddocs.png?raw=true)
+![dogsanddocs](https://github.com/IgorVieira/igorvieira.github.io/blob/master/_images/dogsandocs.png?raw=true)
 
 Bem, a um tempo estava pensando em escrever a respeito sobre React e a forma que adotei para não somente aprender React, como a tudo que se refere a tecnlogias que me interessam, mas nunca tive tempo de qualidade, ou não conseguia conciliar de forma organizada um momento para poder falar sobre o assunto, e outra, boa parte dos meus projetos rodeavam outros frameworks como `Vuejs` e `Angularjs`, entretanto esses dias em uma roda de amigos, estavamos discutindo a respeito da melhor forma de como aprender sobre um novo framework, uma nova linguagem ou uma tecnologia.
 
