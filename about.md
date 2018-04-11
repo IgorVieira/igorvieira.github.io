@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Serie
-permalink: /serie/
+title: Sobre
+permalink: /sobre/
 ---
 
 Meu nome é Igor Vieira, sou um desenvolvedor de software desde os meus 19 anos +-, boa parte do tempo trabalhando com Javascript(front e back) e boa parte do tempo remoto, além de volta e meia brinco com algumas outras linguagens(ruby, php e elixir), é saúdavel sair da sua zona de conforto.
